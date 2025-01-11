@@ -8,3 +8,13 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+:root {
+  --text-color: #1c1e21;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  color: var(--text-color);
+  text-rendering: optimizelegibility;
+}
