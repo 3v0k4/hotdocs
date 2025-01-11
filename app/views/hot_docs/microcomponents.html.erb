@@ -1,0 +1,29 @@
+<%= content_for(:title, "HotDocs: Micro-components") %>
+
+<h1>HotDocs: Micro-components</h1>
+
+HotDocs comes with micro-components available as helpers.
+
+<h2><code>active_link_to</code></h2>
+
+Produces a <code>&lt;a class="active"&gt;</code> if the link points to the current page.
+
+<p><b>Code</b></p>
+
+<pre><code>&lt;%= active_link_to "Self", microcomponents_path %&gt;</code></pre>
+
+<p><b>Result</b></p>
+
+<%= active_link_to "Self", microcomponents_path %>
+
+<h2><code>external_link_to</code></h2>
+
+Produces a <code>&lt;a&gt;</code> with the external link icon.
+
+<p><b>Code</b></p>
+
+<pre><code>&lt;%= external_link_to "Example", "example.com" %&gt;</code></pre>
+
+<p><b>Result</b></p>
+
+<%= external_link_to "Example", "example.com" %>

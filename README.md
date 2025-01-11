@@ -1,24 +1,30 @@
-# README
+# HotDocs: Write your docs with Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<div align="center">
+  <img width="200" width="200" src=".github/images/hot_docs.svg" />
+</div>
 
-Things you may want to cover:
+Let's stop the JavaScript madness:
 
-* Ruby version
+HotDocs is a set of optimized Rails components & tools for writing docs.
 
-* System dependencies
+[**Get Started**](https://hotdocsrails.com)
 
-* Configuration
+## Users
 
-* Database creation
+HotDocs uses itself for its docs: [check the demo out](https://hotdocsrails.com).
 
-* Database initialization
+## Development
 
-* How to run the test suite
+In its current state, HotDocs is a Rails app. Run it with:
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+bin/setup
+```
 
-* Deployment instructions
+## Contributing
 
-* ...
+Let's create a Rails alternative to (just) Ruby and JavaScript docs frameworks:
+- Chime in the [discussions](https://github.com/3v0k4/hot_docs/discussions) with your feedback and wishes
+- Open an [issue](https://github.com/3v0k4/hot_docs/issues)
+- Submit a [pull request](https://github.com/3v0k4/hot_docs/pulls)
