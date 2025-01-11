@@ -1,0 +1,30 @@
+#!/bin/usr/env bash
+
+set -euxo pipefail
+
+curl -o app/assets/stylesheets/hot_docs.css https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/app/assets/stylesheets/hot_docs.css
+
+curl -o app/javascript/controllers/accordion_controller.js https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/app/javascript/controllers/accordion_controller.js
+curl -o app/javascript/controllers/sidenav_controller.js https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/app/javascript/controllers/sidenav_controller.js
+curl -o app/javascript/controllers/toc_controller.js https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/app/javascript/controllers/toc_controller.js
+
+mkdir app/views/hot_docs/
+
+curl -o app/views/hot_docs/_menu_row.html.erb https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/app/views/hot_docs/_menu_row.html.erb
+
+curl -o app/views/layouts/hot_docs.html.erb https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/app/assets/layouts/hot_docs.html.erb
+
+bin/rails generate controller hot_docs page
+curl -o app/helpers/hot_docs_helper.rb https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/app/helpers/hot_docs_helper.rb
+
+set +x
+
+echo
+echo
+echo "Make sure the HotDocs controller uses the correct layout:"
+cat <<END
+  class HotDocsController < ApplicationController
+    layout "hot_docs"
+END
+echo
+echo "Visit http://127.0.0.1:3000/hot_docs/page"

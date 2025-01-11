@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html data-theme="light">
+  <head>
+    <title><%= content_for(:title) || "HotDocs" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <!-- favicons generated with the favicon_factory gem -->
+    <link rel="icon" href="/hot_docs.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :hot_docs, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <nav class="nav" data-controller="sidenav" data-sidenav-open-class-value="sidenav--open" data-sidenav-main-section-class-value="sidenav__sections--main">
+      <div class="nav__section">
+        <button class="nav__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-action="click->sidenav#open">
+          <svg viewBox="0 0 30 30" aria-hidden="true">
+            <path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path>
+          </svg>
+        </button>
+
+        <%= link_to root_path, class: "nav__brand" do %>
+          <div class="nav__logo-wrapper">
+            <img class="nav__logo" src="/hot_docs.svg" alt="A humanized and happy hot dog" height="32" width="32" />
+          </div>
+
+          <span class="nav__title">HotDocs</span>
+        <% end %>
+
+        <div class="nav__links">
+          <% nav_left_items("nav__link").each do |item| %>
+            <%= item %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="nav__section">
+        <div class="nav__links">
+          <% nav_right_items("nav__link").each do |item| %>
+            <%= item %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="sidenav-backdrop"></div>
+      <div class="sidenav">
+        <div class="sidenav__header">
+          <%= link_to root_path, class: "nav__brand" do %>
+            <div class="nav__logo-wrapper">
+              <img class="nav__logo" src="/hot_docs.svg" alt="A humanized and happy hot dog" height="32" width="32" />
+            </div>
+
+            <span class="nav__title">HotDocs</span>
+          <% end %>
+
+          <button aria-label="Close navigation" class="sidenav__toggle" type="button" data-action="click->sidenav#close">
+            <svg viewBox="0 0 15 15">
+              <g stroke="currentColor" stroke-width="1.2">
+                <path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path>
+              </g>
+            </svg>
+          </button>
+        </div>
+
+        <div class="sidenav__sections" data-sidenav-target="sections">
+          <div class="sidenav__section">
+            <ul class="menu__section">
+              <% (nav_left_items("menu__link") + nav_right_items("menu__link")).each do |item| %>
+                <li>
+                  <div class="menu__row">
+                    <%= item %>
+                  </div>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+
+          <div class="sidenav__section">
+            <div class="menu__section">
+              <button type="button" class="sidenav__back-button" data-action="click->sidenav#back">← Back to main menu</button>
+            </div>
+
+            <%= menu %>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="content">
+      <aside class="menu">
+        <div class="menu__sections">
+          <%= menu %>
+        </div>
+      </aside>
+
+      <main data-controller="toc" class="main">
+        <div class="central">
+          <details name="toc" class="toc">
+            <summary class="toc__label">Table of contents</summary>
+
+            <ul class="toc__entries" data-toc-target="toc">
+              <template data-toc-target="tocTemplate">
+                <li><a id class="toc__link" href></a></li>
+              </template>
+            </ul>
+          </details>
+
+          <article class="article" data-toc-target="article">
+            <%= yield %>
+          </article>
+        </div>
+
+        <div class="sidetoc">
+          <ul class="sidetoc__entries" data-toc-target="sidetoc">
+            <template data-toc-target="sidetocTemplate">
+              <li><a id class="sidetoc__link" href></a></li>
+            </template>
+          </ul>
+        </div>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div class="footer__sections">
+        <div class="footer__section">
+          <p class="footer__heading">Contribute</p>
+
+          <ul>
+            <li><%= external_link_to "Source Code", "https://github.com/3v0k4/hot_docs", class: "footer__link" %></li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <p class="footer__heading">Community</p>
+
+          <ul>
+            <li><%= external_link_to "GitHub Discussions", "https://github.com/3v0k4/hot_docs/discussions", class: "footer__link" %></li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <p class="footer__heading">(il)Legal</p>
+
+          <ul>
+            <li>Nothing to see here.</li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <p class="footer__heading">HotDocs</p>
+
+          <p>Write your docs with Ruby on Rails.</p>
+        </div>
+      </div>
+
+      <img class="footer__logo" src="/hot_docs.svg" alt="A humanized and happy hot dog" height="150" width="150" />
+
+      <!-- Buy a license to remove the credits -->
+      <p class="credits">Built with Rails &amp; <a class="credits__link" href="https://hotdocsrails.com">HotDocs<img class="credits__logo" src="/hot_docs.svg" alt="A humanized and happy hot dog" height="32" width="32" /></a></p>
+    </footer>
+  </body>
+</html>

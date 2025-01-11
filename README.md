@@ -1,24 +1,49 @@
-# README
+# HotDocs: Write your docs with Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<div align="center">
+  <img width="200" width="200" src=".github/images/hot_docs.svg" />
+</div>
 
-Things you may want to cover:
+Let's stop the JavaScript madness:
 
-* Ruby version
+HotDocs is a set of optimized Rails components & tools for writing docs:
+- Write your docs from scratch (with the starter-kit)
+- Embed docs in your Rails app (with the components)
 
-* System dependencies
+[**Get Started**](https://hotdocsrails.com)
 
-* Configuration
+## Comparison
 
-* Database creation
+| Feature                                                   | HotDocs | Jekyll | Docusaurus |
+|-----------------------------------------------------------|---------|--------|------------|
+| Ruby on Rails (database, Hotwire, etc.)                   | ✅      | ❌     | ❌         |
+| [Embed docs in an existing Rails app](embedded_path)      | ✅      | ❌     | ❌         |
+| [Standalone docs](standalone_path)                        | ✅      | ✅     | ✅         |
+| [Styled components you can customize](components_path)    | ✅      | ✅     | ✅         |
+| [Markdown](markdown_path)                                 | 🔜 🚀   | 👍     | 🚀         |
+| [Static export](static_export_path)                       | 🔜 🚀   | 👍     | 🚀         |
+| [Search](search_path)                                     | 🔜 ✅   | 🔌     | 🔌         |
+| [Light / Dark](light_dark_path)                           | 🔜 ✅   | 🔌     | ✅         |
+| [Open source](https://github.com/3v0k4/hot_docs)          | ✅      | ✅     | ✅         |
+| Free (if you keep the "Built with HotDocs" in the footer) | ✅      | ✅     | ✅         |
 
-* Database initialization
+**Anything missing? Suggestions?** See how to contribute below.
 
-* How to run the test suite
+## Demo
 
-* Services (job queues, cache servers, search engines, etc.)
+HotDocs uses itself for its docs: [check the demo out](https://hotdocsrails.com).
 
-* Deployment instructions
+## Development
 
-* ...
+In its current state, HotDocs is a Rails app. Run it with:
+
+```bash
+bin/setup
+```
+
+## Contributing
+
+Let's create a Rails alternative to (just) Ruby and JavaScript docs frameworks:
+- Chime in the [discussions](https://github.com/3v0k4/hot_docs/discussions) with your feedback and wishes
+- Open an [issue](https://github.com/3v0k4/hot_docs/issues)
+- Submit a [pull request](https://github.com/3v0k4/hot_docs/pulls)

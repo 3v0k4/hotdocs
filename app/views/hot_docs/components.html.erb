@@ -1,0 +1,36 @@
+<%= content_for(:title, "HotDocs: Components") %>
+
+<h1>HotDocs: Components</h1>
+
+<p>
+  HotDocs is responsive. Feel free to resize this website to see it in action.
+</p>
+
+<p>
+  The following screenshots show how components are laid out on different breakpoints:
+</p>
+
+<h2>Desktop</h2>
+
+<div class="screenshot screenshot--desktop">
+  <%= image_tag asset_path("hot_docs_components_desktop.png"), loading: "lazy", size: "600x385", alt: "Screenshot of this website on desktop: top = nav, left = menu, right = table of contents, bottom = footer.", class: "screenshot__image", usemap: "#imagemap-desktop" %>
+
+  <map class="imagemap" name="imagemap-desktop">
+    <area shape="rect" coords="0,0,600,25" href="<%= nav_path %>" alt="Link to Nav component">
+    <area shape="rect" coords="0,25,130,200" href="<%= nav_path %>" alt="Link to Menu component">
+    <area shape="rect" coords="480,25,600,200" href="<%= toc_path %>" alt="Link to Table of contents component">
+    <area shape="rect" coords="0,200,600,380" href="<%= footer_path %>" alt="Link to Footer component">
+  </map>
+</div>
+
+<h2>Mobile</h2>
+
+<div class="screenshot screenshot--mobile">
+  <%= image_tag asset_path("hot_docs_components_mobile.png"), loading: "lazy", size: "400x1120", alt: "Screenshot of this website on mobile: top = nav, top-left = sidenav, center-top = table of contents, bottom = footer.", class: "screenshot__image", usemap: "#imagemap-mobile" %>
+
+  <map class="imagemap" name="imagemap-mobile">
+    <area shape="rect" coords="0,0,400,50" href="<%= nav_path %>" alt="Link to Nav component">
+    <area shape="rect" coords="0,60,400,100" href="<%= toc_path %>" alt="Link to Table of contents component">
+    <area shape="rect" coords="0,530,400,1120" href="<%= footer_path %>" alt="Link to Footer component">
+  </map>
+</div>
