@@ -10,11 +10,18 @@
  */
 
 :root {
+  --background-color: white;
   --text-color: #1c1e21;
+}
+
+[data-theme=dark]:root {
+  --background-color: #1b1b1d;
+  --text-color: #e3e1de;
 }
 
 html {
   -webkit-font-smoothing: antialiased;
+  background-color: var(--background-color);
   color: var(--text-color);
   text-rendering: optimizelegibility;
 }

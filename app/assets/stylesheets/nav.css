@@ -8,9 +8,20 @@
   --nav-shadow: 0 1px 2px 0 #0000001a;
   --nav-title-color: #1c1e21;
   --sidenav-link-color: #606770;
+  --sidenav-link-hover-color: rgba(0, 0, 0, .05);
   --sidenav-padding-horizontal: 0.75rem;
   --sidenav-padding-vertical: 0.375rem;
-  --sidenav-toggle-color: #8d949e;
+  --sidenav-toggle-color: rgb(28, 30, 33);
+}
+
+[data-theme=dark]:root {
+  --nav-background-color: #242526;
+  --nav-link-color: #e3e1de;
+  --nav-link-hover-color: white; /* TODO */
+  --nav-title-color: #e3e1de;
+  --sidenav-link-color: #dadde1;
+  --sidenav-link-hover-color: rgba(255, 255, 255, .05);
+  --sidenav-toggle-color: rgb(227, 225, 222);
 }
 
 /* Added to <body> */
@@ -78,6 +89,8 @@
 }
 
 .nav__toggle {
+  color: var(--sidenav-toggle-color);
+
   @media (min-width: 996px) {
     display: none;
   }
@@ -143,5 +156,5 @@
 }
 
 .sidenav__link:hover {
-  background-color: rgba(0, 0, 0, .05);
+  background-color: var(--sidenav-link-hover-color);
 }
