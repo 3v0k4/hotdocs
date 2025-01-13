@@ -1,6 +1,7 @@
 :root {
   --nav-background-color: white;
   --nav-height: 3.75rem;
+  --nav-link-active-color: black; /* TODO */
   --nav-link-color: #1c1e21;
   --nav-link-hover-color: black; /* TODO */
   --nav-padding-horizontal: 1rem;
@@ -16,6 +17,7 @@
 
 [data-theme=dark]:root {
   --nav-background-color: #242526;
+  --nav-link-active-color: white; /* TODO */
   --nav-link-color: #e3e1de;
   --nav-link-hover-color: white; /* TODO */
   --nav-title-color: #e3e1de;
@@ -63,6 +65,10 @@
 
 .nav__link:hover {
   color: var(--nav-link-hover-color);
+}
+
+.nav__link.active {
+  color: var(--nav-link-active-color);
 }
 
 .nav__brand {
@@ -153,6 +159,10 @@
   color: var(--sidenav-link-color);
   display: flex;
   padding: var(--sidenav-padding-vertical) var(--sidenav-padding-horizontal);
+}
+
+.sidenav__link.active {
+  color: var(--nav-link-active-color);
 }
 
 .sidenav__link:hover {

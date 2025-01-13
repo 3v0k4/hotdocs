@@ -15,9 +15,9 @@
     <% end %>
 
     <div class="nav__links">
-      <%= link_to "Page1", "#", class: "nav__link" %>
-      <%= link_to "Page2", "#", class: "nav__link" %>
-      <%= link_to "Page3", "#", class: "nav__link" %>
+      <%= active_link_to "Page1", root_path, class: "nav__link" %>
+      <%= active_link_to "Page2", "#", class: "nav__link" %>
+      <%= active_link_to "Page3", "#", class: "nav__link" %>
     </div>
   </div>
 
@@ -44,9 +44,9 @@
     </div>
 
     <ul class="sidenav__section">
-      <li><%= link_to "Page 1", "#", class: "sidenav__link" %></li>
-      <li><%= link_to "Page 2", "#", class: "sidenav__link" %></li>
-      <li><%= link_to "Page 3", "#", class: "sidenav__link" %></li>
+      <li><%= active_link_to "Page 1", root_path, class: "sidenav__link" %></li>
+      <li><%= active_link_to "Page 2", "#", class: "sidenav__link" %></li>
+      <li><%= active_link_to "Page 3", "#", class: "sidenav__link" %></li>
     </ul>
   </div>
 </nav>
