@@ -123,6 +123,7 @@
   bottom: 0;
   left: 0;
   opacity: 0;
+  overflow-x: hidden;
   position: fixed;
   top: 0;
   transform: translate(-100%);
@@ -150,8 +151,28 @@
   top: 0;
 }
 
+.sidenav__sections {
+  display: flex;
+  transform: translate(-85vw);
+  transition-duration: 0.2s;
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+}
+
+.sidenav__sections--main {
+  transform: translate(0);
+}
+
 .sidenav__section {
+  flex-shrink: 0;
   padding: 0.5rem;
+  width: 85vw;
+}
+
+.sidenav__back-button {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding-left: var(--sidenav-padding-horizontal);
 }
 
 .sidenav__link {

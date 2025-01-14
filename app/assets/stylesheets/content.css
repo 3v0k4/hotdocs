@@ -1,0 +1,87 @@
+.content {
+  display: flex;
+}
+
+.sidebar {
+  display: none;
+  flex: 1 0 0;
+  max-width: 300px;
+
+  @media (min-width: 996px) {
+    display: initial;
+  }
+}
+
+.sidebar__section {
+  padding: 0.5rem;
+}
+
+.sidebar__section .sidebar__section {
+  display: none;
+  padding: 0;
+  padding-left: 0.5rem;
+}
+
+.sidebar__row--open ~ .sidebar__section {
+  display: revert;
+}
+
+.sidebar__row {
+  align-items: center;
+  display: flex;
+  height: 36px;
+  justify-content: space-between;
+}
+
+.sidebar__link {
+  border-radius: 0.25rem;
+  color: var(--sidenav-link-color);
+  display: flex;
+  flex: 1 0 0;
+  padding: var(--sidenav-padding-vertical) var(--sidenav-padding-horizontal);
+}
+
+.sidebar__link.active {
+  color: var(--nav-link-active-color);
+}
+
+.sidebar__link:hover {
+  background-color: var(--sidenav-link-hover-color);
+}
+
+.sidebar__toggle {
+  align-items: center;
+  align-self: stretch;
+  border-radius: 0.25rem;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center;
+}
+
+.sidebar__toggle:hover {
+  background-color: var(--sidenav-link-hover-color);
+}
+
+/* Do not display the toggle... */
+.sidebar__toggle {
+  display: none;
+}
+
+/* ...unless it has a sibling section. */
+.sidebar__row:has(~ .sidebar__section) .sidebar__toggle {
+  display: revert;
+}
+
+.sidebar__toggle-icon {
+  transform: rotate(90deg);
+  height: 30px;
+  width: 30px;
+}
+
+.sidebar__row--open .sidebar__toggle-icon {
+  transform: rotate(180deg);
+}
+
+.main {
+  flex: 1 0 0;
+}
