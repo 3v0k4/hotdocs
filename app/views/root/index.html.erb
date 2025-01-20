@@ -1,6 +1,6 @@
 <nav class="nav" data-controller="sidenav" data-sidenav-open-class-value="sidenav--open" data-sidenav-main-section-class-value="sidenav__sections--main">
   <div class="nav__section">
-    <button class="nav__toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-action="click->sidenav#open">
+    <button class="nav__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-action="click->sidenav#open">
       <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
         <path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path>
       </svg>
@@ -67,30 +67,15 @@
   <aside class="sidebar">
     <ul class="sidebar__section">
       <li>
-        <div class="sidebar__row" data-controller="accordion" data-accordion-klass-value="sidebar__row--open" data-accordion-open-value="true">
-          <%= active_link_to "Page 1", root_path, class: "sidebar__link" %>
-          <button type="button" class="sidebar__toggle" data-action="click->accordion#toggle">
-            <svg class="sidebar__toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="rgba(0,0,0,0.5)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>
-          </button>
-        </div>
+        <%= render partial: "sidebar_row", locals: { expanded: true, label: "Page 1", url: root_path } %>
 
         <ul class="sidebar__section">
-          <li data-controller="accordion">
-            <div class="sidebar__row" data-controller="accordion" data-accordion-klass-value="sidebar__row--open">
-              <%= active_link_to "Page 4", "#", class: "sidebar__link" %>
-              <button type="button" class="sidebar__toggle" data-action="click->accordion#toggle">
-                <svg class="sidebar__toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="rgba(0,0,0,0.5)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>
-              </button>
-            </div>
+          <li>
+            <%= render partial: "sidebar_row", locals: { label: "Page 4", url: "#" } %>
 
             <ul class="sidebar__section">
-              <li data-controller="accordion">
-                <div class="sidebar__row" data-controller="accordion" data-accordion-klass-value="sidebar__row--open">
-                  <%= active_link_to "Page 5", "#", class: "sidebar__link" %>
-                  <button type="button" class="sidebar__toggle" data-action="click->accordion#toggle">
-                    <svg class="sidebar__toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="rgba(0,0,0,0.5)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>
-                  </button>
-                </div>
+              <li>
+                <%= render partial: "sidebar_row", locals: { label: "Page 5", url: "#" } %>
               </li>
             </ul>
           </li>
@@ -98,21 +83,11 @@
       </li>
 
       <li>
-        <div class="sidebar__row" data-controller="accordion" data-accordion-klass-value="sidebar__row--open">
-          <%= active_link_to "Page 2", "#", class: "sidebar__link" %>
-          <button type="button" class="sidebar__toggle" data-action="click->accordion#toggle">
-            <svg class="sidebar__toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="rgba(0,0,0,0.5)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>
-          </button>
-        </div>
+        <%= render partial: "sidebar_row", locals: { label: "Page 2", url: "#" } %>
       </li>
 
       <li>
-        <div class="sidebar__row" data-controller="accordion" data-accordion-klass-value="sidebar__row--open">
-          <%= active_link_to "Page 3", "#", class: "sidebar__link" %>
-          <button type="button" class="sidebar__toggle" data-action="click->accordion#toggle">
-            <svg class="sidebar__toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="rgba(0,0,0,0.5)" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path></svg>
-          </button>
-        </div>
+        <%= render partial: "sidebar_row", locals: { label: "Page 3", url: "#" } %>
       </li>
     </ul>
   </aside>

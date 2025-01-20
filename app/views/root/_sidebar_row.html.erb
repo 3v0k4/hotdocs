@@ -1,0 +1,10 @@
+<%# locals: (label:, url:, expanded: false) -%>
+
+<%= tag.div class: "sidebar__row", data: { "controller": "accordion", "accordion-expanded-class-value": "sidebar__row--expanded", "accordion-expanded-value": expanded, "accordion-collapsed-aria-label-value": "Expand sidebar row '#{label}'", "accordion-expanded-aria-label-value": "Collapse sidebar row '#{label}'" } do %>
+  <%= active_link_to label, url, class: "sidebar__link" %>
+  <button type="button" class="sidebar__toggle" data-action="click->accordion#toggle" data-accordion-target="toggle">
+    <svg class="sidebar__toggle-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path>
+    </svg>
+  </button>
+<% end %>

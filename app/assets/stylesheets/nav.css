@@ -41,6 +41,7 @@
   padding: var(--nav-padding-vertical) var(--nav-padding-horizontal);
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 .nav__section {
@@ -142,6 +143,7 @@
 
 .sidenav__header {
   align-items: center;
+  background-color: var(--nav-background-color);
   box-shadow: var(--nav-shadow);
   display: flex;
   height: var(--nav-height);
@@ -149,6 +151,7 @@
   padding: var(--nav-padding-vertical) var(--nav-padding-horizontal);
   position: sticky;
   top: 0;
+  z-index: 10;
 }
 
 .sidenav__sections {

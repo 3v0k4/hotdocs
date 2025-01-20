@@ -1,8 +1,19 @@
+:root {
+  --sidebar-accordion-color: #7f7f7f;
+  --sidebar-border-color: #dadada;
+}
+
+[data-theme=dark]:root {
+  --sidebar-accordion-color: #a0a0a0;
+  --sidebar-border-color: #535353;
+}
+
 .content {
   display: flex;
 }
 
 .sidebar {
+  border-right: 1px solid var(--sidebar-border-color);
   display: none;
   flex: 1 0 0;
   max-width: 300px;
@@ -22,7 +33,7 @@
   padding-left: 0.5rem;
 }
 
-.sidebar__row--open ~ .sidebar__section {
+.sidebar__row--expanded ~ .sidebar__section {
   display: revert;
 }
 
@@ -73,15 +84,17 @@
 }
 
 .sidebar__toggle-icon {
+  color: var(--sidebar-accordion-color);
   transform: rotate(90deg);
   height: 30px;
   width: 30px;
 }
 
-.sidebar__row--open .sidebar__toggle-icon {
+.sidebar__row--expanded .sidebar__toggle-icon {
   transform: rotate(180deg);
 }
 
 .main {
   flex: 1 0 0;
+  padding: 2rem;
 }
