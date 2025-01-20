@@ -12,15 +12,18 @@
 }
 
 .footer__sections {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 20px;
+  grid-template-columns: 1fr;
   max-width: 1200px;
   margin: auto;
 
+  @media (min-width: 501px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   @media (min-width: 996px) {
-    flex-direction: row;
-    justify-content: space-between;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
