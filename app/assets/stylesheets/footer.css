@@ -18,11 +18,11 @@
   max-width: 1200px;
   margin: auto;
 
-  @media (min-width: 501px) {
+  @media (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 996px) {
+  @media (min-width: 1024px) {
     grid-template-columns: repeat(4, 1fr);
   }
 }
