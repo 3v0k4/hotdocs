@@ -65,31 +65,27 @@
 
 <div class="content">
   <aside class="sidebar">
-    <ul class="sidebar__section">
-      <li>
-        <%= render partial: "sidebar_row", locals: { expanded: true, label: "Page 1", url: root_path } %>
-
-        <ul class="sidebar__section">
-          <li>
-            <%= render partial: "sidebar_row", locals: { label: "Page 4", url: "#" } %>
-
-            <ul class="sidebar__section">
-              <li>
-                <%= render partial: "sidebar_row", locals: { label: "Page 5", url: "#" } %>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-
-      <li>
-        <%= render partial: "sidebar_row", locals: { label: "Page 2", url: "#" } %>
-      </li>
-
-      <li>
-        <%= render partial: "sidebar_row", locals: { label: "Page 3", url: "#" } %>
-      </li>
-    </ul>
+    <%= menu([
+      {
+        expanded: true, label: "Page 1", url: root_path, children: [
+          {
+            label: "Page 2", url: "#", children: [
+              { label: "Page 3", url: "#" }
+            ]
+          }
+        ]
+      },
+      {
+        expanded: true, label: "Page 4", url: "#", children: [
+          {
+            label: "Page 5", url: root_path, children: [
+              { label: "Page 6", url: "#" }
+            ]
+          }
+        ]
+      },
+      { label: "Page 7", url: "#" }
+    ]) %>
   </aside>
 
   <main class="main">
