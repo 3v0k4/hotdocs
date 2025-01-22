@@ -8,21 +8,21 @@
 
 .footer {
   background-color: var(--footer-background-color);
-  padding: 64px 16px;
+  padding: 4rem 1rem;
 }
 
 .footer__sections {
   display: grid;
-  gap: 20px;
+  gap: 1.5rem;
   grid-template-columns: 1fr;
   max-width: 1200px;
   margin: auto;
 
-  @media (min-width: 640px) {
+  @media (min-width: 40rem) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 64rem) {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -40,9 +40,9 @@
 }
 
 .footer__logo {
-  margin: 50px auto;
-  max-height: 150px;
-  max-width: 150px;
+  margin: 3rem auto;
+  height: 8rem;
+  width: 8rem;
 }
 
 .footer__credits {

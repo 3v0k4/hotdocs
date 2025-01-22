@@ -8,8 +8,8 @@
   --nav-padding-vertical: 0.5rem;
   --nav-shadow: 0 1px 2px 0 #0000001a;
   --nav-title-color: #1c1e21;
+  --nav-toggle-color: rgb(28, 30, 33);
   --sidenav-padding-horizontal: 0.75rem;
-  --sidenav-toggle-color: rgb(28, 30, 33);
 }
 
 [data-theme=dark]:root {
@@ -18,7 +18,7 @@
   --nav-link-color: #e3e1de;
   --nav-link-hover-color: white; /* TODO */
   --nav-title-color: #e3e1de;
-  --sidenav-toggle-color: rgb(227, 225, 222);
+  --nav-toggle-color: rgb(227, 225, 222);
 }
 
 /* Added to <body> */
@@ -42,16 +42,16 @@
 .nav__section {
   align-items: center;
   display: flex;
-  gap: 20px;
+  gap: 1.5rem;
 }
 
 .nav__links {
   display: none;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 64rem) {
     align-items: center;
     display: flex;
-    gap: 20px;
+    gap: 1.5rem;
   }
 }
 
@@ -70,15 +70,17 @@
 .nav__brand {
   align-items: center;
   display: flex;
-  gap: 10px;
+  gap: 0.5rem;
 }
 
 .nav__logo-wrapper {
   height: 2rem;
+  width: 2rem;
 }
 
 .nav__logo {
   height: 100%;
+  width: 100%;
 }
 
 .nav__title {
@@ -91,9 +93,11 @@
 }
 
 .nav__toggle {
-  color: var(--sidenav-toggle-color);
+  color: var(--nav-toggle-color);
+  height: 1.5rem;
+  width: 1.5rem;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 64rem) {
     display: none;
   }
 }
@@ -147,6 +151,12 @@
   position: sticky;
   top: 0;
   z-index: 10;
+}
+
+.sidenav__toggle {
+  color: var(--nav-toggle-color);
+  height: 1rem;
+  width: 1rem;
 }
 
 .sidenav__sections {
