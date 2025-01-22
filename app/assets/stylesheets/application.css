@@ -25,3 +25,14 @@ html {
   color: var(--text-color);
   text-rendering: optimizelegibility;
 }
+
+.external-link {
+  align-items: center;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.external-link__icon {
+  height: 0.6rem;
+  width: 0.6rem;
+}
