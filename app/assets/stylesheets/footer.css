@@ -8,7 +8,7 @@
 
 .footer {
   background-color: var(--footer-background-color);
-  padding: 32px 16px;
+  padding: 64px 16px;
 }
 
 .footer__sections {
@@ -39,8 +39,13 @@
   text-decoration: underline;
 }
 
+.footer__logo {
+  margin: 50px auto;
+  max-height: 150px;
+  max-width: 150px;
+}
+
 .footer__credits {
   font-size: 0.8rem;
-  margin-top: 60px;
   text-align: center;
 }
