@@ -45,26 +45,44 @@
 
     <div class="sidenav__sections" data-sidenav-target="sections">
       <div class="sidenav__section">
-        <ul>
-          <li><%= active_link_to "Docs", root_path, class: "sidenav__link" %></li>
+        <ul class="menu__section">
+          <li><%= active_link_to "Docs", root_path, class: "menu__link" %></li>
         </ul>
       </div>
 
       <div class="sidenav__section">
-        <button type="button" class="sidenav__back-button" data-action="click->sidenav#back">← Back to main menu</button>
+        <div class="menu__section">
+          <button type="button" class="sidenav__back-button" data-action="click->sidenav#back">← Back to main menu</button>
+        </div>
 
-        <ul>
-          <li><%= active_link_to "Page 1", root_path, class: "sidenav__link" %></li>
-          <li><%= active_link_to "Page 2", "#", class: "sidenav__link" %></li>
-          <li><%= active_link_to "Page 3", "#", class: "sidenav__link" %></li>
-        </ul>
+        <%= menu([
+          {
+            expanded: true, label: "Page 1", url: root_path, children: [
+              {
+                label: "Page 2", url: "#", children: [
+                  { label: "Page 3", url: "#" }
+                ]
+              }
+            ]
+          },
+          {
+            expanded: true, label: "Page 4", url: "#", children: [
+              {
+                label: "Page 5", url: root_path, children: [
+                  { label: "Page 6", url: "#" }
+                ]
+              }
+            ]
+          },
+          { label: "Page 7", url: "#" }
+        ]) %>
       </div>
     </div>
   </div>
 </nav>
 
 <div class="content">
-  <aside class="sidebar">
+  <aside class="menu">
     <%= menu([
       {
         expanded: true, label: "Page 1", url: root_path, children: [

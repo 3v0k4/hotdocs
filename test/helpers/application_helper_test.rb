@@ -77,12 +77,12 @@ class ApplicationHelperTest < ActionView::TestCase
     ])
 
     expected = <<~HTML
-      <ul class="sidebar__section">
+      <ul class="menu__section">
         <li>
-          #{render partial: "root/sidebar_row", locals: { expanded: true, label: "Page 1", url: "#first" }}
+          #{render partial: "root/menu_row", locals: { expanded: true, label: "Page 1", url: "#first" }}
 
-          <ul class="sidebar__section">
-            <li>#{render partial: "root/sidebar_row", locals: { label: "Page 2", url: "#second" }}</li>
+          <ul class="menu__section">
+            <li>#{render partial: "root/menu_row", locals: { label: "Page 2", url: "#second" }}</li>
           </ul>
         </li>
       </ul>

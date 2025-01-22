@@ -40,11 +40,11 @@ module ApplicationHelper
   def menu_r(items)
     return nil if items.size == 0
 
-    content_tag(:ul, class: "sidebar__section") do
+    content_tag(:ul, class: "menu__section") do
       items.each do |item|
         concat(content_tag(:li) do
           locals = { expanded: item.fetch(:expanded), label: item.fetch(:label), url: item.fetch(:url) }
-          concat(render partial: "root/sidebar_row", locals: locals)
+          concat(render partial: "root/menu_row", locals: locals)
 
           concat(menu_r(item.fetch(:children)))
         end)
