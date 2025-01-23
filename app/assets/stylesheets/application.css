@@ -11,11 +11,18 @@
 
 :root {
   --background-color: white;
+  --column-border-color: #dadada;
+  --link-active-color: black; /* TODO */
+  --link-color: #707070;
+  --nav-height: 3.75rem;
   --text-color: #1c1e21;
 }
 
 [data-theme=dark]:root {
   --background-color: #1b1b1d;
+  --column-border-color: #535353;
+  --link-active-color: white; /* TODO */
+  --link-color: #909090;
   --text-color: #e3e1de;
 }
 
@@ -23,6 +30,7 @@ html {
   -webkit-font-smoothing: antialiased;
   background-color: var(--background-color);
   color: var(--text-color);
+  scroll-padding-top: calc(var(--nav-height) + 0.2rem);
   text-rendering: optimizelegibility;
 }
 

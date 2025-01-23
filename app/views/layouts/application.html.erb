@@ -135,8 +135,30 @@
         ]) %>
       </aside>
 
-      <main class="main">
-        <%= yield %>
+      <main data-controller="toc" class="main">
+        <div class="central">
+          <details name="toc" class="toc">
+            <summary class="toc__label">Table of contents</summary>
+
+            <ul class="toc__entries" data-toc-target="toc">
+              <template data-toc-target="tocTemplate">
+                <li><a id class="toc__link" href></a></li>
+              </template>
+            </ul>
+          </details>
+
+          <article class="article" data-toc-target="article">
+            <%= yield %>
+          </article>
+        </div>
+
+        <div class="sidetoc">
+          <ul class="sidetoc__entries" data-toc-target="sidetoc">
+            <template data-toc-target="sidetocTemplate">
+              <li><a id class="sidetoc__link" href></a></li>
+            </template>
+          </ul>
+        </div>
       </main>
     </div>
 

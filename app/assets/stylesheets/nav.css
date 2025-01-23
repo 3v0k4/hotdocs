@@ -1,9 +1,7 @@
 :root {
   --nav-background-color: white;
-  --nav-height: 3.75rem;
-  --nav-link-active-color: black; /* TODO */
-  --nav-link-color: #1c1e21;
-  --nav-link-hover-color: black; /* TODO */
+  --nav-link-active-color: var(--link-active-color);
+  --nav-link-color: var(--link-color);
   --nav-padding-horizontal: 1rem;
   --nav-padding-vertical: 0.5rem;
   --nav-shadow: 0 1px 2px 0 #0000001a;
@@ -14,9 +12,8 @@
 
 [data-theme=dark]:root {
   --nav-background-color: #242526;
-  --nav-link-active-color: white; /* TODO */
-  --nav-link-color: #e3e1de;
-  --nav-link-hover-color: white; /* TODO */
+  --nav-link-active-color: var(--link-active-color);
+  --nav-link-color: var(--link-color);
   --nav-title-color: #e3e1de;
   --nav-toggle-color: rgb(227, 225, 222);
 }
@@ -57,14 +54,14 @@
 
 .nav__link {
   color: var(--nav-link-color);
-}
 
-.nav__link:hover {
-  color: var(--nav-link-hover-color);
-}
+  &.active {
+    color: var(--nav-link-active-color);
+  }
 
-.nav__link.active {
-  color: var(--nav-link-active-color);
+  &:hover {
+    color: var(--nav-link-active-color);
+  }
 }
 
 .nav__brand {
@@ -86,10 +83,6 @@
 .nav__title {
   color: var(--nav-title-color);
   font-weight: bold;
-}
-
-.nav__title:hover {
-  color: var(--nav-link-hover-color);
 }
 
 .nav__toggle {
