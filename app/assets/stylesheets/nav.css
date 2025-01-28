@@ -28,6 +28,7 @@
   background-color: var(--nav-background-color);
   box-shadow: var(--nav-shadow);
   display: flex;
+  flex: 0 0 auto;
   height: var(--nav-height);
   justify-content: space-between;
   padding: var(--nav-padding-vertical) var(--nav-padding-horizontal);

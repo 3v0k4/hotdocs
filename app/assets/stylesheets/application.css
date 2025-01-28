@@ -34,6 +34,17 @@ html {
   text-rendering: optimizelegibility;
 }
 
+/* Sticky footer */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 .external-link {
   align-items: center;
   display: flex;
