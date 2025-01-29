@@ -10,5 +10,19 @@ Rails.application.routes.draw do
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
   root "root#index"
-  get "root/index"
+
+  get "quickstart", to: "root#quickstart"
+  get "embedded", to: "root#embedded"
+  get "standalone", to: "root#standalone"
+
+  get "components", to: "root#components"
+  get "nav", to: "root#nav"
+  get "menu", to: "root#menu"
+  get "table-of-contents", to: "root#toc", as: "toc"
+  get "markdown", to: "root#markdown"
+  get "search", to: "root#search"
+  get "static-export", to: "root#static_export"
+  get "light-dark", to: "root#light_dark"
+  get "footer", to: "root#footer"
+  get "microcomponents", to: "root#microcomponents"
 end

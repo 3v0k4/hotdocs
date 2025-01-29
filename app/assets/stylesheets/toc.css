@@ -20,7 +20,7 @@
   background-color: var(--toc-background-color);
   border-radius: 5px;
   cursor: pointer;
-  margin-bottom: 1rem;
+  margin-block: 1rem;
   user-select: none;
 
   @media (min-width: 64rem) {

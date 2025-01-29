@@ -10,6 +10,7 @@
 }
 
 .central {
+  flex-grow: 1;
   padding-inline: var(--nav-padding-horizontal);
 
   @media (min-width: 64rem) {
@@ -18,5 +19,5 @@
 }
 
 .article * {
-  all: revert;
+  all: revert-layer; /* otherwise svg path is unset */
 }

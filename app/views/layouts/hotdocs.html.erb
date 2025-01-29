@@ -84,27 +84,7 @@
               <button type="button" class="sidenav__back-button" data-action="click->sidenav#back">← Back to main menu</button>
             </div>
 
-            <%= menu([
-              {
-                expanded: true, label: "Page 1", url: root_path, children: [
-                  {
-                    label: "Page 2", url: "#", children: [
-                      { label: "Page 3", url: "#" }
-                    ]
-                  }
-                ]
-              },
-              {
-                expanded: true, label: "Page 4", url: "#", children: [
-                  {
-                    label: "Page 5", url: root_path, children: [
-                      { label: "Page 6", url: "#" }
-                    ]
-                  }
-                ]
-              },
-              { label: "Page 7", url: "#" }
-            ]) %>
+            <%= menu %>
           </div>
         </div>
       </div>
@@ -112,27 +92,7 @@
 
     <div class="content">
       <aside class="menu">
-        <%= menu([
-          {
-            expanded: true, label: "Page 1", url: root_path, children: [
-              {
-                label: "Page 2", url: "#", children: [
-                  { label: "Page 3", url: "#" }
-                ]
-              }
-            ]
-          },
-          {
-            expanded: true, label: "Page 4", url: "#", children: [
-              {
-                label: "Page 5", url: root_path, children: [
-                  { label: "Page 6", url: "#" }
-                ]
-              }
-            ]
-          },
-          { label: "Page 7", url: "#" }
-        ]) %>
+        <%= menu %>
       </aside>
 
       <main data-controller="toc" class="main">
@@ -197,7 +157,8 @@
 
       <img class="footer__logo" src="/hot-docs.svg" alt="TODO" height="150" width="150" />
 
-      <p class="footer__credits">Built with HotDocs ❤️</p>
+      <!-- You can remove this line if you pay for a license -->
+      <p class="credits">Built with <a class="credits__link" href="#TODO">HotDocs<img class="credits__logo" src="/hot-docs.svg" alt="TODO" height="32" width="32" /></a></p>
     </footer>
   </body>
 </html>
