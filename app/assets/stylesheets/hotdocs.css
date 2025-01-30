@@ -47,7 +47,7 @@ body {
 
 .external-link {
   align-items: center;
-  display: flex;
+  display: inline-flex;
   gap: 0.3rem;
 }
 
