@@ -1,4 +1,4 @@
-class RootController < ApplicationController
+class HotDocsController < ApplicationController
   layout "hotdocs"
 
   def index

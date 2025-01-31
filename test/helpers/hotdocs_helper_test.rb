@@ -1,4 +1,4 @@
-class ApplicationHelperTest < ActionView::TestCase
+class HotDocsHelperTest < ActionView::TestCase
   test "#active_link_to" do
     assert_dom_equal %(<a href="/">label</a>), active_link_to("label", root_path)
 
@@ -79,10 +79,10 @@ class ApplicationHelperTest < ActionView::TestCase
     expected = <<~HTML
       <ul class="menu__section">
         <li>
-          #{render partial: "root/menu_row", locals: { expanded: true, label: "Page 1", url: "#first" }}
+          #{render partial: "hotdocs/menu_row", locals: { expanded: true, label: "Page 1", url: "#first" }}
 
           <ul class="menu__section">
-            <li>#{render partial: "root/menu_row", locals: { label: "Page 2", url: "#second" }}</li>
+            <li>#{render partial: "hotdocs/menu_row", locals: { label: "Page 2", url: "#second" }}</li>
           </ul>
         </li>
       </ul>
