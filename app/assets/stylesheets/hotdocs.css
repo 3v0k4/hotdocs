@@ -728,7 +728,7 @@ body {
 
 .main {
   display: flex;
-  flex: 1 0 0;
+  width: calc(100% - 20rem);
   padding-bottom: 2rem;
 }
 
