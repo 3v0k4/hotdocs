@@ -1,55 +1,10 @@
-<style>
-  .toc, .sidetoc {
-    /* display: none; */
-  }
-
-  .article {
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0;
-      text-align: center;
-    }
-
-    .sub {
-      font-size: 1.25rem;
-      margin-top: 0;
-      text-align: center;
-    }
-
-    .wrap {
-      font-weight: bold;
-    }
-
-    .center {
-      margin-block: 5rem;
-      text-align: center;
-    }
-
-    a {
-      color: black;
-    }
-
-    .button {
-      background-color: #e9e9e9;
-      border-radius: 6px;
-      color: black;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-
-      &:hover {
-        background-color: #d9d9d9;
-      }
-    }
-  }
-</style>
-
-<h1>Write your docs with Ruby on Rails</h1>
+<h1 class="h1">Write your docs with Ruby on Rails</h1>
 
 <!--<p class="sub">Unleash the <span id="todo">Power of Rails</span> with HotDocs</p>-->
 <p class="sub">
   Unleash the
   <span class="typewrite" data-period="2000" data-type='[ "Power of Rails", "Finesse of Hotwire", "Speed of Jekyll", "Awe of Docusaurus" ]'>
-    <span class="wrap"></span>
+    <span class="wrap">Power of Rails</span>
   </span>
   with HotDocs
 </p>
@@ -126,20 +81,6 @@ var TxtType = function(el, toRotate, period) {
   <%= link_to "Get started", quickstart_path, class: "button" %>
 </div>
 
-<style>
-  .cont {
-    display: flex;
-    flex-direction: column;
-    column-gap: 5rem;
-    row-gap: 1rem;
-    justify-content: space-between;
-
-    @container (min-width: 35rem) {
-      flex-direction: row;
-    }
-  }
-</style>
-
 <div style="margin-block: 5rem; margin-top: 10rem; container-type: inline-size;">
   <h2>HotDocs is a set of optimized Rails components &amp; tools for writing docs</h2>
   <div style="" class="cont">
@@ -150,7 +91,7 @@ var TxtType = function(el, toRotate, period) {
 
     <div style="flex-grow: 0;">
       <p style="font-weight: bold;">Write the docs</p>
-      <p>HotDocs covers your bases, you only need to author the content. Markdown support (and plugins) coming soon.</p>
+      <p>HotDocs covers all your bases, you only need to author the content. Markdown support (and plugins) coming soon.</p>
     </div>
 
     <div style="flex-grow: 0;">
@@ -162,24 +103,6 @@ var TxtType = function(el, toRotate, period) {
 
 <div style="margin-top: 10rem;">
   <h2>Comparison with Jekyll &amp; Docusaurus</h2>
-
-  <style>
-    .article table {
-      font-family: arial, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-    }
-
-    .article td, .article th {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
-    }
-
-    .article tr:nth-child(even) {
-      background-color: #eeeeee;
-    }
-  </style>
 
   <table>
     <tr>

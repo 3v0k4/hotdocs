@@ -1,113 +1,12 @@
-<style>
-  .article {
-    a {
-      color: black;
-    }
-
-    pre {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      width: 100%;
-    }
-
-    code {
-      overflow: auto;
-      word-break: break-all;
-      display: block;
-      overflow-x: auto;
-    }
-  }
-</style>
-
 <h1>HotDocs: Embedded</h1>
 
 <p>
   Follow these steps to embed HotDocs in an already existing Rails application:
 </p>
 
-<ul>
-  <li>
-    Copy hotdocs.css into app/assets/stylesheets/
-    <pre>
-      <code>
-        curl -o app/assets/stylesheets/hotdocs.css https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/app/assets/stylesheets/hotdocs.css
-      </code>
-    </pre>
-  </li>
+<pre><code>curl https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/bin/hotdocs -o hotdocs
+bash hotdocs</code></pre>
 
-  <li>
-    Copy accordion_controller.js, sidenav_controller.js, toc_controller.js into app/javascript/controllers/
-    <pre>
-      <code>
-        curl -o app/javascript/controllers/accordion_controller.js https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/app/javascript/controllers/accordion_controller.js
-        curl -o app/javascript/controllers/sidenav_controller.js https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/app/javascript/controllers/sidenav_controller.js
-        curl -o app/javascript/controllers/toc_controller.js https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/app/javascript/controllers/toc_controller.js
-      </code>
-    </pre>
-  </li>
-
-  <li>
-    Copy app/helpers/hotdocs_helper.rb into app/helpers/
-    <pre>
-      <code>
-        curl -o app/helpers/hotdocs_helper.rb https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/app/helpers/hotdocs_helper.rb
-      </code>
-    </pre>
-  </li>
-
-  <li>
-    Create the app/views/hotdocs/ directory
-    <pre>
-      <code>
-        mkdir app/views/hotdocs/
-      </code>
-    </pre>
-  </li>
-
-  <li>
-    Copy _menu_row.html.erb into app/views/hotdocs/
-    <pre>
-      <code>
-        curl -o app/views/hotdocs/_menu_row.html.erb https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/app/views/hotdocs/_menu_row.html.erb
-      </code>
-    </pre>
-  </li>
-
-  <li>
-    Copy layouts/hotdocs.html.erb into app/assets/layouts/
-    <pre>
-      <code>
-        curl -o app/assets/layouts/hotdocs.html.erb https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/app/assets/layouts/hotdocs.html.erb
-      </code>
-    </pre>
-  </li>
-
-  <li>
-    Create the HotDocs controller and route
-    <pre>
-      <code>
-        bin/rails generate controller hotdocs page
-      </code>
-    </pre>
-  </li>
-
-  <li>
-    Make sure the HotDocs controller uses the correct layout
-    <pre>
-      <code>
-        class HotDocsController &lt; ApplicationController
-          layout "hotdocs"
-      </code>
-    </pre>
-  </li>
-
-  <li>
-    Throw some html into app/views/hotdocs/page.html.erb
-  </li>
-
-  <li>
-    Visit http://127.0.0.1:3000/hotdocs/page
-  </li>
-</ul>
-
-<p>TODO: add other todos: logo, menu, components, etc.</p>
+<p>
+  To customize your docs, take a look at <%= link_to "Components", components_path %>.
+</p>
