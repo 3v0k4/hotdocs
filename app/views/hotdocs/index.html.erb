@@ -1,185 +1,118 @@
-<h1 class="h1">Write your docs with Ruby on Rails</h1>
+<h1 class="title">Write your docs with Ruby on Rails</h1>
 
-<!--<p class="sub">Unleash the <span id="todo">Power of Rails</span> with HotDocs</p>-->
-<p class="sub">
-  Unleash the
-  <span class="typewrite" data-period="2000" data-type='[ "Power of Rails", "Finesse of Hotwire", "Speed of Jekyll", "Awe of Docusaurus" ]'>
-    <span class="wrap">Power of Rails</span>
-  </span>
-  with HotDocs
+<p class="subtitle" data-controller="typewriter" data-typewriter-phrases-value='[ "Power of Rails", "Finesse of Hotwire", "Speed of Jekyll", "Awe of Docusaurus" ]'>
+  Unleash the&ensp;<span class="typewriter" data-typewriter-target="typewrite">Power of Rails</span>&ensp;with HotDocs
 </p>
-<script>
-// i = 1;
-// frameworks = ["Power of Rails", "Finesse of Hotwire", "Speed of Jekyll", "Coolness of Docusaurus"];
-// setInterval(() => {
-//   document.querySelector("#todo").innerText = frameworks[i];
-//   i = (i+1) % frameworks.length;
-// }, 3000)
-var TxtType = function(el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
-    };
 
-    TxtType.prototype.tick = function() {
-        var i = this.loopNum % this.toRotate.length;
-        var fullTxt = this.toRotate[i];
+<%= image_tag "/hotdocs.svg", class: "logo", alt: "TODO", size: "160x160" %>
 
-        if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
-
-        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-        var that = this;
-        var delta = 200 - Math.random() * 100;
-
-        if (this.isDeleting) { delta /= 2; }
-
-        if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
-        }
-
-        setTimeout(function() {
-        that.tick();
-        }, delta);
-    };
-
-    window.onload = function() {
-        var elements = document.getElementsByClassName('typewrite');
-        for (var i=0; i<elements.length; i++) {
-            var toRotate = elements[i].getAttribute('data-type');
-            var period = elements[i].getAttribute('data-period');
-            if (toRotate) {
-              new TxtType(elements[i], JSON.parse(toRotate), period);
-            }
-        }
-        // INJECT CSS
-        var css = document.createElement("style");
-        css.type = "text/css";
-        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid black; color: black;}";
-        document.body.appendChild(css);
-    };
-</script>
-
-<div class="center">
-  <img style="margin-inline: auto;" src="/hotdocs.svg" alt="TODO" height="150" width="150" />
+<div class="action">
+  <%= link_to "Get started", quickstart_path, class: "action__button" %>
 </div>
 
-<div class="center">
-  <%= link_to "Get started", quickstart_path, class: "button" %>
-</div>
-
-<div style="margin-block: 5rem; margin-top: 10rem; container-type: inline-size;">
+<div class="benefits">
   <h2>HotDocs is a set of optimized Rails components &amp; tools for writing docs</h2>
-  <div style="" class="cont">
-    <div style="flex-grow: 0;">
-      <p style="font-weight: bold;">It's just Rails</p>
+
+  <div class="benefits__cards">
+    <div class="benefits__card">
+      <p class="benefits__card-title">It's just Rails</p>
+
       <p>Do you need the database? Or want to reuse code? What about Hotwire? Yes, yes, and yes! You'll feel at home.</p>
     </div>
 
-    <div style="flex-grow: 0;">
-      <p style="font-weight: bold;">Write the docs</p>
+    <div class="benefits__card">
+      <p class="benefits__card-title">Write the docs</p>
+
       <p>HotDocs covers all your bases, you only need to author the content. Markdown support (and plugins) coming soon.</p>
     </div>
 
-    <div style="flex-grow: 0;">
-      <p style="font-weight: bold;">Static export 🔜</p>
+    <div class="benefits__card">
+      <p class="benefits__card-title">Static export 🔜</p>
+
       <p>Export Html and Css for speed while allowing islands of dynamic Js that can interact with your backend.</p>
     </div>
   </div>
 </div>
 
-<div style="margin-top: 10rem;">
+<div class="comparison">
   <h2>Comparison with Jekyll &amp; Docusaurus</h2>
 
-  <table>
+  <table class="comparison__table">
     <tr>
       <th></th>
-      <th>HotDocs</th>
-      <th>Jekyll</th>
-      <th>Docusaurus</th>
+      <th class="comparison__who">HotDocs</th>
+      <th class="comparison__who">Jekyll</th>
+      <th class="comparison__who">Docusaurus</th>
     </tr>
 
     <tr>
-      <td>Ruby on Rails</td>
-      <td>✅</td>
-      <td>❌</td>
-      <td>❌</td>
+      <td class="comparison__what">Ruby on Rails</td>
+      <td class="comparison__how">✅</td>
+      <td class="comparison__how">❌</td>
+      <td class="comparison__how">❌</td>
     </tr>
 
     <tr>
-      <td><%= link_to "Embed docs in an existing Rails app", embedded_path %></td>
-      <td>✅</td>
-      <td>❌</td>
-      <td>❌</td>
+      <td class="comparison__what"><%= link_to "Embed docs in an existing Rails app", embedded_path %></td>
+      <td class="comparison__how">✅</td>
+      <td class="comparison__how">❌</td>
+      <td class="comparison__how">❌</td>
     </tr>
 
     <tr>
-      <td><%= link_to "Standalone docs", standalone_path %></td>
-      <td>✅</td>
-      <td>✅</td>
-      <td>✅</td>
+      <td class="comparison__what"><%= link_to "Standalone docs", standalone_path %></td>
+      <td class="comparison__how">✅</td>
+      <td class="comparison__how">✅</td>
+      <td class="comparison__how">✅</td>
     </tr>
 
     <tr>
-      <td><%= link_to "Styled components you can customize", components_path %></td>
-      <td>✅</td>
-      <td>✅</td>
-      <td>✅</td>
+      <td class="comparison__what"><%= link_to "Styled components you can customize", components_path %></td>
+      <td class="comparison__how">✅</td>
+      <td class="comparison__how">✅</td>
+      <td class="comparison__how">✅</td>
     </tr>
 
     <tr>
-      <td><%= link_to "Markdown", markdown_path %></td>
-      <td>🔜 🚀</td>
-      <td>👍</td>
-      <td>🚀</td>
+      <td class="comparison__what"><%= link_to "Markdown", markdown_path %></td>
+      <td class="comparison__how">🔜 🚀</td>
+      <td class="comparison__how">👍</td>
+      <td class="comparison__how">🚀</td>
     </tr>
 
     <tr>
-      <td><%= link_to "Static export", static_export_path %></td>
-      <td>🔜 🚀</td>
-      <td>👍</td>
-      <td>🚀</td>
+      <td class="comparison__what"><%= link_to "Static export", static_export_path %></td>
+      <td class="comparison__how">🔜 🚀</td>
+      <td class="comparison__how">👍</td>
+      <td class="comparison__how">🚀</td>
     </tr>
 
     <tr>
-      <td><%= link_to "Search", search_path %></td>
-      <td>🔜</td>
-      <td>✅</td>
-      <td>✅</td>
+      <td class="comparison__what"><%= link_to "Search", search_path %></td>
+      <td class="comparison__how">🔜</td>
+      <td class="comparison__how">✅</td>
+      <td class="comparison__how">✅</td>
     </tr>
 
     <tr>
-      <td><%= link_to "Light / Dark", light_dark_path %></td>
-      <td>🔜</td>
-      <td>🔌</td>
-      <td>✅</td>
+      <td class="comparison__what"><%= link_to "Light / Dark", light_dark_path %></td>
+      <td class="comparison__how">🔜</td>
+      <td class="comparison__how">🔌</td>
+      <td class="comparison__how">✅</td>
     </tr>
 
     <tr>
-      <td><%= external_link_to "Open source", "#TODO" %></td>
-      <td>✅</td>
-      <td>✅</td>
-      <td>✅</td>
+      <td class="comparison__what"><%= external_link_to "Open source", "#TODO" %></td>
+      <td class="comparison__how">✅</td>
+      <td class="comparison__how">✅</td>
+      <td class="comparison__how">✅</td>
     </tr>
 
     <tr>
-      <td>Free <span style="font-size: 0.8rem">(if you keep the "Built with HotDocs" in the footer)</span></td>
-      <td>✅</td>
-      <td>✅</td>
-      <td>✅</td>
+      <td class="comparison__what">Free <span style="font-size: 0.8rem">(if you keep the "Built with HotDocs" in the footer)</span></td>
+      <td class="comparison__how">✅</td>
+      <td class="comparison__how">✅</td>
+      <td class="comparison__how">✅</td>
     </tr>
 
     <tr>

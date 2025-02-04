@@ -1,0 +1,138 @@
+.article {
+  .title {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .typewriter {
+    border-right: 0.08em solid black;
+    color: black;
+    font-weight: bold;
+  }
+
+  .logo {
+    display: block;
+    height: 10rem;
+    margin-block: 5rem;
+    margin-inline: auto;
+    width: 10rem;
+  }
+
+  .action {
+    margin-block: 5rem;
+    text-align: center;
+  }
+
+  .action__button {
+    background-color: #e9e9e9;
+    border-radius: 6px;
+    color: black;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #d9d9d9;
+    }
+  }
+
+  .benefits {
+    container-type: inline-size;
+    margin-block: 10rem;
+  }
+
+  .benefits__cards {
+    column-gap: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @container (min-width: 35rem) {
+      flex-direction: row;
+      row-gap: 1rem;
+    }
+  }
+
+  .benefits__card {
+    flex-grow: 0;
+  }
+
+  .benefits__card-title {
+    font-weight: bold;
+  }
+
+  .comparison {
+    margin-block: 10rem;
+  }
+
+  .comparison__table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 0.5rem;
+  }
+
+  .comparison__who {
+    text-align: center;
+    width: 10rem;
+  }
+
+  .comparison__how {
+    text-align: center;
+    width: 10rem;
+  }
+
+  tr:nth-child(even) {
+    background-color: #eeeeee;
+  }
+
+  a {
+    color: black;
+  }
+
+
+
+
+
+  pre {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    width: 100%;
+    border-radius: .375rem;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -4px rgba(0, 0, 0, .1);;
+    scrollbar-color: hsla(0,0%,0%,0.1) transparent;
+  }
+
+  code {
+    background: #eaeef3;
+    color: #00193a;
+    font-size: 0.8rem;
+    overflow-x: auto;
+    overflow: auto;
+    word-break: break-all;
+  }
+
+  code {
+    border-radius: 5px;
+    display: inline;
+    padding: 0.2rem 0.4rem;
+  }
+
+  pre code {
+    display: block;
+    padding: 1em;
+  }
+}
