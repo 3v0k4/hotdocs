@@ -18,7 +18,6 @@ Rails.application.routes.draw do
 
   get "components", to: "hotdocs#components"
   get "nav", to: "hotdocs#nav"
-  get "menu", to: "hotdocs#menu"
   get "table-of-contents", to: "hotdocs#toc", as: "toc"
   get "markdown", to: "hotdocs#markdown"
   get "search", to: "hotdocs#search"

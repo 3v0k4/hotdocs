@@ -30,9 +30,30 @@ module HotDocsHelper
     request.path == url
   end
 
+  def nav_left_items(classes)
+    require "ostruct"
+
+    [
+      active_link_to("Page 1", root_path, class: Array(classes)),
+      active_link_to("Page 2", microcomponents_path, class: Array(classes)),
+      active_link_to("Page 3", "#TODO", class: Array(classes))
+    ]
+  end
+
+  def nav_right_items(classes)
+    require "ostruct"
+
+    [
+      active_link_to("Page 4", root_path, class: Array(classes)),
+      active_link_to("Page 5", microcomponents_path, class: Array(classes)),
+      active_link_to("Page 6", "#TODO", class: Array(classes))
+    ]
+  end
+
+  # { label: "", url: *_path, children: [], expanded: true }
   def menu_items
     [
-      { label: "Welcome", url: root_path }, # free if you keep footer
+      { label: "Welcome", url: root_path },
       {
         label: "Quickstart", url: quickstart_path, children: [
           { label: "Embedded", url: embedded_path },
@@ -40,16 +61,15 @@ module HotDocsHelper
         ]
       },
       {
-        label: "Components", url: components_path, children: [ # css, js, customize
+        label: "Components", url: components_path, children: [
           { label: "Nav / Sidenav", url: nav_path },
-          { label: "Menu", url: menu_path },
           { label: "Table of contents", url: toc_path },
           { label: "Markdown", url: markdown_path }, # page unreset, syntax highlight
           { label: "Search", url: search_path }, # lunr
           { label: "Static export", url: static_export_path },
           { label: "Light / Dark", url: light_dark_path },
           { label: "Footer", url: footer_path },
-          { label: "Micro-components", url: microcomponents_path } # external_link_to, source_code_link
+          { label: "Micro-components", url: microcomponents_path }
         ]
       }
     ]
