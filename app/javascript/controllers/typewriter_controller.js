@@ -9,9 +9,9 @@ export default class extends Controller {
 
   connect() {
     this.typewriteTarget.innerText = this.phrasesValue[0];
-    this.phrase = this.phrasesValue[1];
-    this.typed = "";
-    this.timeout = setTimeout(() => this._type(), 2000);
+    this.typed = this.phrasesValue[0];
+    this.phrase = this.phrasesValue[0];
+    this.timeout = setTimeout(() => this._delete(), 2000);
   }
 
   disconnect() {

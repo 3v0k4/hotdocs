@@ -1,4 +1,22 @@
+:root {
+  --docs-background-active-color: #d9d9d9;
+  --docs-background-color: #e9e9e9;
+  --docs-border-color: #dadada;
+  --docs-code-background-color: #e9e9e9;
+  --docs-text-color: #1c1e21;
+}
+
+[data-theme=dark]:root {
+  --docs-background-active-color: #5a5a5a;
+  --docs-background-color: #444444;
+  --docs-border-color: #535353;
+  --docs-code-background-color: #4f4f4f;
+  --docs-text-color: #e3e1de;
+}
+
 .article {
+  color: var(--docs-text-color);
+
   .title {
     font-size: 2.5rem;
     line-height: 3rem;
@@ -13,8 +31,7 @@
   }
 
   .typewriter {
-    border-right: 0.08em solid black;
-    color: black;
+    border-right: 0.08em solid var(--docs-text-color);
     font-weight: bold;
   }
 
@@ -32,16 +49,15 @@
   }
 
   .action__button {
-    background-color: #e9e9e9;
+    background-color: var(--docs-background-color);
     border-radius: 6px;
-    color: black;
-    font-size: 1.25rem;
+    color: var(--docs-text-color);
     font-weight: bold;
     padding: 0.5rem 1rem;
     text-decoration: none;
 
     &:hover {
-      background-color: #d9d9d9;
+      background-color: var(--docs-text-color2);
     }
   }
 
@@ -63,7 +79,7 @@
   }
 
   .benefits__card {
-    flex-grow: 0;
+    flex: 1 0 0;
   }
 
   .benefits__card-title {
@@ -80,11 +96,11 @@
   }
 
   .comparison__table tr:nth-child(even) {
-    background-color: #eeeeee;
+    background-color: var(--docs-background-color);
   }
 
   .comparison__table th, .comparison__table td {
-    border: 1px solid #dddddd;
+    border: 1px solid var(--docs-border-color);
     padding: 0.5rem;
   }
 
@@ -107,7 +123,7 @@
   }
 
   a {
-    color: black;
+    color: var(--docs-text-color);
 
     &:has(code) {
       text-underline-position: under;
@@ -140,8 +156,7 @@
   }
 
   code {
-    background: #eaeef3;
-    color: #00193a;
+    background: var(--docs-code-background-color);
     font-size: 0.8rem;
     overflow-x: auto;
     overflow: auto;
