@@ -57,7 +57,7 @@
     text-decoration: none;
 
     &:hover {
-      background-color: var(--docs-text-color2);
+      background-color: var(--docs-background-active-color);
     }
   }
 
