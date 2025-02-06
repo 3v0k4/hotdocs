@@ -1,3 +1,3 @@
 class HotDocsController < ApplicationController
-  layout "hotdocs"
+  layout "hot_docs"
 end

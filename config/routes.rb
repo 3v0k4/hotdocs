@@ -10,19 +10,19 @@ Rails.application.routes.draw do
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
-  root "hotdocs#index"
+  root "hot_docs#index"
 
-  get "quickstart", to: "hotdocs#quickstart"
-  get "embedded", to: "hotdocs#embedded"
-  get "standalone", to: "hotdocs#standalone"
+  get "quickstart", to: "hot_docs#quickstart"
+  get "embedded", to: "hot_docs#embedded"
+  get "standalone", to: "hot_docs#standalone"
 
-  get "components", to: "hotdocs#components"
-  get "nav", to: "hotdocs#nav"
-  get "table-of-contents", to: "hotdocs#toc", as: "toc"
-  get "markdown", to: "hotdocs#markdown"
-  get "search", to: "hotdocs#search"
-  get "static-export", to: "hotdocs#static_export"
-  get "light-dark", to: "hotdocs#light_dark"
-  get "footer", to: "hotdocs#footer"
-  get "microcomponents", to: "hotdocs#microcomponents"
+  get "components", to: "hot_docs#components"
+  get "nav", to: "hot_docs#nav"
+  get "table-of-contents", to: "hot_docs#toc", as: "toc"
+  get "markdown", to: "hot_docs#markdown"
+  get "search", to: "hot_docs#search"
+  get "static-export", to: "hot_docs#static_export"
+  get "light-dark", to: "hot_docs#light_dark"
+  get "footer", to: "hot_docs#footer"
+  get "microcomponents", to: "hot_docs#microcomponents"
 end

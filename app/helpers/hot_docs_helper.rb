@@ -105,7 +105,7 @@ module HotDocsHelper
       items.each do |item|
         concat(content_tag(:li) do
           locals = { expanded: item.fetch(:expanded), label: item.fetch(:label), url: item.fetch(:url) }
-          concat(render partial: "hotdocs/menu_row", locals: locals)
+          concat(render partial: "hot_docs/menu_row", locals: locals)
 
           concat(menu_r(item.fetch(:children)))
         end)

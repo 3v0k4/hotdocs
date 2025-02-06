@@ -79,10 +79,10 @@ class HotDocsHelperTest < ActionView::TestCase
     expected = <<~HTML
       <ul class="menu__section">
         <li>
-          #{render partial: "hotdocs/menu_row", locals: { expanded: true, label: "Page 1", url: "#first" }}
+          #{render partial: "hot_docs/menu_row", locals: { expanded: true, label: "Page 1", url: "#first" }}
 
           <ul class="menu__section">
-            <li>#{render partial: "hotdocs/menu_row", locals: { label: "Page 2", url: "#second" }}</li>
+            <li>#{render partial: "hot_docs/menu_row", locals: { label: "Page 2", url: "#second" }}</li>
           </ul>
         </li>
       </ul>
