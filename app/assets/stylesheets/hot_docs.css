@@ -400,7 +400,7 @@ video {
 :root {
   --background-color: white;
   --column-border-color: #dadada;
-  --link-active-color: black; /* TODO */
+  --link-active-color: black;
   --link-color: #707070;
   --nav-height: 3.75rem;
   --text-color: #1c1e21;
@@ -409,7 +409,7 @@ video {
 [data-theme=dark]:root {
   --background-color: #1b1b1d;
   --column-border-color: #535353;
-  --link-active-color: white; /* TODO */
+  --link-active-color: white;
   --link-color: #909090;
   --text-color: #e3e1de;
 }

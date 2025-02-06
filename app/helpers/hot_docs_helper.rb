@@ -34,9 +34,7 @@ module HotDocsHelper
     require "ostruct"
 
     [
-      active_link_to("Page 1", root_path, class: Array(classes)),
-      active_link_to("Page 2", microcomponents_path, class: Array(classes)),
-      active_link_to("Page 3", "#TODO", class: Array(classes))
+      active_link_to("Docs", root_path, class: Array(classes))
     ]
   end
 
@@ -44,9 +42,7 @@ module HotDocsHelper
     require "ostruct"
 
     [
-      active_link_to("Page 4", root_path, class: Array(classes)),
-      active_link_to("Page 5", microcomponents_path, class: Array(classes)),
-      active_link_to("Page 6", "#TODO", class: Array(classes))
+      external_link_to("GitHub", "https://github.com/3v0k4/hot_docs", class: Array(classes))
     ]
   end
 
