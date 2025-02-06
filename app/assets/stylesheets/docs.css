@@ -139,6 +139,20 @@
     font-size: 1.5rem;
   }
 
+  .screenshot {
+    max-width: 400px;
+  }
+
+  .screenshot--desktop {
+    max-width: 600px;
+  }
+
+  .screenshot__image {
+    height: auto;
+    width: 100%;
+  }
+
+
 
 
 
