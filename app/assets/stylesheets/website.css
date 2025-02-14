@@ -132,8 +132,13 @@
     margin-block: 10rem;
   }
 
+  .comparison__table-wrapper {
+    overflow-x: auto;
+  }
+
   .comparison__table {
     border-collapse: collapse;
+    white-space: nowrap;
     width: 100%;
   }
 
@@ -144,6 +149,7 @@
   .comparison__table th, .comparison__table td {
     border: 1px solid var(--docs-border-color);
     padding: 0.5rem;
+    table-layout: fixed;
   }
 
   .comparison__what {
@@ -152,7 +158,7 @@
 
   .comparison__who {
     text-align: center;
-    width: 10rem;
+    min-width: 7rem;
   }
 
   .comparison__note {
@@ -161,7 +167,6 @@
 
   .comparison__how {
     text-align: center;
-    width: 10rem;
   }
 
   a {

@@ -730,6 +730,7 @@ body {
 .main {
   display: flex;
   flex-grow: 1;
+  max-width: 100%;
   padding-bottom: var(--content-padding-bottom);
 
   @media (min-width: 64rem) {
@@ -739,6 +740,7 @@ body {
 
 .central {
   flex-grow: 1;
+  max-width: 100%;
   padding-inline: var(--nav-padding-horizontal);
 
   @media (min-width: 64rem) {
