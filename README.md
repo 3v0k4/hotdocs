@@ -17,14 +17,14 @@ HotDocs is a set of optimized Rails components & tools for writing docs:
 | Feature                                                   | HotDocs | Jekyll | Docusaurus |
 |-----------------------------------------------------------|---------|--------|------------|
 | Ruby on Rails (database, Hotwire, etc.)                   | ✅      | ❌     | ❌         |
-| [Embed docs in an existing Rails app](embedded_path)      | ✅      | ❌     | ❌         |
-| [Standalone docs](standalone_path)                        | ✅      | ✅     | ✅         |
-| [Styled components you can customize](components_path)    | ✅      | ✅     | ✅         |
-| [Markdown](markdown_path)                                 | 🔜 🚀   | 👍     | 🚀         |
-| [Static export](static_export_path)                       | 🔜 🚀   | 👍     | 🚀         |
-| [Search](search_path)                                     | 🔜 ✅   | 🔌     | 🔌         |
-| [Light / Dark](light_dark_path)                           | 🔜 ✅   | 🔌     | ✅         |
-| [Open source](https://github.com/3v0k4/hot_docs)          | ✅      | ✅     | ✅         |
+| Embed docs in an existing Rails app                       | ✅      | ❌     | ❌         |
+| Standalone docs                                           | ✅      | ✅     | ✅         |
+| Styled components you can customize                       | ✅      | ✅     | ✅         |
+| Markdown                                                  | 🔜 🚀   | 👍     | 🚀         |
+| Static export                                             | 🔜 🚀   | 👍     | 🚀         |
+| Search                                                    | 🔜 ✅   | 🔌     | 🔌         |
+| Light / Dark                                              | 🔜 ✅   | 🔌     | ✅         |
+| Open source                                               | ✅      | ✅     | ✅         |
 | Free (if you keep the "Built with HotDocs" in the footer) | ✅      | ✅     | ✅         |
 
 **Anything missing? Suggestions?** See how to contribute below.
