@@ -1,0 +1,15 @@
+<%= content_for(:title, "HotDocs: Nav / Sidenav") %>
+
+# HotDocs: Nav / Sidenav
+
+The Nav (top) and Sidenav (hamburger on mobile) contents are declared in <%= link_to raw("<code>hot_docs_helper</code>"), "https://github.com/3v0k4/hot_docs/blob/main/app/helpers/hot_docs_helper.rb" %>:
+- `nav_left_items`: left part of the nav on desktop and sidenav on mobile
+- `nav_right_items`: right part of the nav on desktop and sidenav on mobile
+- `menu_items`: sidenav on mobile
+
+## Implementation
+
+- Html: <%= link_to raw("<code>layouts/hot_docs.html.erb</code>"), "https://github.com/3v0k4/hot_docs/blob/main/app/views/layouts/hot_docs.html.erb" %>
+- Css: `.nav` and `.sidenav` in <%= link_to raw("<code>hot_docs.css</code>"), "https://github.com/3v0k4/hot_docs/blob/main/app/assets/stylesheets/hot_docs.css" %>
+- JavaScript: <%= link_to raw("<code>sidenav_controller.js</code>"), "https://github.com/3v0k4/hot_docs/blob/main/app/javascript/controllers/sidenav_controller.js" %>
+- Ruby: <%= link_to raw("<code>hot_docs_helper.rb</code>"), "https://github.com/3v0k4/hot_docs/blob/main/app/helpers/hot_docs_helper.rb" %>

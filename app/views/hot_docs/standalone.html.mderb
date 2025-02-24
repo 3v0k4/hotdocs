@@ -1,0 +1,11 @@
+<%= content_for(:title, "HotDocs: Standalone") %>
+
+# HotDocs: Standalone
+
+Clone the repository that powers this website as a starting point:
+
+```
+git clone https://github.com/3v0k4/hot-docs
+```
+
+To customize your docs, take a look at <%= link_to "Components", components_path %>.
