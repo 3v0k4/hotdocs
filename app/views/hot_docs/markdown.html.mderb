@@ -1,0 +1,13 @@
+<%= content_for(:title, "HotDocs: Markdown") %>
+
+# HotDocs: Markdown
+
+**Warning:** The runtime needs <%= external_link_to raw("<code>deno</code>"), "https://deno.com/" %> to compile markdown files.
+
+Markdown support is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hot_docs/discussions/7" %> to share wishes and feedback.
+
+HotDocs supports templates ending in `.mderb`: you can mix markdown and erb in the same template.
+
+Behind the curtains, `.mderb` templates are compiled first as `.erb` and second as `.md` with <%= external_link_to "unifiedjs", "https://unifiedjs.com/" %>. This gives you access to a truckload of <%= external_link_to "plugins", "https://unifiedjs.com/explore/package/" %> that you can configure in <%= external_link_to "`config/initializers/markdown.mjs`", "https://github.com/3v0k4/hot_docs/blob/main/config/initializers/markdown.mjs" %>.
+
+For example, if you want all the external links in your `.mderb`s to open in a new tab, just throw in [rehype-external-links](https://github.com/rehypejs/rehype-external-links)!

@@ -1,16 +1,12 @@
 <%= content_for(:title, "HotDocs: Components") %>
 
-<h1>HotDocs: Components</h1>
+# HotDocs: Components
 
-<p>
-  HotDocs is responsive. Feel free to resize this website to see it in action.
-</p>
+HotDocs is responsive. Feel free to resize this website to see it in action.
 
-<p>
-  The following screenshots show how components are laid out on different breakpoints:
-</p>
+The following screenshots show how components are laid out on different breakpoints:
 
-<h2>Desktop</h2>
+## Desktop
 
 <div class="screenshot screenshot--desktop">
   <%= image_tag asset_path("hot_docs_components_desktop.png"), loading: "lazy", size: "600x385", alt: "Screenshot of this website on desktop: top = nav, left = menu, right = table of contents, bottom = footer.", class: "screenshot__image", usemap: "#imagemap-desktop" %>
@@ -23,7 +19,7 @@
   </map>
 </div>
 
-<h2>Mobile</h2>
+## Mobile
 
 <div class="screenshot screenshot--mobile">
   <%= image_tag asset_path("hot_docs_components_mobile.png"), loading: "lazy", size: "400x1120", alt: "Screenshot of this website on mobile: top = nav, top-left = sidenav, center-top = table of contents, bottom = footer.", class: "screenshot__image", usemap: "#imagemap-mobile" %>

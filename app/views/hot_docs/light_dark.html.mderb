@@ -1,0 +1,29 @@
+<%= content_for(:title, "HotDocs: Light / Dark") %>
+
+# HotDocs: Light / Dark 🔜
+
+Light / Dark is not yet available.
+
+You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hot_docs/discussions/9" %> to let us know you want it or to share wishes and feedback.
+
+<hr />
+
+The Light / Dark theme is implemented with Css variables and a data attribute on `<html>`:
+- `<html data-theme="light">`
+- `<html data-theme="dark">`
+
+## Implementation
+
+Each component in <%= link_to raw("<code>hot_docs.css</code>"), "https://github.com/3v0k4/hot_docs/blob/main/app/assets/stylesheets/hot_docs.css" %> comes with variables for both themes.
+
+For example, the `.footer` styles start with:
+
+```
+:root {
+  --footer-background-color: #e9e9e9;
+}
+
+[data-theme=dark]:root {
+  --footer-background-color: #444444;
+}
+```

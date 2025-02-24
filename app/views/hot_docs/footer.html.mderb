@@ -1,0 +1,13 @@
+<%= content_for(:title, "HotDocs: Footer") %>
+
+# HotDocs: Footer
+
+You can support HotDocs by either:
+
+- Keeping the "Built with Rails & HotDocs" credits
+- Paying for a license
+
+## Implementation
+
+- Html: <%= link_to raw("<code>layouts/hot_docs.html.erb</code>"), "https://github.com/3v0k4/hot_docs/blob/main/app/views/layouts/hot_docs.html.erb" %>
+- Css: `.footer` in <%= link_to raw("<code>hot_docs.css</code>"), "https://github.com/3v0k4/hot_docs/blob/main/app/assets/stylesheets/hot_docs.css" %>
