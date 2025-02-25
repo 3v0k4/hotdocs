@@ -83,7 +83,6 @@
   }
 
   .actions__button {
-    align-items: center;
     background-color: var(--docs-background-color);
     border-radius: 0.375rem;
     color: var(--docs-text-color);
@@ -91,6 +90,7 @@
     flex-direction: column;
     font-weight: bold;
     padding: 0.5rem 1rem;
+    text-align: center;
     text-decoration: none;
 
     &:hover {
