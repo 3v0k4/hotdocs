@@ -2,6 +2,9 @@
 
 set -euxo pipefail
 
+curl -o config/initializers/markdown.rb https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/config/initializers/markdown.rb
+curl -o config/initializers/markdown.mjs https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/config/initializers/markdown.mjs
+
 curl -o app/assets/stylesheets/hot_docs.css https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/app/assets/stylesheets/hot_docs.css
 
 curl -o app/javascript/controllers/accordion_controller.js https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/app/javascript/controllers/accordion_controller.js
