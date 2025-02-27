@@ -1,12 +1,19 @@
 require "open3"
 
+Rails.application.config.before_configuration do
+  # Install npm packages early so that Handlers::MarkdownHandler#call doesn't have to.
+  Open3.capture3("deno --allow-read --allow-env --node-modules-dir=auto config/initializers/markdown.mjs", stdin_data: "")
+rescue
+  nil # The deno buildpack is not available while running assets:precompile
+end
+
 module Handlers
   class MarkdownHandler
     def call(template, source)
       compiled = ::ApplicationController.render(inline: source, handler: :erb)
       # `capture3` raises if deno is not available
-      out, err, _status = Open3.capture3("deno --allow-read --allow-env --node-modules-dir=auto config/initializers/markdown.mjs", stdin_data: compiled)
-      Rails.logger.error(err) if !err.empty?
+      out, err, status = Open3.capture3("deno --allow-read --allow-env --node-modules-dir=auto config/initializers/markdown.mjs", stdin_data: compiled)
+      Rails.logger.error("Failed to compile markdown: #{err}") unless status.success?
 
       if !err.empty? && !err.include?("The following packages are deprecated")
         # Render the compiled erb (without the md step).
