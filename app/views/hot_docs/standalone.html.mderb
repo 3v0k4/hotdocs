@@ -4,7 +4,7 @@
 
 Clone the repository that powers this website as a starting point:
 
-```
+```bash
 git clone https://github.com/3v0k4/hot-docs
 ```
 

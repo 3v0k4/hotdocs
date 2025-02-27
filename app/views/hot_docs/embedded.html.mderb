@@ -4,7 +4,7 @@
 
 Follow these steps to embed HotDocs in an already existing Rails application:
 
-```
+```bash
 curl https://raw.githubusercontent.com/3v0k4/hot-docs/refs/heads/main/bin/embed_hot_docs -o embed_hot_docs
 bash embed_hot_docs
 ```

@@ -18,7 +18,7 @@ Each component in <%= link_to raw("<code>hot_docs.css</code>"), "https://github.
 
 For example, the `.footer` styles start with:
 
-```
+```css
 :root {
   --footer-background-color: #e9e9e9;
 }
