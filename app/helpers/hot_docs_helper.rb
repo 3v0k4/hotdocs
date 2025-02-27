@@ -67,6 +67,38 @@ module HotDocsHelper
     compute_menu_r(items).first
   end
 
+  def repository_base_url
+    # Return the url of the root folder of the docs in the repository.
+    # Example: https://github.com/user/repo/blob/main/docs
+  end
+
+  def edit_link(base_url = repository_base_url)
+    return nil if base_url.nil?
+    return nil if base_url.empty?
+
+    template_path = lookup_context
+      .find_template("#{controller_path}/#{action_name}")
+      .identifier
+      .sub(Rails.root.to_s + "/", "")
+    href = "#{base_url}/#{template_path}"
+
+    html_options = {
+      class: "edit-link",
+      target: "_blank",
+      rel: [ "noopener", "noreferrer" ]
+    }
+
+    link_to(href, html_options) do
+      concat(<<~SVG.html_safe)
+        <svg aria-hidden="true" viewBox="0 0 40 40" class="edit-link__icon">
+          <path fill="currentColor" d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path>
+        </svg>
+      SVG
+
+      concat(content_tag(:span, "Edit this page"))
+    end
+  end
+
   private
 
   def compute_menu_r(items)

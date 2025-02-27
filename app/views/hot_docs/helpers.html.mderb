@@ -31,3 +31,7 @@ Produces a `<a>` with the external link icon.
 **Result**
 
 <%= external_link_to "Example", "example.com" %>
+
+## `edit_link`
+
+Set the `repository_base_url` in <%= link_to raw("<code>layouts/hot_docs.html.erb</code>"), "https://github.com/3v0k4/hot_docs/blob/main/app/views/layouts/hot_docs.html.erb" %> to show the "Edit this page" link at the bottom of each page.

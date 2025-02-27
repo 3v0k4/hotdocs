@@ -22,4 +22,8 @@ module ApplicationHelper
       }
     ]
   end
+
+  def website_repository_base_url
+    "https://github.com/3v0k4/hot_docs/blob/main"
+  end
 end
