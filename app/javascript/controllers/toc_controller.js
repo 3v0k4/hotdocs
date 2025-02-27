@@ -14,6 +14,7 @@ export default class extends Controller {
     this._slugHeadings();
     this._createEntries();
     this._trackActiveEntry();
+    this._addAnchorLinks();
   }
 
   _slugHeadings() {
@@ -68,6 +69,18 @@ export default class extends Controller {
 
     this._headings().forEach((heading) => {
       observer.observe(heading);
+    });
+  }
+
+  _addAnchorLinks() {
+    this._headings().forEach((heading) => {
+      const a = document.createElement("a");
+      a.textContent = "#";
+      a.href = `#${heading.id}`;
+      a.classList.add("anchor-link");
+      a.title = `Anchor link to ${heading.innerText}`;
+      a.ariaDescription = `Anchor link to ${heading.innerText}`;
+      heading.appendChild(a);
     });
   }
 
