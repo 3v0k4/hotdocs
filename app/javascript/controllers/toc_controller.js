@@ -73,19 +73,23 @@ export default class extends Controller {
   }
 
   _addAnchorLinks() {
-    this._headings().forEach((heading) => {
-      const a = document.createElement("a");
-      a.textContent = "#";
-      a.href = `#${heading.id}`;
-      a.classList.add("anchor-link");
-      a.title = `Anchor link to ${heading.innerText}`;
-      a.ariaDescription = `Anchor link to ${heading.innerText}`;
-      heading.appendChild(a);
-    });
+    this._headings()
+      .filter((heading) => heading.tagName !== "H1")
+      .forEach((heading) => {
+        const a = document.createElement("a");
+        a.textContent = "#";
+        a.href = `#${heading.id}`;
+        a.classList.add("anchor-link");
+        a.title = `Anchor link to ${heading.innerText}`;
+        a.ariaDescription = `Anchor link to ${heading.innerText}`;
+        heading.appendChild(a);
+      });
   }
 
   _headings() {
-    return this.articleTarget.querySelectorAll("h1, h2, h3, h4, h5, h6");
+    return Array.from(
+      this.articleTarget.querySelectorAll("h1, h2, h3, h4, h5, h6")
+    );
   }
 }
 
