@@ -2,11 +2,13 @@
 
 # HotDocs: Markdown
 
-**Warning:** The runtime needs <%= external_link_to raw("<code>deno</code>"), "https://deno.com/" %> to compile markdown files.
+:::warning
+The runtime needs <%= external_link_to raw("<code>deno</code>"), "https://deno.com/" %> to compile markdown files.
+:::
 
+:::info
 Markdown support is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hot_docs/discussions/7" %> to share wishes and feedback.
-
----
+:::
 
 HotDocs supports templates ending in `.mderb`: you can mix markdown and erb in the same template.
 
@@ -19,6 +21,44 @@ For example, if you want all the external links in your `.mderb`s to open in a n
 HotDocs <%= external_link_to "highlights", "https://github.com/3v0k4/hot_docs/blob/main/config/initializers/markdown.mjs" %> code block with PrismJS.
 
 You can customize the css styles by editing <%= link_to raw("<code>prism.css</code>"), "https://github.com/3v0k4/hot_docs/blob/main/app/assets/stylesheets/prism.css" %>.
+
+## Admonitions
+
+On top of the markdown syntax, HotDocs supports admonitions as follows (icons from <%= external_link_to "Heroicons", "https://heroicons.com/" %>):
+
+```md
+:::info
+This is an info.
+:::
+
+:::tip
+This is a tip.
+:::
+
+:::warning
+This is a warning.
+:::
+
+:::danger
+This is a danger.
+:::
+```
+
+:::info
+This is an info.
+:::
+
+:::tip
+This is a tip.
+:::
+
+:::warning
+This is a warning.
+:::
+
+:::danger
+This is a danger.
+:::
 
 ## Adding `deno` to Heroku
 
