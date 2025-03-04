@@ -2,11 +2,9 @@
 
 # HotDocs: Light / Dark 🔜
 
-Light / Dark is not yet available.
-
-You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hot_docs/discussions/9" %> to let us know you want it or to share wishes and feedback.
-
-<hr />
+:::info
+Light / Dark is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hot_docs/discussions/9" %> to share wishes and feedback.
+:::
 
 The Light / Dark theme is implemented with Css variables and a data attribute on `<html>`:
 - `<html data-theme="light">`

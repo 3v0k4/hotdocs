@@ -2,6 +2,6 @@
 
 # HotDocs: Static export 🔜
 
-Static export is not yet available.
-
-You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hot_docs/discussions/10" %> to let us know you want it or to share wishes and feedback.
+:::info
+Static export is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hot_docs/discussions/10" %> to share wishes and feedback.
+:::
