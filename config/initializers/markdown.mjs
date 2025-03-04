@@ -109,11 +109,7 @@ import { visit } from "npm:unist-util-visit";
 function remarkAdmonitions() {
   return (tree) => {
     visit(tree, (node) => {
-      if (
-        node.type === "containerDirective" ||
-        node.type === "leafDirective" ||
-        node.type === "textDirective"
-      ) {
+      if (node.type === "containerDirective") {
         const level = node.name;
         const admonition = ADMONITIONS[level];
         if (!admonition) return;
