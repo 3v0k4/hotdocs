@@ -8,3 +8,5 @@
 /website/log/*.log
 /website/storage/
 /website/tmp/
+
+node_modules/
