@@ -1,0 +1,7 @@
+<%= content_for(:title, "HotDocs: Search") %>
+
+# HotDocs: Search 🔜
+
+:::info
+Search is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hotdocs/discussions/2" %> to share wishes and feedback.
+:::

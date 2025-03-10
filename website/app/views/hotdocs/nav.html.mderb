@@ -1,0 +1,10 @@
+<%= content_for(:title, "HotDocs: Nav / Sidenav") %>
+
+# HotDocs: Nav / Sidenav
+
+The left menu & top nav (on desktop) and hamburger menu (on mobile) are configured in `application_helper.rb`.
+
+You can customize the content by updating the following methods:
+- `nav_left_items`: shown in left part of the top nav on desktop and hamburger menu on mobile
+- `nav_right_items`: shown in right part of the nav on desktop and hamburger menu on mobile
+- `menu_items`: shown in left menu on desktop and hamburger menu on mobile

@@ -1,0 +1,7 @@
+<%= content_for(:title, "HotDocs: Static export") %>
+
+# HotDocs: Static export 🔜
+
+:::info
+Static export is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hotdocs/discussions/4" %> to share wishes and feedback.
+:::

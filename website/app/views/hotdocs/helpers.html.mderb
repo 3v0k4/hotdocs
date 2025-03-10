@@ -1,0 +1,37 @@
+<%= content_for(:title, "HotDocs: Helpers") %>
+
+# HotDocs: Helpers
+
+HotDocs comes with helpers.
+
+## `active_link_to`
+
+Produces a `<a class="active">` if the link points to the current page.
+
+**Code**
+
+```erb
+<%%= active_link_to "Self", root_path %>
+```
+
+**Result**
+
+<%= active_link_to "Self", root_path %>
+
+## `external_link_to`
+
+Produces a `<a>` with the external link icon.
+
+**Code**
+
+```erb
+<%%= external_link_to "Example", "example.com" %>
+```
+
+**Result**
+
+<%= external_link_to "Example", "example.com" %>
+
+## "Edit this page" link
+
+Set the `repository_base_url` in `application_helper.rb` to show the "Edit this page" link at the bottom of each page.

@@ -1,0 +1,19 @@
+<%= content_for(:title, "HotDocs: Standalone") %>
+
+# HotDocs: Standalone
+
+Follow these steps to create a new HotDocs application:
+
+```bash
+rails new MY_DOCS
+cd MY_DOCS
+bundle add hotdocs
+bin/rails hotdocs:install
+```
+
+You can now start the server and visit HotDocs:
+
+```bash
+bin/rails server
+open http://127.0.0.1:3000
+```

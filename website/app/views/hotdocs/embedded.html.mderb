@@ -1,0 +1,17 @@
+<%= content_for(:title, "HotDocs: Embedded") %>
+
+# HotDocs: Embedded
+
+Follow these steps to embed HotDocs in an already existing Rails application:
+
+```bash
+bundle add hotdocs
+bin/rails hotdocs:install
+```
+
+You can now start the server and visit HotDocs:
+
+```bash
+bin/rails server
+open http://127.0.0.1:3000 # or /hotdocs
+```

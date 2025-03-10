@@ -1,0 +1,12 @@
+<%= content_for(:title, "HotDocs: Quickstart") %>
+
+
+# HotDocs: Quickstart
+
+There are 2 ways to get started with HotDocs:
+- <%= link_to "Embed HotDocs in an already existing Rails application", embedded_path %>
+- <%= link_to "Create a new Rails application for your docs", standalone_path %>
+
+If you are in doubt, embed if you already have an app, otherwise create a new one.
+
+Switching from one to the other is easy, so keep it simple!

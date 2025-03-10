@@ -1,0 +1,136 @@
+<%= content_for(:title, "HotDocs: Welcome") %>
+
+<p class="supertitle">Stop the JavaScript madness:</p>
+
+<h1 class="title">Write your docs with Ruby&nbsp;on&nbsp;Rails</h1>
+
+<div class="subtitle" data-controller="typewriter" data-typewriter-phrases-value='[ "Power of Rails", "Finesse of Hotwire", "Speed of Jekyll", "Awe of Docusaurus" ]'>
+  <p class="subtitle__fixed">Unleash the</p>
+  <p class="subtitle__typewriter" data-typewriter-target="typewrite">Power of Rails</p>
+  <p class="subtitle__fixed">with HotDocs</p>
+</div>
+
+<%= image_tag asset_path("hotdocs.svg"), class: "logo", alt: "A humanized and happy hot dog", size: "160x160" %>
+
+<div class="actions">
+  <div class="actions__buttons">
+    <%= link_to "Start from scratch", standalone_path, class: "actions__button" %>
+    <%= link_to "Embed in Rails app", embedded_path, class: "actions__button" %>
+  </div>
+
+  <p class="actions__footnote">..or read the <%= link_to "Quickstart", quickstart_path %></p>
+</div>
+
+
+<div class="benefits">
+  <h2>HotDocs is a set of optimized Rails components &amp; tools for writing docs</h2>
+
+  <div class="benefits__cards">
+    <div class="benefits__card">
+      <p class="benefits__card-title">It's just Rails</p>
+
+      <p>Do you need the database? Or want to reuse code? What about Hotwire? Yes, yes, and yes! As a Rails dev, you'll feel at home.</p>
+    </div>
+
+    <div class="benefits__card">
+      <p class="benefits__card-title">Focus on the docs</p>
+
+      <p>HotDocs covers all your bases, you only need to author the content. Html and Markdown support included.</p>
+    </div>
+
+    <div class="benefits__card">
+      <p class="benefits__card-title">Static export 🔜</p>
+
+      <p>Export Html and Css for speed while allowing islands of dynamic Js that can interact with your backend.</p>
+    </div>
+  </div>
+</div>
+
+<div class="comparison">
+  <h2>Comparison with Jekyll &amp; Docusaurus</h2>
+
+  <div class="comparison__table-wrapper">
+    <table class="comparison__table">
+      <tr>
+        <th></th>
+        <th class="comparison__who">HotDocs</th>
+        <th class="comparison__who">Jekyll</th>
+        <th class="comparison__who">Docusaurus</th>
+      </tr>
+
+      <tr>
+        <td class="comparison__what">Ruby on Rails <span class="comparison__note">(database, Hotwire, etc.)</span></td>
+        <td class="comparison__how">✅</td>
+        <td class="comparison__how">❌</td>
+        <td class="comparison__how">❌</td>
+      </tr>
+
+      <tr>
+        <td class="comparison__what"><%= link_to "Embed docs in an existing Rails app", embedded_path %></td>
+        <td class="comparison__how">✅</td>
+        <td class="comparison__how">❌</td>
+        <td class="comparison__how">❌</td>
+      </tr>
+
+      <tr>
+        <td class="comparison__what"><%= link_to "Standalone docs", standalone_path %></td>
+        <td class="comparison__how">✅</td>
+        <td class="comparison__how">✅</td>
+        <td class="comparison__how">✅</td>
+      </tr>
+
+      <tr>
+        <td class="comparison__what"><%= link_to "Styled components you can customize", components_path %></td>
+        <td class="comparison__how">✅</td>
+        <td class="comparison__how">✅</td>
+        <td class="comparison__how">✅</td>
+      </tr>
+
+      <tr>
+        <td class="comparison__what"><%= link_to "Markdown", markdown_path %> <span class="comparison__note">(with syntax highlight &amp; themes)</span></td>
+        <td class="comparison__how">🚀</td>
+        <td class="comparison__how">👍</td>
+        <td class="comparison__how">🚀</td>
+      </tr>
+
+      <tr>
+        <td class="comparison__what"><%= link_to "Static export", static_export_path %></td>
+        <td class="comparison__how">🔜 🚀</td>
+        <td class="comparison__how">👍</td>
+        <td class="comparison__how">🚀</td>
+      </tr>
+
+      <tr>
+        <td class="comparison__what"><%= link_to "Search", search_path %></td>
+        <td class="comparison__how">🔜 ✅</td>
+        <td class="comparison__how">🔌</td>
+        <td class="comparison__how">🔌</td>
+      </tr>
+
+      <tr>
+        <td class="comparison__what"><%= link_to "Light / Dark", light_dark_path %></td>
+        <td class="comparison__how">🔜 ✅</td>
+        <td class="comparison__how">🔌</td>
+        <td class="comparison__how">✅</td>
+      </tr>
+
+      <tr>
+        <td class="comparison__what"><%= external_link_to "Open source", "https://github.com/3v0k4/hotdocs" %></td>
+        <td class="comparison__how">✅</td>
+        <td class="comparison__how">✅</td>
+        <td class="comparison__how">✅</td>
+      </tr>
+
+      <tr>
+        <td class="comparison__what">Free</td>
+        <td class="comparison__how">✅</td>
+        <td class="comparison__how">✅</td>
+        <td class="comparison__how">✅</td>
+      </tr>
+
+      <tr>
+        <td colspan="4">Anything missing? Suggestions? <%= external_link_to "Contribute", "https://github.com/3v0k4/hotdocs" %></td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -1,28 +1,51 @@
-# Hotdocs
-Short description and motivation.
+# HotDocs: Write your docs with Ruby on Rails
 
-## Usage
-How to use my plugin.
+<div align="center">
+  <img width="200" width="200" src=".github/images/hotdocs.svg" />
+</div>
 
-## Installation
-Add this line to your application's Gemfile:
+Let's stop the JavaScript madness:
 
-```ruby
-gem "hotdocs"
-```
+HotDocs is a set of optimized Rails components & tools for writing docs:
+- Write your docs from scratch
+- Embed docs in your Rails app
 
-And then execute:
+[**Get Started**](https://hotdocsrails.com)
+
+## Comparison
+
+| Feature                                                   | HotDocs | Jekyll | Docusaurus |
+|-----------------------------------------------------------|---------|--------|------------|
+| Ruby on Rails (database, Hotwire, etc.)                   | ✅      | ❌     | ❌         |
+| Embed docs in an existing Rails app                       | ✅      | ❌     | ❌         |
+| Standalone docs                                           | ✅      | ✅     | ✅         |
+| Styled components you can customize                       | ✅      | ✅     | ✅         |
+| Markdown (with syntax highlight & themes)                 | 🚀      | 👍     | 🚀         |
+| Static export                                             | 🔜 🚀   | 👍     | 🚀         |
+| Search                                                    | 🔜 ✅   | 🔌     | 🔌         |
+| Light / Dark                                              | 🔜 ✅   | 🔌     | ✅         |
+| Open source                                               | ✅      | ✅     | ✅         |
+| Free                                                      | ✅      | ✅     | ✅         |
+
+**Anything missing? Suggestions?** See how to contribute below.
+
+## Demo
+
+HotDocs uses itself for its docs: [check the demo out](https://hotdocsrails.com).
+
+## Development
+
+In its current state, HotDocs is a mountable Rails engine.
+
+The HotDocs website is a Rails app configured to use the HotDocs engine. Run it with:
+
 ```bash
-$ bundle
-```
-
-Or install it yourself as:
-```bash
-$ gem install hotdocs
+bin/dev
 ```
 
 ## Contributing
-Contribution directions go here.
 
-## License
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+Let's create a Rails alternative to (just) Ruby and JavaScript docs frameworks:
+- Chime in the [discussions](https://github.com/3v0k4/hotdocs/discussions) with your feedback and wishes
+- Open an [issue](https://github.com/3v0k4/hotdocs/issues)
+- Submit a [pull request](https://github.com/3v0k4/hotdocs/pulls)

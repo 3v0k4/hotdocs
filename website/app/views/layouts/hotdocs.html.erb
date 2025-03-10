@@ -1,0 +1,9 @@
+<% content_for :head do %>
+  <link rel="icon" href="<%= asset_path "hotdocs.svg" %>" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <%= stylesheet_link_tag :app %>
+  <%= javascript_importmap_tags %>
+<% end %>
+
+<%= render template: "layouts/hotdocs/application" %>

@@ -1,0 +1,31 @@
+<%= content_for(:title, "HotDocs: Light / Dark") %>
+
+# HotDocs: Light / Dark 🔜
+
+:::info
+Light / Dark is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hotdocs/discussions/3" %> to share wishes and feedback.
+:::
+
+The Light / Dark theme is implemented with Css variables and a data attribute on `<html>`:
+- `<html data-theme="light">`
+- `<html data-theme="dark">`
+
+## Styling your own content
+
+When styling your docs, use Css variables to support both light and dark themes.
+
+For example, here is a COMPONENT that uses different background colors:
+
+```css
+:root {
+  --COMPONENT-background-color: #ffffff;
+}
+
+[data-theme=dark]:root {
+  --COMPONENT-background-color: #000000;
+}
+
+.COMPONENT {
+  background-color: var(--COMPONENT-background-color);
+}
+```
