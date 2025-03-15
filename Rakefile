@@ -6,3 +6,9 @@ load "rails/tasks/engine.rake"
 load "rails/tasks/statistics.rake"
 
 require "bundler/gem_tasks"
+
+namespace :assets do
+  task :precompile do
+    Rake::Task["app:assets:precompile"].invoke
+  end
+end
