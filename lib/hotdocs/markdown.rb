@@ -2,10 +2,10 @@ require "open3"
 
 class MarkdownHandler
   def self.prepare(engine)
-    # Install npm packages early so that Handlers::MarkdownHandler#call doesn't have to.
+    # Install npm packages
     Open3.capture3("deno --allow-read --allow-env --node-modules-dir=auto #{engine.root.join("lib/hotdocs/markdown.mjs")}", stdin_data: "")
   rescue
-    Rails.logger.info("deno not found: could not install npm packages early") # The deno buildpack is not available while running assets:precompile
+    Rails.logger.info("deno not found: Could not install npm packages.")
   end
 
   def initialize(engine)

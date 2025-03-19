@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html data-theme="light">
   <head>
-    <title><%= content_for(:title) || "HotDocs" %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><%= content_for(:title) %></title>
 
     <%= yield :head %>
 
@@ -11,7 +10,7 @@
   </head>
 
   <body>
-    <nav class="nav" data-controller="sidenav" data-sidenav-open-class-value="sidenav--open" data-sidenav-main-section-class-value="sidenav__sections--main">
+    <nav class="nav" data-controller="sidenav" data-sidenav-open-class-value="sidenav--open" data-sidenav-main-menu-class-value="sidenav__sections--main">
       <div class="nav__section">
         <button class="nav__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-action="click->sidenav#open">
           <svg viewBox="0 0 30 30" aria-hidden="true">

@@ -5,7 +5,7 @@ export default class extends Controller {
 
   static values = {
     openClass: String,
-    mainSectionClass: String,
+    mainMenuClass: String,
   };
 
   open(event) {
@@ -17,17 +17,17 @@ export default class extends Controller {
   close() {
     this._toggleOpen();
     this.opener.ariaExpanded = false;
-    if (this.resetSection) {
-      this.resetSection();
-      this.resetSection = null;
+    if (this.reset) {
+      this.reset();
+      this.reset = null;
     }
   }
 
   back() {
-    this.sectionsTarget.classList.add(this.mainSectionClassValue);
-    this.resetSection = () => {
+    this.sectionsTarget.classList.add(this.mainMenuClassValue);
+    this.reset = () => {
       setTimeout(
-        () => this.sectionsTarget.classList.remove(this.mainSectionClassValue),
+        () => this.sectionsTarget.classList.remove(this.mainMenuClassValue),
         200 // Give time to the CSS transition to finish
       );
     };

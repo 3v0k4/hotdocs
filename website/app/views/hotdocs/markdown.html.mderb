@@ -2,6 +2,10 @@
 
 # HotDocs: Markdown
 
+:::danger
+HotDocs evaluates Ruby code on your server when rendering. Only use it for trusted markdown content.
+:::
+
 :::warning
 The runtime needs <%= external_link_to raw("<code>deno</code>"), "https://deno.com/" %> to compile markdown files.
 :::

@@ -1,7 +1,6 @@
 module Hotdocs
   module ApplicationHelper
-    # Include host helpers.
-    include Rails.application.helpers
+    include Rails.application.helpers # Include host helpers
 
     def active_link_to(name = nil, options = nil, html_options = nil, &block)
       if options.is_a?(String) && active_link?(options)
@@ -34,10 +33,6 @@ module Hotdocs
           </svg>
         SVG
       end
-    end
-
-    def active_link?(url)
-      request.path == url
     end
 
     def menu(items = menu_items)
@@ -76,6 +71,10 @@ module Hotdocs
     end
 
     private
+
+    def active_link?(url)
+      request.path == url
+    end
 
     def compute_menu_r(items)
       return [ [], false ] if items.nil?
