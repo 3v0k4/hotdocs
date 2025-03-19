@@ -648,15 +648,15 @@ body {
 
 .admonition {
   border: 1px solid;
-  border-left: 10px solid;
+  border-left: 0.5rem solid;
   border-radius: 0.375rem;
   margin-bottom: 1rem;
   padding: 1rem;
 }
 
 .admonition--tip {
-  background: #8fed9011;
-  border-color: #8fed90;
+  background: #00940011;
+  border-color: #009400;
 }
 
 .admonition--info {
@@ -692,6 +692,6 @@ body {
   text-transform: uppercase;
 }
 
-.admonition__content>:last-child {
+.admonition__content > :last-of-type {
   margin-bottom: 0;
 }
