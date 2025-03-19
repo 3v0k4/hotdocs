@@ -29,7 +29,7 @@ gem?("stimulus-rails") && run("bin/rails stimulus:install")
 
 generate(:controller, "hotdocs", "index", "--skip-routes --no-helper --no-test-framework --no-view-specs")
 remove_file(Pathname(destination_root).join("app/views/hotdocs/index.html.erb"))
-insert_into_file(Pathname(destination_root).join("app/controllers/hotdocs_controller.rb"), <<-LINES, after: "class HotdocsController < ApplicationController\n")
+inject_into_class(Pathname(destination_root).join("app/controllers/hotdocs_controller.rb"), "HotdocsController", <<-LINES)
   helper Hotdocs::Engine.helpers
   layout "hotdocs"
 
@@ -56,7 +56,7 @@ VIEW
 
 copy_file("app/assets/images/hotdocs/icon.svg", Pathname(destination_root).join("app/assets/images/hotdocs.svg"))
 
-append_to_file(Pathname(destination_root).join("app/helpers/application_helper.rb"), "  include HotdocsHelper\n\n", after: "module ApplicationHelper\n")
+inject_into_module(Pathname(destination_root).join("app/helpers/application_helper.rb"), "ApplicationHelper", "  include HotdocsHelper\n\n")
 create_file(Pathname(destination_root).join("app/helpers/hotdocs_helper.rb"), <<~HELPER)
   module HotdocsHelper
     def logo
