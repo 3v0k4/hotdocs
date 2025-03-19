@@ -51,7 +51,16 @@ create_file(Pathname(destination_root).join("app/views/hotdocs/index.html.mderb"
 
   # Welcome to HotDocs
 
-  Find this markdown in #{Pathname(destination_root).join("app/views/hotdocs/index.html.mderb")}.
+  Find this markdown in `app/views/hotdocs/index.html.mderb`.
+
+  ## Todos
+
+  <input type="checkbox" id="first">
+  <label for="first"> Update <code>app/views/layouts/hotdocs.html.erb</code></label><br>
+  <input type="checkbox" id="second">
+  <label for="second"> Update <code>app/helpers/hotdocs_helper.rb</code></label><br>
+  <input type="checkbox" id="third">
+  <label for="third"> Maybe read the docs: <a href="https://hotdocsrails.com/" target="_blank">hotdocsrails.com</a></label>
 VIEW
 
 copy_file("app/assets/images/hotdocs/icon.svg", Pathname(destination_root).join("app/assets/images/hotdocs.svg"))
