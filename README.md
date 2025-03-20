@@ -41,7 +41,15 @@ The HotDocs website is a Rails app configured to use the HotDocs engine. Run it 
 
 ```bash
 bin/dev
+bin/rails test
 ```
+
+To release a new version:
+- Update the version number in `version.rb`
+- Run `bundle exec rake release`, which will
+  - Create a git tag for the version
+  - Push git commits and the created tag
+  - Push the `.gem` file to [rubygems.org](https://rubygems.org)
 
 ## Contributing
 
