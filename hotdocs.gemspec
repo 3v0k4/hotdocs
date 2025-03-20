@@ -10,10 +10,6 @@ Gem::Specification.new do |spec|
   spec.description = "HotDocs is a set of optimized Rails components & tools for writing docs."
   spec.licenses    = %w[LGPL-3.0 Commercial]
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/3v0k4/hotdocs"
   spec.metadata["changelog_uri"] = "https://github.com/3v0k4/hotdocs/blob/main/CHANGELOG.md"
