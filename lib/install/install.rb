@@ -69,7 +69,7 @@ inject_into_module(Pathname(destination_root).join("app/helpers/application_help
 create_file(Pathname(destination_root).join("app/helpers/hotdocs_helper.rb"), <<~HELPER)
   module HotdocsHelper
     def logo
-      Data.define(:src, :alt).new(src: asset_path("hotdocs.svg"), alt: "A humanized and happy hot dog")
+      Struct.new(:src, :alt).new(asset_path("hotdocs.svg"), "A humanized and happy hot dog")
     end
 
     def nav_left_items(classes)

@@ -1,7 +1,7 @@
 module ApplicationHelper
   # svg big footer
   def logo
-    Data.define(:src, :alt).new(src: asset_path("hotdocs.svg"), alt: "A humanized and happy hot dog")
+    Struct.new(:src, :alt).new(asset_path("hotdocs.svg"), "A humanized and happy hot dog")
   end
 
   def nav_left_items(classes)
