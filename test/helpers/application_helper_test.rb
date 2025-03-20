@@ -3,7 +3,6 @@ require "test_helper"
 class Hotdocs::ApplicationHelperTest < ActionView::TestCase
   test "#active_link_to" do
     assert_dom_equal %(<a href="/">label</a>), active_link_to("label", root_path)
-
     controller.request.path = root_path
     assert_dom_equal %(<a href="/" class="active">label</a>), active_link_to("label", root_path)
   end

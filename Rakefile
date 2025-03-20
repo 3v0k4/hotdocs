@@ -8,6 +8,7 @@ load "rails/tasks/statistics.rake"
 require "bundler/gem_tasks"
 
 namespace :assets do
+  desc "Expose app:assets:precompile to Heroku"
   task :precompile do
     Rake::Task["app:assets:precompile"].invoke
   end
