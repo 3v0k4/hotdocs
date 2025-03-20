@@ -19,8 +19,7 @@ Gem::Specification.new do |spec|
   spec.metadata["changelog_uri"] = "https://github.com/3v0k4/hotdocs/blob/main/CHANGELOG.md"
   spec.metadata["rubygems_mfa_required"] = "true"
 
-  # rubocop:disable ThreadSafety/DirChdir
-  spec.files = Dir.chdir(File.expand_path(__dir__)) do
+  spec.files = Dir.chdir(File.expand_path(__dir__)) do # rubocop:disable ThreadSafety/DirChdir
     Dir["{app,config,lib}/**/*", "LICENSE*", "Rakefile", "README.md"]
   end
 
