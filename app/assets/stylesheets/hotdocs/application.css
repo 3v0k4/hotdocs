@@ -363,8 +363,10 @@ body {
 .main {
   display: flex;
   flex-grow: 1;
-  max-width: 100%;
+  margin-inline: auto;
+  max-width: 82rem;
   padding-bottom: var(--content-padding-bottom);
+  width: 100%;
 
   @media (min-width: 64rem) {
     width: calc(100% - 20rem);
