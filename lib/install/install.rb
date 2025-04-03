@@ -27,13 +27,12 @@ gem?("importmap-rails") && run("bin/rails importmap:install")
 gem?("turbo-rails") && run("bin/rails turbo:install")
 gem?("stimulus-rails") && run("bin/rails stimulus:install")
 
-generate(:controller, "hotdocs", "index", "--skip-routes --no-helper --no-test-framework --no-view-specs")
-remove_file(Pathname(destination_root).join("app/views/hotdocs/index.html.erb"))
-inject_into_class(Pathname(destination_root).join("app/controllers/hotdocs_controller.rb"), "HotdocsController", <<-LINES)
-  helper Hotdocs::Engine.helpers
-  layout "hotdocs"
-
-LINES
+create_file(Pathname(destination_root).join("app/controllers/hotdocs_controller.rb"), <<~CONTROLLER)
+  class HotdocsController < ApplicationController
+    helper Hotdocs::Engine.helpers
+    layout "hotdocs"
+  end
+CONTROLLER
 
 create_file(Pathname(destination_root).join("app/views/layouts/hotdocs.html.erb"), <<~LAYOUT)
   <% content_for :head do %>
@@ -127,6 +126,18 @@ create_file(Pathname(destination_root).join("app/helpers/hotdocs_helper.rb"), <<
 HELPER
 
 create_file(Pathname(destination_root).join("app/assets/stylesheets/prism.css"), <<~CSS)
+  /* Find more themes on: https://github.com/PrismJS/prism-themes */
+
+  /*
+     Darcula theme
+
+     Adapted from a theme based on:
+     IntelliJ Darcula Theme (https://github.com/bulenkov/Darcula)
+
+     @author Alexandre Paradis <service.paradis@gmail.com>
+     @version 1.0
+  */
+
   code[class*="language-"],
   pre[class*="language-"] {
     color: #a9b7c6;
@@ -279,9 +290,11 @@ create_file(Pathname(destination_root).join("app/assets/stylesheets/prism.css"),
 CSS
 
 routes_path = Pathname(destination_root).join("config/routes.rb")
-regex = /^\s*(?!#)root/
-if File.readlines(routes_path).grep(regex).any?
-  route "get '/hotdocs', to: 'hotdocs#index'"
-else
-  route "root to: 'hotdocs#index'"
+routes = File.readlines(routes_path)
+unless routes.grep(/hotdocs#index/).any?
+  if routes.grep(/^\s*(?!#)root/).any?
+    route "get '/hotdocs', to: 'hotdocs#index'"
+  else
+    route "root to: 'hotdocs#index'"
+  end
 end
