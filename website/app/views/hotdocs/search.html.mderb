@@ -1,7 +1,13 @@
 <%= content_for(:title, "HotDocs: Search") %>
 
-# HotDocs: Search 🔜
+# HotDocs: Search
 
 :::info
 Search is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hotdocs/discussions/2" %> to share wishes and feedback.
 :::
+
+HotDocs indexes for search all the pages listed under `menu_items` in `hotdocs_helper.rb`.
+
+In development, you can index pages by running `bundle exec rails hotdocs:index`.
+
+On production, HotDocs hooks into the `assets:precompile` task.

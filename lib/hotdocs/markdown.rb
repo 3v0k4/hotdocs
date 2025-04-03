@@ -3,9 +3,8 @@ require "open3"
 class MarkdownHandler
   def self.prepare(engine)
     # Install npm packages
+    # `capture3` raises if deno is not available
     Open3.capture3("deno --allow-read --allow-env --node-modules-dir=auto #{engine.root.join("lib/hotdocs/markdown.mjs")}", stdin_data: "")
-  rescue
-    Rails.logger.info("deno not found: Could not install npm packages.")
   end
 
   def initialize(engine)
