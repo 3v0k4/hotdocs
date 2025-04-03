@@ -7,10 +7,23 @@ def gem?(name)
 
   regex = /gem ["']#{name}["']/
   if File.readlines(gemfile_path).grep(regex).any?
-    say "#{name} already installed"
+    say "#{name} already bundled"
     false
   else
     run("bundle add #{name}") || abort("Failed to add #{name} to the bundle")
+    true
+  end
+end
+
+def pin?(name)
+  importmap_path = Pathname(destination_root).join("config/importmap.rb")
+
+  regex = /pin ["']#{name}["']/
+  if File.readlines(importmap_path).grep(regex).any?
+    say "#{name} already pinned"
+    false
+  else
+    run("bin/importmap pin #{name}") || abort("Failed to pin #{name} to the importmap")
     true
   end
 end
@@ -26,6 +39,8 @@ end
 gem?("importmap-rails") && run("bin/rails importmap:install")
 gem?("turbo-rails") && run("bin/rails turbo:install")
 gem?("stimulus-rails") && run("bin/rails stimulus:install")
+
+pin?("lunr")
 
 create_file(Pathname(destination_root).join("app/controllers/hotdocs_controller.rb"), <<~CONTROLLER)
   class HotdocsController < ApplicationController
@@ -288,6 +303,13 @@ create_file(Pathname(destination_root).join("app/assets/stylesheets/prism.css"),
     color: #ffc66d;
   }
 CSS
+
+empty_directory "app/assets/builds"
+keep_file "app/assets/builds"
+if Pathname(destination_root).join(".gitignore").exist?
+  append_to_file(".gitignore", %(\n/app/assets/builds/*\n!/app/assets/builds/.keep\n))
+  append_to_file(".gitignore", %(\n/node_modules/\n))
+end
 
 routes_path = Pathname(destination_root).join("config/routes.rb")
 routes = File.readlines(routes_path)

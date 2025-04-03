@@ -43,6 +43,10 @@ jobs:
           ruby-version: ruby-3.4.2
           bundler-cache: true
 
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
       - name: Run tests
         env:
           RAILS_ENV: test

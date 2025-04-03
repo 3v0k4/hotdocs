@@ -34,4 +34,4 @@ Produces a `<a>` with the external link icon.
 
 ## "Edit this page" link
 
-Set the `repository_base_url` in `application_helper.rb` to show the "Edit this page" link at the bottom of each page.
+Set the `repository_base_url` in `hotdocs_helper.rb` to show the "Edit this page" link at the bottom of each page.

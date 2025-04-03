@@ -10,3 +10,5 @@
 /website/tmp/
 
 node_modules/
+/website/app/assets/builds/*
+!/website/app/assets/builds/.keep

@@ -6,6 +6,6 @@
 You can pay for a license to remove the "Built with HotDocs" notice.
 :::
 
-The footer configured in `application_helper.rb`.
+The footer configured in `hotdocs_helper.rb`.
 
 You can customize the content by updating the `footer_items` method.
