@@ -40,7 +40,7 @@ module HotdocsHelper
   end
 
   def repository_base_url
-    "https://github.com/3v0k4/hotdocs/blob/main"
+    "https://github.com/3v0k4/hotdocs/tree/main/website"
   end
 
   def footer_items
