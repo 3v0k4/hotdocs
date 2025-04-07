@@ -73,5 +73,5 @@ heroku buildpacks
 If deno is not yet installed, you can do so with:
 
 ```bash
-heroku buildpacks:add --index 1 https://github.com/chibat/heroku-buildpack-deno.git
+heroku buildpacks:add --index 1 https://github.com/3v0k4/heroku-buildpack-deno.git
 ```
