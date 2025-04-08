@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Prevent possible (implicit) styles overwrite
+
 ## [0.2.0]
 
 - Constrain `max-width` for content & toc to look better on wider viewports

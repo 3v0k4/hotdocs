@@ -53,7 +53,6 @@ create_file(Pathname(destination_root).join("app/views/layouts/hotdocs.html.erb"
   <% content_for :head do %>
     <%= content_for(:title, "HotDocs") unless content_for?(:title) %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= stylesheet_link_tag :app %>
     <%= javascript_importmap_tags %>
   <% end %>
 
