@@ -12,6 +12,15 @@ class MarkdownHandler
   end
 
   def call(template, source)
+    # If the template contains a `fetcher`, do not allow Rails to cache the page.
+    if source.match?(%r{<%= fetcher.* do %>})
+      ActionView::PathRegistry.all_resolvers.each do |resolver|
+        resolver.instance_eval do
+          @unbound_templates.delete(template.virtual_path)
+        end
+      end
+    end
+
     compiled = ::HotdocsController.render(inline: source, handler: :erb)
     # `capture3` raises if deno is not available
     out, err, status = Open3.capture3("deno --allow-read --allow-env --node-modules-dir=auto #{@engine.root.join("lib/hotdocs/markdown.mjs")}", stdin_data: compiled)

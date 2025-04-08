@@ -26,3 +26,5 @@ gem "stimulus-rails", "~> 1.3"
 gem "rubocop-minitest", require: false
 gem "rubocop-rake", require: false
 gem "rubocop-thread_safety", require: false
+
+gem "parklife"

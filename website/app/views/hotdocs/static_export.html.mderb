@@ -1,7 +1,82 @@
 <%= content_for(:title, "HotDocs: Static export") %>
 
-# HotDocs: Static export 🔜
+# HotDocs: Static export
 
 :::info
 Static export is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hotdocs/discussions/4" %> to share wishes and feedback.
 :::
+
+Create a static build with <%= external_link_to "Parklife", "https://parklife.dev/" %>:
+
+1. `bundle add --group development parklife`
+1. `bundle exec parklife init --rails`
+1. Update `Parklife`
+1. Update `bin/static-build`
+1. `bin/static-build`
+
+You can test the static export with:
+
+```bash
+ruby -r webrick -e 'WEBrick::HTTPServer.new(Port: 8000, DocumentRoot: "build").start'
+```
+
+Refer to the <%= external_link_to "Parklife", "https://parklife.dev/" %> docs for details on how to tweak the configuration.
+
+## Fetch fresh content
+
+There are situations where a static build is limiting. For example, you may have a page that loads some data from the database:
+
+```ruby
+Registered users: #{User.registered.count}
+```
+
+If you exported that page from a development environment, the count would be wrong. And, even if you managed to export it from the production database, the count would be outdated.
+
+You can work around this issue by using the `fetcher` helper:
+
+After setting `fetcher_host` in `hotdocs_helper.rb`, wrap content in a `fetcher` block to fetch dynamic content from the backend.
+
+:::warning
+If the `fetcher_host` has a different domain than the one you host HotDocs on, you have to configure CORS with something like <%= external_link_to raw("<code>rack-cors</code>"), "https://github.com/cyu/rack-cors" %>.
+:::
+
+For example, given the following is statically exported:
+
+```erb
+
+<%= fetcher(id: "someid", path: "/my/path", fallback: "Registered users: Loading...") do %>
+  Registered users: #{User.registered.count}
+<% end %>
+
+```
+
+1. On the first load, the fallback is rendered:
+
+```html
+Registered users: Loading...
+```
+
+2. the fetcher gets `fetcher_host + path`, which is expected to contain either:
+
+```erb
+
+<%= fetcher(id: "someid", path: "/my/path", fallback: "Registered users: Loading...") do %>
+  Registered users: #{User.registered.count}
+<% end %>
+
+```
+
+or an element with the correct id:
+
+```html
+<div id="someid">
+  Registered users: #{User.registered.count}
+</div>
+```
+
+3. the content is swapped:
+
+```diff
+- Registered users: Loading...
++ Registered users: #{User.registered.count}
+```

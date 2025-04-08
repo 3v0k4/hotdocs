@@ -136,6 +136,10 @@ create_file(Pathname(destination_root).join("app/helpers/hotdocs_helper.rb"), <<
         }
       ]
     end
+
+    def fetcher_host
+      "http://127.0.0.1:3000"
+    end
   end
 HELPER
 

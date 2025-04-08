@@ -70,6 +70,16 @@ module Hotdocs
       end
     end
 
+    def fetcher(id:, path:, fallback: nil, &)
+      data = {
+        controller: "fetcher",
+        "fetcher-host-value": fetcher_host,
+        "fetcher-path-value": path,
+        "fetcher-fallback-value": fallback
+      }
+      content_tag(:div, id: id, data: data, style: "visibility: hidden;", &)
+    end
+
     private
 
     def active_link?(url)
