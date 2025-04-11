@@ -30,7 +30,7 @@ class MarkdownHandler
       # Render the compiled erb (without the md step).
       # It won't look great, but better than nothing.
       return <<~STRING
-        @output_buffer.safe_append='#{compiled}'.freeze;
+        @output_buffer.safe_append='#{compiled.gsub("'", "\\\\'")}'.freeze;
         @output_buffer
       STRING
     end
@@ -43,7 +43,7 @@ class MarkdownHandler
 
     <<~STRING
       #{content_fors.join(";")}
-      @output_buffer.safe_append='#{out}'.freeze;
+      @output_buffer.safe_append='#{out.gsub("'", "\\\\'")}'.freeze;
       @output_buffer
     STRING
   end

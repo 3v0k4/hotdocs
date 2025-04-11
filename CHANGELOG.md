@@ -1,5 +1,6 @@
 ## [Unreleased]
 
+- Allow single quotes in mderb templates
 - Fetcher helper to fetch fresh content from a static page
 - Prevent possible (implicit) styles overwrite
 
