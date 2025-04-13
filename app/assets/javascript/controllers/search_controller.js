@@ -10,7 +10,7 @@ export default class extends Controller {
 
   disconnect() {
     document.removeEventListener("keydown", this.keydownOpen);
-    document.removeEventListener("click", this.clickClose, { once: true });
+    document.removeEventListener("click", this._clickClose);
   }
 
   open() {
@@ -32,13 +32,16 @@ export default class extends Controller {
     document.addEventListener("keydown", this.keydownOpen);
   }
 
-  _allowClosing() {
-    this.clickClose = (event) => {
-      if (this.dialogTarget.contains(event.target)) return;
-      this.searchTarget.close();
-    };
+  _clickClose = (event) => {
+    if (!this.searchTarget.open) return;
+    if (this.dialogTarget.contains(event.target)) return;
+    this.searchTarget.close();
+    document.removeEventListener("click", this._clickClose);
+  };
 
-    document.addEventListener("click", this.clickClose, { once: true });
+  _allowClosing() {
+    document.removeEventListener("click", this._clickClose);
+    document.addEventListener("click", this._clickClose);
   }
 
   _initSearch() {
