@@ -20,6 +20,11 @@ export default class extends Controller {
     this.searchTarget.showModal();
   }
 
+  close() {
+    this.searchTarget.close();
+    document.removeEventListener("click", this._clickClose);
+  }
+
   search = debounce(this._search, 200);
 
   _allowOpening() {
@@ -35,8 +40,7 @@ export default class extends Controller {
   _clickClose = (event) => {
     if (!this.searchTarget.open) return;
     if (this.dialogTarget.contains(event.target)) return;
-    this.searchTarget.close();
-    document.removeEventListener("click", this._clickClose);
+    this.close();
   };
 
   _allowClosing() {

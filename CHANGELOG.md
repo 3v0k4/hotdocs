@@ -1,5 +1,6 @@
 ## [Unreleased]
 
+- Make search full screen on mobile and allow closing with button
 - Allow single quotes in mderb templates
 - Fetcher helper to fetch fresh content from a static page
 - Prevent possible (implicit) styles overwrite
