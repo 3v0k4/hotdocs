@@ -11,9 +11,9 @@ export SECRET_KEY_BASE=dummy
 # bundle exec rails db:setup
 
 # Generate production-optimised assets with Sprockets and friends. This must be
-# done before generating the Parklife build as Rails will blow up if it detects
+# done before generating the Parklife build as Rails will blow up if it detects
 # missing assets in production.
-bundle exec rails assets:precompile
+RAILS_RELATIVE_URL_ROOT="${BASE_PATH:-}" bundle exec rails assets:precompile
 
 # Build with Parklife - and forward arguments sent to this script.
 bundle exec parklife build "$@"

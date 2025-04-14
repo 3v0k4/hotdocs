@@ -75,7 +75,9 @@ def render_search_data
     end
 
     def render_path(path)
-      controller, action = Rails.application.routes.recognize_path(path).values_at(:controller, :action)
+      base = ENV.fetch("RAILS_RELATIVE_URL_ROOT", "")
+      baseless_path = path.sub(/\A#{base}/, "")
+      controller, action = Rails.application.routes.recognize_path(baseless_path).values_at(:controller, :action)
       render_to_string("#{controller}/#{action}", layout: false)
     rescue ActionController::RoutingError => error
       logger.info("Skipped building #{path}: #{error}")
