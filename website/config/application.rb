@@ -25,7 +25,5 @@ module Website
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-
-    config.hotwire.spark.css_paths << "app/assets/stylesheets"
   end
 end
