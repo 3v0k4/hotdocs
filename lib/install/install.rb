@@ -15,16 +15,15 @@ def gem?(name)
   end
 end
 
-def pin?(name)
+def pin(name)
   importmap_path = Pathname(destination_root).join("config/importmap.rb")
 
   regex = /pin ["']#{name}["']/
   if File.readlines(importmap_path).grep(regex).any?
     say "#{name} already pinned"
-    false
   else
     run("bin/importmap pin #{name}") || abort("Failed to pin #{name} to the importmap")
-    true
+    gsub_file importmap_path, /(pin ["']#{name}["'])(.*)/, '\1, preload: "hotdocs"\2'
   end
 end
 
@@ -40,26 +39,37 @@ gem?("importmap-rails") && run("bin/rails importmap:install")
 gem?("turbo-rails") && run("bin/rails turbo:install")
 gem?("stimulus-rails") && run("bin/rails stimulus:install")
 
-pin?("lunr")
+create_file(Pathname(destination_root).join("app/javascript/hotdocs.js"), <<~FILE)
+  import "@hotwired/turbo-rails";
+  import "controllers";
 
-create_file(Pathname(destination_root).join("app/controllers/hotdocs_controller.rb"), <<~CONTROLLER)
+  import { application } from "controllers/application"
+  import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading"
+  eagerLoadControllersFrom("hotdocs/controllers", application)
+FILE
+
+importmap_path = Pathname(destination_root).join("config/importmap.rb")
+append_to_file(importmap_path, %(pin "hotdocs", preload: "hotdocs"\n))
+pin("lunr")
+
+create_file(Pathname(destination_root).join("app/controllers/hotdocs_controller.rb"), <<~FILE)
   class HotdocsController < ApplicationController
     helper Hotdocs::Engine.helpers
     layout "hotdocs"
   end
-CONTROLLER
+FILE
 
-create_file(Pathname(destination_root).join("app/views/layouts/hotdocs.html.erb"), <<~LAYOUT)
+create_file(Pathname(destination_root).join("app/views/layouts/hotdocs.html.erb"), <<~FILE)
   <% content_for :head do %>
     <%= content_for(:title, "HotDocs") unless content_for?(:title) %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= javascript_importmap_tags %>
+    <%= javascript_importmap_tags "hotdocs" %>
   <% end %>
 
   <%= render template: "layouts/hotdocs/application" %>
-LAYOUT
+FILE
 
-create_file(Pathname(destination_root).join("app/views/hotdocs/index.html.mderb"), <<~VIEW)
+create_file(Pathname(destination_root).join("app/views/hotdocs/index.html.mderb"), <<~FILE)
   <%= content_for(:title, "Welcome") %>
 
   # Welcome to HotDocs
@@ -74,12 +84,12 @@ create_file(Pathname(destination_root).join("app/views/hotdocs/index.html.mderb"
   <label for="second"> Update <code>app/helpers/hotdocs_helper.rb</code></label><br>
   <input type="checkbox" id="third">
   <label for="third"> Maybe read the docs: <a href="https://hotdocsrails.com/" target="_blank">hotdocsrails.com</a></label>
-VIEW
+FILE
 
 copy_file("app/assets/images/hotdocs/icon.svg", Pathname(destination_root).join("app/assets/images/hotdocs.svg"))
 
 inject_into_module(Pathname(destination_root).join("app/helpers/application_helper.rb"), "ApplicationHelper", "  include HotdocsHelper\n\n")
-create_file(Pathname(destination_root).join("app/helpers/hotdocs_helper.rb"), <<~HELPER)
+create_file(Pathname(destination_root).join("app/helpers/hotdocs_helper.rb"), <<~FILE)
   module HotdocsHelper
     def logo
       Struct.new(:src, :alt).new(asset_path("hotdocs.svg"), "A humanized and happy hot dog")
@@ -141,9 +151,9 @@ create_file(Pathname(destination_root).join("app/helpers/hotdocs_helper.rb"), <<
       "http://127.0.0.1:3000"
     end
   end
-HELPER
+FILE
 
-create_file(Pathname(destination_root).join("app/assets/stylesheets/prism.css"), <<~CSS)
+create_file(Pathname(destination_root).join("app/assets/stylesheets/prism.css"), <<~FILE)
   /* Find more themes on: https://github.com/PrismJS/prism-themes */
 
   /*
@@ -305,7 +315,7 @@ create_file(Pathname(destination_root).join("app/assets/stylesheets/prism.css"),
   code.language-css .token.selector > .token.pseudo-element {
     color: #ffc66d;
   }
-CSS
+FILE
 
 empty_directory "app/assets/builds"
 keep_file "app/assets/builds"
