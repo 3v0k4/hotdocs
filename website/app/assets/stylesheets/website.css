@@ -126,6 +126,24 @@
     font-weight: bold;
   }
 
+  .goals {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-block: 10rem;
+    margin-inline: auto;
+  }
+
+  .goals__section {
+    flex: 1 0 20rem;
+  }
+
+  .goals__list {
+    list-style-position: inside;
+    padding-left: 0;
+  }
+
   .comparison {
     margin-block: 10rem;
   }
