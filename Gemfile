@@ -28,3 +28,7 @@ gem "rubocop-rake", require: false
 gem "rubocop-thread_safety", require: false
 
 gem "parklife"
+
+group :development do
+  gem "hotwire-spark"
+end
