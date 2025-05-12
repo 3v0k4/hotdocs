@@ -95,6 +95,10 @@ create_file(Pathname(destination_root).join("app/helpers/hotdocs_helper.rb"), <<
       Struct.new(:src, :alt).new(asset_path("hotdocs.svg"), "A humanized and happy hot dog")
     end
 
+    def title
+      "HotDocs"
+    end
+
     def nav_left_items(classes)
       [
         active_link_to("Docs", root_path, class: Array(classes))
