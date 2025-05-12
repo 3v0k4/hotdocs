@@ -88,7 +88,6 @@ FILE
 
 copy_file("app/assets/images/hotdocs/icon.svg", Pathname(destination_root).join("app/assets/images/hotdocs.svg"))
 
-inject_into_module(Pathname(destination_root).join("app/helpers/application_helper.rb"), "ApplicationHelper", "  include HotdocsHelper\n\n")
 create_file(Pathname(destination_root).join("app/helpers/hotdocs_helper.rb"), <<~FILE)
   module HotdocsHelper
     def logo
