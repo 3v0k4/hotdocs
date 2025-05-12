@@ -762,6 +762,7 @@ body:has(.search:open), body:has(.search[open]) {
 }
 
 .credits {
+  padding-block: 1rem;
   text-align: center;
 }
 

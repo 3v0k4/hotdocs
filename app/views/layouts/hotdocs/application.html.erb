@@ -42,48 +42,18 @@
       </script>
     </dialog>
 
-    <nav class="nav" data-controller="sidenav" data-sidenav-open-class-value="sidenav--open" data-sidenav-main-menu-class-value="sidenav__sections--main">
-      <div class="nav__section">
-        <button class="nav__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-action="click->sidenav#open">
-          <svg viewBox="0 0 30 30" aria-hidden="true">
-            <path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path>
-          </svg>
-        </button>
+    <% if content_for?(:hotdocs_nav) %>
+      <%= content_for(:hotdocs_nav) %>
 
-        <%= link_to root_path, class: "nav__brand" do %>
-          <div class="nav__logo-wrapper">
-            <img class="nav__logo" src="<%= logo.src %>" alt="<%= logo.alt %>" height="32" width="32" />
-          </div>
+    <% else %>
+      <nav class="nav" data-controller="sidenav" data-sidenav-open-class-value="sidenav--open" data-sidenav-main-menu-class-value="sidenav__sections--main">
+        <div class="nav__section">
+          <button class="nav__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-action="click->sidenav#open">
+            <svg viewBox="0 0 30 30" aria-hidden="true">
+              <path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path>
+            </svg>
+          </button>
 
-          <span class="nav__title">HotDocs</span>
-        <% end %>
-
-        <div class="nav__links">
-          <% nav_left_items("nav__link").each do |item| %>
-            <%= item %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="nav__section">
-        <div class="nav__links">
-          <% nav_right_items("nav__link").each do |item| %>
-            <%= item %>
-          <% end %>
-        </div>
-
-        <button type="button" data-action="click->search#open:stop" class="search-button" aria-label="Open search dialog">
-          <svg class="search-button__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-          </svg>
-
-          <span class="search-button__label">Type / to search</span>
-        </button>
-      </div>
-
-      <div class="sidenav-backdrop"></div>
-      <div class="sidenav">
-        <div class="sidenav__header">
           <%= link_to root_path, class: "nav__brand" do %>
             <div class="nav__logo-wrapper">
               <img class="nav__logo" src="<%= logo.src %>" alt="<%= logo.alt %>" height="32" width="32" />
@@ -92,38 +62,73 @@
             <span class="nav__title">HotDocs</span>
           <% end %>
 
-          <button aria-label="Close navigation" class="sidenav__toggle" type="button" data-action="click->sidenav#close">
-            <svg viewBox="0 0 15 15">
-              <g stroke="currentColor" stroke-width="1.2">
-                <path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path>
-              </g>
+          <div class="nav__links">
+            <% nav_left_items("nav__link").each do |item| %>
+              <%= item %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="nav__section">
+          <div class="nav__links">
+            <% nav_right_items("nav__link").each do |item| %>
+              <%= item %>
+            <% end %>
+          </div>
+
+          <button type="button" data-action="click->search#open:stop" class="search-button" aria-label="Open search dialog">
+            <svg class="search-button__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
             </svg>
+
+            <span class="search-button__label">Type / to search</span>
           </button>
         </div>
 
-        <div class="sidenav__sections" data-sidenav-target="sections">
-          <div class="sidenav__section">
-            <ul class="menu__section">
-              <% (nav_left_items("menu__link") + nav_right_items("menu__link")).each do |item| %>
-                <li>
-                  <div class="menu__row">
-                    <%= item %>
-                  </div>
-                </li>
-              <% end %>
-            </ul>
+        <div class="sidenav-backdrop"></div>
+        <div class="sidenav">
+          <div class="sidenav__header">
+            <%= link_to root_path, class: "nav__brand" do %>
+              <div class="nav__logo-wrapper">
+                <img class="nav__logo" src="<%= logo.src %>" alt="<%= logo.alt %>" height="32" width="32" />
+              </div>
+
+              <span class="nav__title">HotDocs</span>
+            <% end %>
+
+            <button aria-label="Close navigation" class="sidenav__toggle" type="button" data-action="click->sidenav#close">
+              <svg viewBox="0 0 15 15">
+                <g stroke="currentColor" stroke-width="1.2">
+                  <path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path>
+                </g>
+              </svg>
+            </button>
           </div>
 
-          <div class="sidenav__section">
-            <div class="menu__section">
-              <button type="button" class="sidenav__back-button" data-action="click->sidenav#back">← Back to main menu</button>
+          <div class="sidenav__sections" data-sidenav-target="sections">
+            <div class="sidenav__section">
+              <ul class="menu__section">
+                <% (nav_left_items("menu__link") + nav_right_items("menu__link")).each do |item| %>
+                  <li>
+                    <div class="menu__row">
+                      <%= item %>
+                    </div>
+                  </li>
+                <% end %>
+              </ul>
             </div>
 
-            <%= menu %>
+            <div class="sidenav__section">
+              <div class="menu__section">
+                <button type="button" class="sidenav__back-button" data-action="click->sidenav#back">← Back to main menu</button>
+              </div>
+
+              <%= menu %>
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    <% end %>
 
     <div class="content">
       <aside class="menu">
@@ -161,24 +166,29 @@
       </main>
     </div>
 
-    <footer class="footer">
-      <div class="footer__sections">
-        <% footer_items.each do |footer_item| %>
-          <div class="footer__section">
-            <p class="footer__heading"><%= footer_item.fetch(:heading) %></p>
+    <% if content_for?(:hotdocs_footer) %>
+      <%= content_for(:hotdocs_footer) %>
 
-            <ul>
-              <% footer_item.fetch(:items).each do |item| %>
-                <li><%= item %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
-      </div>
+    <% else %>
+      <footer class="footer">
+        <div class="footer__sections">
+          <% footer_items.each do |footer_item| %>
+            <div class="footer__section">
+              <p class="footer__heading"><%= footer_item.fetch(:heading) %></p>
 
-      <img class="footer__logo" src="<%= logo.src %>" alt="<%= logo.alt %>" height="150" width="150" />
+              <ul>
+                <% footer_item.fetch(:items).each do |item| %>
+                  <li><%= item %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+        </div>
 
-      <p class="credits">Built with Rails &amp; <a class="credits__link" href="https://hotdocsrails.com">HotDocs<img class="credits__logo" src="<%= asset_path "hotdocs/icon.svg" %>" alt="A humanized and happy hot dog" height="32" width="32" /></a></p>
-    </footer>
+        <img class="footer__logo" src="<%= logo.src %>" alt="<%= logo.alt %>" height="150" width="150" />
+      </footer>
+    <% end %>
+
+    <p class="credits">Built with Rails &amp; <a class="credits__link" href="https://hotdocsrails.com">HotDocs<img class="credits__logo" src="<%= asset_path "hotdocs/icon.svg" %>" alt="A humanized and happy hot dog" height="32" width="32" /></a></p>
   </body>
 </html>

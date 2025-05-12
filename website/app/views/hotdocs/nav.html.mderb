@@ -8,3 +8,15 @@ You can customize the content by updating the following methods:
 - `nav_left_items`: shown in left part of the top nav on desktop and hamburger menu on mobile
 - `nav_right_items`: shown in right part of the nav on desktop and hamburger menu on mobile
 - `menu_items`: shown in left menu on desktop and hamburger menu on mobile
+
+## Replace the default Nav
+
+If you prefer to code the nav from scratch you can do so in `app/views/layouts/hotdocs.html.erb`:
+
+```erb
+<%% content_for :hotdocs_nav do %>
+  <nav>YOUR NAV</nav>
+<%% end %>
+
+<%%= render template: "layouts/hotdocs/application" %>
+```

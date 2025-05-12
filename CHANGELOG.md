@@ -1,5 +1,6 @@
 ## [Unreleased]
 
+- Allow replacing nav and footer
 - Perf: Only load HotDocs assets when needed
 - Fix Lighthouse accessibility errors
 - Make search full screen on mobile and allow closing with button
