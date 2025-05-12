@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+- Fix installer to set up css stylesheet tags and `website.css`
+- Fix layout to allow to set up title
+- Fix layout to allow for nil logo
+- Fix to avoid overriding host helpers
 - Allow replacing nav and footer
 - Perf: Only load HotDocs assets when needed
 - Fix Lighthouse accessibility errors
