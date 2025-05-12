@@ -90,6 +90,7 @@ copy_file("app/assets/images/hotdocs/icon.svg", Pathname(destination_root).join(
 
 create_file(Pathname(destination_root).join("app/helpers/hotdocs_helper.rb"), <<~FILE)
   module HotdocsHelper
+    # @return [Logo, nil]
     def logo
       Struct.new(:src, :alt).new(asset_path("hotdocs.svg"), "A humanized and happy hot dog")
     end

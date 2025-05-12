@@ -55,9 +55,11 @@
           </button>
 
           <%= link_to root_path, class: "nav__brand" do %>
-            <div class="nav__logo-wrapper">
-              <img class="nav__logo" src="<%= logo.src %>" alt="<%= logo.alt %>" height="32" width="32" />
-            </div>
+            <% unless logo.nil? %>
+              <div class="nav__logo-wrapper">
+                <img class="nav__logo" src="<%= logo.src %>" alt="<%= logo.alt %>" height="32" width="32" />
+              </div>
+            <% end %>
 
             <span class="nav__title">HotDocs</span>
           <% end %>
@@ -89,9 +91,11 @@
         <div class="sidenav">
           <div class="sidenav__header">
             <%= link_to root_path, class: "nav__brand" do %>
-              <div class="nav__logo-wrapper">
-                <img class="nav__logo" src="<%= logo.src %>" alt="<%= logo.alt %>" height="32" width="32" />
-              </div>
+              <% unless logo.nil? %>
+                <div class="nav__logo-wrapper">
+                  <img class="nav__logo" src="<%= logo.src %>" alt="<%= logo.alt %>" height="32" width="32" />
+                </div>
+              <% end %>
 
               <span class="nav__title">HotDocs</span>
             <% end %>
@@ -185,7 +189,9 @@
           <% end %>
         </div>
 
-        <img class="footer__logo" src="<%= logo.src %>" alt="<%= logo.alt %>" height="150" width="150" />
+        <% unless logo.nil? %>
+          <img class="footer__logo" src="<%= logo.src %>" alt="<%= logo.alt %>" height="150" width="150" />
+        <% end %>
       </footer>
     <% end %>
 
