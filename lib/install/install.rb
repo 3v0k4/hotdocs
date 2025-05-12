@@ -63,6 +63,9 @@ create_file(Pathname(destination_root).join("app/views/layouts/hotdocs.html.erb"
   <% content_for :head do %>
     <%= content_for(:title, "HotDocs") unless content_for?(:title) %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= stylesheet_link_tag "hotdocs/application" %>
+    <%= stylesheet_link_tag "website" %>
+    <%= stylesheet_link_tag "prism" %>
     <%= javascript_importmap_tags "hotdocs" %>
   <% end %>
 
@@ -155,6 +158,52 @@ create_file(Pathname(destination_root).join("app/helpers/hotdocs_helper.rb"), <<
       "http://127.0.0.1:3000"
     end
   end
+FILE
+
+create_file(Pathname(destination_root).join("app/assets/stylesheets/website.css"), <<~FILE)
+  :root {
+    --docs-code-background-color: #eee;
+    --docs-code-border-color: #00000022;
+    --docs-text-color: #1c1e21;
+  }
+
+  [data-theme=dark]:root {
+    --docs-code-background-color: #2b2b2b;
+    --docs-code-border-color: #ffffff22;
+    --docs-text-color: #e3e1de;
+  }
+
+  .article {
+    color: var(--docs-text-color);
+
+    a {
+      color: var(--docs-text-color);
+
+      &:has(code) {
+        text-underline-position: under;
+        text-decoration-thickness: 1px;
+      }
+    }
+
+    pre {
+      -webkit-overflow-scrolling: touch;
+      border-radius: .375rem;
+      box-sizing: border-box;
+      overflow-x: auto;
+      width: 100%;
+    }
+
+    code:not(pre code) {
+      background: var(--docs-code-background-color);
+      border-radius: 0.375rem;
+      border: .1rem solid var(--docs-code-border-color);
+      display: inline;
+      overflow-x: auto;
+      overflow: auto;
+      padding: 0.1rem 0.2rem;
+      word-break: break-word;
+    }
+  }
 FILE
 
 create_file(Pathname(destination_root).join("app/assets/stylesheets/prism.css"), <<~FILE)
