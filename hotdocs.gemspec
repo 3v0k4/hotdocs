@@ -21,4 +21,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = ">= 3.1.0"
   spec.add_dependency "rails", ">= 7.1.0"
+  spec.add_dependency "kramdown", "~> 2.5"
+  spec.add_dependency "kramdown-parser-gfm"
+  spec.add_dependency "rouge", "~> 4.5"
 end

@@ -29,10 +29,6 @@ jobs:
         with:
           bundler-cache: true
 
-      - uses: denoland/setup-deno@v2
-        with:
-          deno-version: v2.x
-
       - uses: actions/configure-pages@v5
         id: pages
 

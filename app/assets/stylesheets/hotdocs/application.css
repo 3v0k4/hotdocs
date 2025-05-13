@@ -804,9 +804,9 @@ body:has(.search:open), body:has(.search[open]) {
   width: 1rem;
 }
 
-/* CSS: ADMONITIONS */
+/* CSS: ALERTS */
 
-.admonition {
+.alert {
   border: 1px solid;
   border-left: 0.5rem solid;
   border-radius: 0.375rem;
@@ -814,44 +814,44 @@ body:has(.search:open), body:has(.search[open]) {
   padding: 1rem;
 }
 
-.admonition--tip {
+.alert--tip {
   background: #00940011;
   border-color: #009400;
 }
 
-.admonition--info {
+.alert--info {
   background: #87cef911;
   border-color: #87cef9;
 }
 
-.admonition--warning {
+.alert--warning {
   background: #fea50011;
   border-color: #fea500;
 }
 
-.admonition--danger {
+.alert--danger {
   background: #db153b11;
   border-color: #db153b;
 }
 
-.admonition__header {
+.alert__header {
   align-items: center;
   display: flex;
   gap: 0.5ch;
   margin-bottom: 1rem;
 }
 
-.admonition__icon {
+.alert__icon {
   height: 1rem;
   width: 1rem;
 }
 
-.admonition__label {
+.alert__label {
   font-weight: bold;
   margin: 0;
   text-transform: uppercase;
 }
 
-.admonition__content > :last-of-type {
+.alert__content > :last-of-type {
   margin-bottom: 0;
 }

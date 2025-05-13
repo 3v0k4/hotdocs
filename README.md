@@ -20,8 +20,8 @@ HotDocs is a set of optimized Rails components & tools for writing docs:
 | Embed docs in an existing Rails app                       | ✅      | ❌     | ❌         |
 | Standalone docs                                           | ✅      | ✅     | ✅         |
 | Styled components you can customize                       | ✅      | ✅     | ✅         |
-| Markdown (with syntax highlight & themes)                 | 🚀      | 👍     | 🚀         |
-| Static export                                             | 🚀      | 👍     | 🚀         |
+| Markdown (with syntax highlight & themes)                 | ✅      | ✅     | ✅         |
+| Static export                                             | ✅      | ✅     | ✅         |
 | Search                                                    |  ✅     | 🔌     | 🔌         |
 | Light / Dark                                              | 🔜 ✅   | 🔌     | ✅         |
 | Open source                                               | ✅      | ✅     | ✅         |
