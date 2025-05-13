@@ -13,8 +13,7 @@ module Hotdocs
     end
 
     config.before_initialize do
-      MarkdownHandler.prepare(self)
-      ActionView::Template.register_template_handler :mderb, MarkdownHandler.new(self)
+      ActionView::Template.register_template_handler :mderb, MarkdownHandler.new
     end
   end
 end

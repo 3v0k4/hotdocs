@@ -2,9 +2,8 @@
 
 # HotDocs: Static export
 
-:::info
-Static export is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hotdocs/discussions/4" %> to share wishes and feedback.
-:::
+> [!INFO]
+> Static export is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hotdocs/discussions/4" %> to share wishes and feedback.
 
 Create a static build with <%= external_link_to "Parklife", "https://parklife.dev/" %>:
 
@@ -36,18 +35,15 @@ You can work around this issue by using the `fetcher` helper:
 
 After setting `fetcher_host` in `hotdocs_helper.rb`, wrap content in a `fetcher` block to fetch dynamic content from the backend.
 
-:::warning
-If the `fetcher_host` has a different domain than the one you host HotDocs on, you have to configure CORS with something like <%= external_link_to raw("<code>rack-cors</code>"), "https://github.com/cyu/rack-cors" %>.
-:::
+> [!WARNING]
+> If the `fetcher_host` has a different domain than the one you host HotDocs on, you have to configure CORS with something like <%= external_link_to raw("<code>rack-cors</code>"), "https://github.com/cyu/rack-cors" %>.
 
 For example, given the following is statically exported:
 
 ```erb
-
-<%= fetcher(id: "someid", path: "/my/path", fallback: "Registered users: Loading...") do %>
+<%%= fetcher(id: "someid", path: "/my/path", fallback: "Registered users: Loading...") do %>
   Registered users: #{User.registered.count}
-<% end %>
-
+<%% end %>
 ```
 
 1. On the first load, the fallback is rendered:
@@ -59,11 +55,9 @@ Registered users: Loading...
 2. the fetcher gets `fetcher_host + path`, which is expected to contain either:
 
 ```erb
-
-<%= fetcher(id: "someid", path: "/my/path", fallback: "Registered users: Loading...") do %>
+<%%= fetcher(id: "someid", path: "/my/path", fallback: "Registered users: Loading...") do %>
   Registered users: #{User.registered.count}
-<% end %>
-
+<%% end %>
 ```
 
 or an element with the correct id:
