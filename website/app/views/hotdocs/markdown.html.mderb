@@ -27,23 +27,23 @@ On top of the markdown syntax, HotDocs supports alerts as follows (icons from <%
 > This is an info.
 
 > [!TIP]
-> This is an tip.
+> This is a tip.
 
 > [!WARNING]
-> This is an warning.
+> This is a warning.
 
 > [!DANGER]
-> This is an danger.
+> This is a danger.
 ```
 
 > [!INFO]
 > This is an info.
 
 > [!TIP]
-> This is an tip.
+> This is a tip.
 
 > [!WARNING]
-> This is an warning.
+> This is a warning.
 
 > [!DANGER]
-> This is an danger.
+> This is a danger.
