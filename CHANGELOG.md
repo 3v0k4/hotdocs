@@ -1,6 +1,8 @@
 ## [Unreleased]
 
-- Replace deno & unifiedjs with kramdown & rouge (no more need for a JavaScript runtime!)
+## [0.3.0]
+
+- Replace deno & unifiedjs with kramdown & rouge (no more need for a JavaScript runtime!) (#23)
 - Fix installer to set up css stylesheet tags and `website.css`
 - Fix layout to allow to set up title
 - Fix layout to allow for nil logo

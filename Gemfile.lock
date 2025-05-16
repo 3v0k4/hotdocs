@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    hotdocs (0.2.0)
+    hotdocs (0.3.0)
       kramdown (~> 2.5)
       kramdown-parser-gfm
       rails (>= 7.1.0)
