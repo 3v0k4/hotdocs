@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [0.4.0]
+
+- Always install at `/hotdocs`
+- Move images and stylesheets to `hotdocs/`
+
 ## [0.3.0]
 
 - Replace deno & unifiedjs with kramdown & rouge (no more need for a JavaScript runtime!) (#23)
