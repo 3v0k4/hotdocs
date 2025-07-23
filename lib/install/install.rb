@@ -84,6 +84,8 @@ FILE
 
 copy_file("app/assets/images/hotdocs/icon.svg", Pathname(destination_root).join("app/assets/images/hotdocs.svg"))
 
+route "get '/hotdocs', to: 'hotdocs#index'"
+
 create_file(Pathname(destination_root).join("app/helpers/hotdocs_helper.rb"), <<~FILE)
   module HotdocsHelper
     # @return [Logo, nil]
@@ -97,7 +99,7 @@ create_file(Pathname(destination_root).join("app/helpers/hotdocs_helper.rb"), <<
 
     def nav_left_items(classes)
       [
-        active_link_to("Docs", root_path, class: Array(classes))
+        active_link_to("Docs", hotdocs_path, class: Array(classes))
       ]
     end
 
@@ -110,7 +112,7 @@ create_file(Pathname(destination_root).join("app/helpers/hotdocs_helper.rb"), <<
     # { label: "", url: *_path, children: [], expanded: false/true }
     def menu_items
       [
-        { label: "Welcome", url: root_path },
+        { label: "Welcome", url: hotdocs_path },
       ]
     end
 
@@ -290,14 +292,4 @@ keep_file "app/assets/builds"
 if Pathname(destination_root).join(".gitignore").exist?
   append_to_file(".gitignore", %(\n/app/assets/builds/*\n!/app/assets/builds/.keep\n))
   append_to_file(".gitignore", %(\n/node_modules/\n))
-end
-
-routes_path = Pathname(destination_root).join("config/routes.rb")
-routes = File.readlines(routes_path)
-unless routes.grep(/hotdocs#index/).any?
-  if routes.grep(/^\s*(?!#)root/).any?
-    route "get '/hotdocs', to: 'hotdocs#index'"
-  else
-    route "root to: 'hotdocs#index'"
-  end
 end

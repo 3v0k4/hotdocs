@@ -13,5 +13,5 @@ You can now start the server and visit HotDocs:
 
 ```bash
 bin/rails server
-open http://127.0.0.1:3000 # or /hotdocs
+open http://127.0.0.1:3000/hotdocs
 ```
