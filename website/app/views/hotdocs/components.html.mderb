@@ -9,7 +9,7 @@ The following screenshots show how components are laid out on different breakpoi
 ## Desktop
 
 <div class="screenshot screenshot--desktop">
-  <%= image_tag asset_path("hotdocs_components_desktop.png"), loading: "lazy", size: "600x385", alt: "Screenshot of this website on desktop: top = nav, left = menu, right = table of contents, bottom = footer.", class: "screenshot__image", usemap: "#imagemap-desktop" %>
+  <%= image_tag asset_path("hotdocs/hotdocs_components_desktop.png"), loading: "lazy", size: "600x385", alt: "Screenshot of this website on desktop: top = nav, left = menu, right = table of contents, bottom = footer.", class: "screenshot__image", usemap: "#imagemap-desktop" %>
 
   <map class="imagemap" name="imagemap-desktop">
     <area shape="rect" coords="0,0,600,25" href="<%= nav_path %>" alt="Link to Nav component">
@@ -22,7 +22,7 @@ The following screenshots show how components are laid out on different breakpoi
 ## Mobile
 
 <div class="screenshot screenshot--mobile">
-  <%= image_tag asset_path("hotdocs_components_mobile.png"), loading: "lazy", size: "400x1120", alt: "Screenshot of this website on mobile: top = nav, top-left = sidenav, center-top = table of contents, bottom = footer.", class: "screenshot__image", usemap: "#imagemap-mobile" %>
+  <%= image_tag asset_path("hotdocs/hotdocs_components_mobile.png"), loading: "lazy", size: "400x1120", alt: "Screenshot of this website on mobile: top = nav, top-left = sidenav, center-top = table of contents, bottom = footer.", class: "screenshot__image", usemap: "#imagemap-mobile" %>
 
   <map class="imagemap" name="imagemap-mobile">
     <area shape="rect" coords="0,0,400,50" href="<%= nav_path %>" alt="Link to Nav component">

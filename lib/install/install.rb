@@ -1,4 +1,4 @@
-def source_paths # used by copy() & template()
+def source_paths # used by copy_file()
   [ File.expand_path("../..", __dir__) ]
 end
 
@@ -60,8 +60,8 @@ create_file(Pathname(destination_root).join("app/views/layouts/hotdocs.html.erb"
     <%= content_for(:title, "HotDocs") unless content_for?(:title) %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= stylesheet_link_tag "hotdocs/application" %>
-    <%= stylesheet_link_tag "website" %>
-    <%= stylesheet_link_tag "rouge" %>
+    <%= stylesheet_link_tag "hotdocs/base" %>
+    <%= stylesheet_link_tag "hotdocs/rouge" %>
     <%= javascript_importmap_tags "hotdocs" %>
   <% end %>
 
@@ -82,7 +82,8 @@ create_file(Pathname(destination_root).join("app/views/hotdocs/index.html.mderb"
   <input type="checkbox" id="third"><label for="third"> Maybe read the docs: <a href="https://hotdocsrails.com/" target="_blank">hotdocsrails.com</a></label>
 FILE
 
-copy_file("app/assets/images/hotdocs/icon.svg", Pathname(destination_root).join("app/assets/images/hotdocs.svg"))
+empty_directory "app/assets/images/hotdocs"
+copy_file("app/assets/images/hotdocs/icon.svg", Pathname(destination_root).join("app/assets/images/hotdocs/hotdocs.svg"))
 
 route "get '/hotdocs', to: 'hotdocs#index'"
 
@@ -90,7 +91,7 @@ create_file(Pathname(destination_root).join("app/helpers/hotdocs_helper.rb"), <<
   module HotdocsHelper
     # @return [Logo, nil]
     def logo
-      Struct.new(:src, :alt).new(asset_path("hotdocs.svg"), "A humanized and happy hot dog")
+      Struct.new(:src, :alt).new(asset_path("hotdocs/hotdocs.svg"), "A humanized and happy hot dog")
     end
 
     def title
@@ -155,7 +156,9 @@ create_file(Pathname(destination_root).join("app/helpers/hotdocs_helper.rb"), <<
   end
 FILE
 
-create_file(Pathname(destination_root).join("app/assets/stylesheets/website.css"), <<~FILE)
+empty_directory "app/assets/stylesheets/hotdocs"
+
+create_file(Pathname(destination_root).join("app/assets/stylesheets/hotdocs/base.css"), <<~FILE)
   :root {
     --docs-code-background-color: #eee;
     --docs-code-border-color: #00000022;
@@ -201,7 +204,7 @@ create_file(Pathname(destination_root).join("app/assets/stylesheets/website.css"
   }
 FILE
 
-create_file(Pathname(destination_root).join("app/assets/stylesheets/rouge.css"), <<~FILE)
+create_file(Pathname(destination_root).join("app/assets/stylesheets/hotdocs/rouge.css"), <<~FILE)
   .article {
     .highlight .hll { background-color: #6e7681 }
     .highlight { background: #0d1117; color: #e6edf3 }

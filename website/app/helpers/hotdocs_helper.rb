@@ -1,7 +1,7 @@
 module HotdocsHelper
   # @return [Logo, nil]
   def logo
-    Struct.new(:src, :alt).new(asset_path("hotdocs.svg"), "A humanized and happy hot dog")
+    Struct.new(:src, :alt).new(asset_path("hotdocs/hotdocs.svg"), "A humanized and happy hot dog")
   end
 
   def title
