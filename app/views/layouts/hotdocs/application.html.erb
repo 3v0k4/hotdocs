@@ -5,12 +5,11 @@
 
     <%= yield :head %>
 
-    <%= stylesheet_link_tag "hotdocs/reset", media: "all", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "hotdocs/application", media: "all", "data-turbo-track": "reload" %>
   </head>
 
   <body data-controller="search">
-    <dialog data-search-target="search" class="search">
+    <dialog data-search-target="search" class="reset search">
       <div data-search-target="dialog" class="search__dialog">
         <div class="search__header">
           <input autofocus data-action="input->search#search" type="text" class="search__input"></input>
@@ -46,7 +45,7 @@
       <%= content_for(:hotdocs_nav) %>
 
     <% else %>
-      <nav class="nav" data-controller="sidenav" data-sidenav-open-class-value="sidenav--open" data-sidenav-main-menu-class-value="sidenav__sections--main">
+      <nav class="reset nav" data-controller="sidenav" data-sidenav-open-class-value="sidenav--open" data-sidenav-main-menu-class-value="sidenav__sections--main">
         <div class="nav__section">
           <button class="nav__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-action="click->sidenav#open">
             <svg viewBox="0 0 30 30" aria-hidden="true">
@@ -135,7 +134,7 @@
     <% end %>
 
     <div class="content">
-      <aside class="menu">
+      <aside class="reset menu">
         <div class="menu__sections">
           <%= menu %>
         </div>
@@ -143,7 +142,7 @@
 
       <main data-controller="toc" class="main">
         <div class="central">
-          <details name="toc" class="toc">
+          <details name="toc" class="reset toc">
             <summary class="toc__label">Table of contents</summary>
 
             <ul class="toc__entries" data-toc-target="toc">
@@ -157,10 +156,12 @@
             <%= yield %>
           </article>
 
-          <%= edit_link %>
+          <div class="reset">
+            <%= edit_link %>
+          </div>
         </div>
 
-        <div class="sidetoc">
+        <div class="reset sidetoc">
           <ul class="sidetoc__entries" data-toc-target="sidetoc">
             <template data-toc-target="sidetocTemplate">
               <li><a id class="sidetoc__link" href></a></li>
@@ -174,7 +175,7 @@
       <%= content_for(:hotdocs_footer) %>
 
     <% else %>
-      <footer class="footer">
+      <footer class="reset footer">
         <div class="footer__sections">
           <% footer_items.each do |footer_item| %>
             <div class="footer__section">
@@ -195,6 +196,6 @@
       </footer>
     <% end %>
 
-    <p class="credits">Built with Rails &amp; <a class="credits__link" href="https://hotdocsrails.com">HotDocs<img class="credits__logo" src="<%= asset_path "hotdocs/icon.svg" %>" alt="A humanized and happy hot dog" height="32" width="32" /></a></p>
+    <p class="reset credits">Built with Rails &amp; <a class="credits__link" href="https://hotdocsrails.com">HotDocs<img class="credits__logo" src="<%= asset_path "hotdocs/icon.svg" %>" alt="A humanized and happy hot dog" height="32" width="32" /></a></p>
   </body>
 </html>
