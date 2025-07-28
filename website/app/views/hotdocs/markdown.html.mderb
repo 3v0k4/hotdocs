@@ -14,6 +14,22 @@ HotDocs supports templates ending in `.mderb`: you can mix markdown and erb in t
 
 Behind the curtains, `.mderb` templates are compiled first as `.erb` and second as `.md` with <%= external_link_to "kramdown", "https://github.com/gettalong/kramdown" %> & <%= external_link_to "kramdown-parser-gfm", "https://github.com/kramdown/parser-gfm" %>.
 
+## HTML in Markdown
+
+You can use HTML in `.mderb` templates.
+
+If you want to use markdown inside HTML, add the `markdown="1"` attribute (see the <%= external_link_to "Kramdown syntax docs", "https://kramdown.gettalong.org/syntax.html#html-blocks" %>):
+
+~~~html
+<div markdown="1">
+This is `markdown`:
+
+```ruby
+puts "hello, world!"
+```
+</div>
+~~~
+
 ## Syntax highlight
 
 HotDocs highlights code blocks with <%= external_link_to "rouge", "https://github.com/rouge-ruby/rouge" %>.
