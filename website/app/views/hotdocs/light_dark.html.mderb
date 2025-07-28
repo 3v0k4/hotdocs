@@ -2,8 +2,9 @@
 
 # HotDocs: Light / Dark 🔜
 
-> [!INFO]
-> Light / Dark is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hotdocs/discussions/3" %> to share wishes and feedback.
+<%= alert :info do %>
+  Light / Dark is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hotdocs/discussions/3" %> to share wishes and feedback.
+<% end %>
 
 The Light / Dark theme is implemented with Css variables and a data attribute on `<html>`:
 - `<html data-theme="light">`

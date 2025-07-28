@@ -2,8 +2,9 @@
 
 # HotDocs: Static export
 
-> [!INFO]
-> Static export is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hotdocs/discussions/4" %> to share wishes and feedback.
+<%= alert :info do %>
+  Static export is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hotdocs/discussions/4" %> to share wishes and feedback.
+<% end %>
 
 Create a static build with <%= external_link_to "Parklife", "https://parklife.dev/" %>:
 
@@ -35,8 +36,9 @@ You can work around this issue by using the `fetcher` helper:
 
 After setting `fetcher_host` in `hotdocs_helper.rb`, wrap content in a `fetcher` block to fetch dynamic content from the backend.
 
-> [!WARNING]
-> If the `fetcher_host` has a different domain than the one you host HotDocs on, you have to configure CORS with something like <%= external_link_to raw("<code>rack-cors</code>"), "https://github.com/cyu/rack-cors" %>.
+<%= alert :warning do %>
+  If the `fetcher_host` has a different domain than the one you host HotDocs on, you have to configure CORS with something like <%= external_link_to raw("<code>rack-cors</code>"), "https://github.com/cyu/rack-cors" %>.
+<% end %>
 
 For example, given the following is statically exported:
 

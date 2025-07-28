@@ -2,11 +2,13 @@
 
 # HotDocs: Markdown
 
-> [!DANGER]
-> HotDocs evaluates Ruby code on your server when rendering. Only use it for trusted markdown content.
+<%= alert :danger do %>
+  HotDocs evaluates Ruby code on your server when rendering. Only use it for trusted markdown content.
+<% end %>
 
-> [!INFO]
-> Markdown support is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hotdocs/discussions/5" %> to share wishes and feedback.
+<%= alert :info do %>
+  Markdown support is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hotdocs/discussions/5" %> to share wishes and feedback.
+<% end %>
 
 HotDocs supports templates ending in `.mderb`: you can mix markdown and erb in the same template.
 
@@ -22,28 +24,36 @@ You can customize the css styles by editing `rouge.css` or by replacing it with 
 
 On top of the markdown syntax, HotDocs supports alerts as follows (icons from <%= external_link_to "Heroicons", "https://heroicons.com/" %>):
 
-```md
-> [!INFO]
-> This is an info.
+```bash
+<%%= alert :info do %>
+  This is an info.
+<%% end %>
 
-> [!TIP]
-> This is a tip.
+<%%= alert :tip do %>
+  This is a tip.
+<%% end %>
 
-> [!WARNING]
-> This is a warning.
+<%%= alert :warning do %>
+  This is a warning.
+<%% end %>
 
-> [!DANGER]
-> This is a danger.
+<%%= alert :danger do %>
+  This is a danger.
+<%% end %>
 ```
 
-> [!INFO]
-> This is an info.
+<%= alert :info do %>
+  This is an info.
+<% end %>
 
-> [!TIP]
-> This is a tip.
+<%= alert :tip do %>
+  This is a tip.
+<% end %>
 
-> [!WARNING]
-> This is a warning.
+<%= alert :warning do %>
+  This is a warning.
+<% end %>
 
-> [!DANGER]
-> This is a danger.
+<%= alert :danger do %>
+  This is a danger.
+<% end %>

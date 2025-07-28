@@ -2,8 +2,9 @@
 
 # HotDocs: Footer
 
-> [!INFO]
-> You can pay for a license to remove the "Built with HotDocs" notice.
+<%= alert :info do %>
+  You can pay for a license to remove the "Built with HotDocs" notice.
+<% end %>
 
 The footer configured in `hotdocs_helper.rb`.
 

@@ -2,8 +2,6 @@ require "kramdown"
 require "kramdown-parser-gfm"
 require "rouge"
 
-require_relative "kramdown_alerts"
-
 class MarkdownHandler
   def call(template, source)
     # If the template contains a `fetcher`, do not allow Rails to cache the page.

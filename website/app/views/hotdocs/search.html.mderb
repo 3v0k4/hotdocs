@@ -2,8 +2,9 @@
 
 # HotDocs: Search
 
-> [!INFO]
-> Search is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hotdocs/discussions/2" %> to share wishes and feedback.
+<%= alert :info do %>
+  Search is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hotdocs/discussions/2" %> to share wishes and feedback.
+<% end %>
 
 HotDocs indexes for search all the pages listed under `menu_items` in `hotdocs_helper.rb`.
 
