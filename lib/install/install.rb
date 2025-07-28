@@ -294,5 +294,4 @@ empty_directory "app/assets/builds"
 keep_file "app/assets/builds"
 if Pathname(destination_root).join(".gitignore").exist?
   append_to_file(".gitignore", %(\n/app/assets/builds/*\n!/app/assets/builds/.keep\n))
-  append_to_file(".gitignore", %(\n/node_modules/\n))
 end
