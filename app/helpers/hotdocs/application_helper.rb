@@ -92,7 +92,7 @@ module Hotdocs
 
       new_items = items.map do |item|
         children, expanded_below = compute_menu_r(item[:children])
-        active = active_link?(item.fetch(:url))
+        active = active_link?(item.fetch(:url, nil))
         expanded = expanded_below || item[:expanded] || active
         { **item, expanded: expanded, children: children }
       end
@@ -106,7 +106,7 @@ module Hotdocs
       content_tag(:ul, class: "menu__section") do
         items.each do |item|
           concat(content_tag(:li) do
-            locals = { expanded: item.fetch(:expanded), label: item.fetch(:label), url: item.fetch(:url) }
+            locals = { expanded: item.fetch(:expanded), label: item.fetch(:label), url: item.fetch(:url, nil) }
             concat(render partial: "hotdocs/menu_row", locals: locals)
 
             concat(menu_r(item.fetch(:children)))

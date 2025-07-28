@@ -110,7 +110,7 @@ create_file(Pathname(destination_root).join("app/helpers/hotdocs_helper.rb"), <<
       ]
     end
 
-    # { label: "", url: *_path, children: [], expanded: false/true }
+    # { label: String, url?: [String, nil], children?: Array, expanded: Boolean }
     def menu_items
       [
         { label: "Welcome", url: hotdocs_path },

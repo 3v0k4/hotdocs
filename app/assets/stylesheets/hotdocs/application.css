@@ -466,6 +466,15 @@
     }
   }
 
+  .menu__toggle--full {
+    flex-grow: 1;
+    text-align: left;
+
+    & .menu__link:hover {
+      background: none;
+    }
+  }
+
   /* Do not display the toggle... */
   .menu__toggle {
     display: none;
