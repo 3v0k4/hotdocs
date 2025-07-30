@@ -61,8 +61,6 @@
 
   [data-theme=dark]:root {
     --nav-background-color: #242526;
-    --nav-link-active-color: var(--link-active-color);
-    --nav-link-color: var(--link-color);
     --nav-title-color: #e3e1de;
     --nav-toggle-color: rgb(227, 225, 222);
   }
@@ -395,9 +393,7 @@
 
   [data-theme=dark]:root {
     --menu-accordion-color: #a0a0a0;
-    --menu-link-active-color: var(--link-active-color);
     --menu-link-hover-background-color: rgba(255, 255, 255, .05);
-    --menu-link-color: var(--link-color);
   }
 
   .menu {
@@ -547,13 +543,7 @@
   }
 
   [data-theme=dark]:root {
-    --sidetoc-code-background-color: var(--code-background-color);
-    --sidetoc-code-border-color: var(--code-border-color);
-    --sidetoc-link-color: var(--link-color);
-    --sidetoc-link-active-color: var(--link-active-color);
     --toc-background-color: #444444;
-    --toc-code-background-color: var(--code-background-color);
-    --toc-code-border-color: var(--code-border-color);
     --toc-divider-color: #909090;
     --toc-link-active-color: white;
     --toc-link-color: #c0c0c0;
@@ -875,11 +865,6 @@
   /* CSS: ARTICLE */
 
   :root {
-    --article-code-background-color: var(--code-background-color);
-    --article-code-border-color: var(--code-border-color);
-  }
-
-  [data-theme=dark]:root {
     --article-code-background-color: var(--code-background-color);
     --article-code-border-color: var(--code-border-color);
   }
