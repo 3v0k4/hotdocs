@@ -1,7 +1,8 @@
 <%# locals: (label:, url:, expanded: false) -%>
 
 <%= content_tag :div, class: "menu__row", data: { "controller": "accordion", "accordion-expanded-class-value": "menu__row--expanded", "accordion-expanded-value": expanded, "accordion-collapsed-aria-label-value": "Expand menu row '#{label}'", "accordion-expanded-aria-label-value": "Collapse menu row '#{label}'" } do %>
-  <%= active_link_to label, url, class: "menu__link" unless url.nil? %>
+  <%= active_link_to label, url, class: "menu__link" if !url.nil? && !external_url?(url) %>
+  <%= external_link_to label, url, class: "menu__link" if !url.nil? && external_url?(url) %>
 
   <%= content_tag :button, type: "button", class: class_names("menu__toggle", "menu__toggle--full": url.nil?), data: { action: "click->accordion#toggle", "accordion-target": "toggle" } do %>
     <%= content_tag :span, label, class: "menu__link" if url.nil? %>

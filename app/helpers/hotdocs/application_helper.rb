@@ -127,6 +127,12 @@ module Hotdocs
       end
     end
 
+    def external_url?(url)
+      !URI.parse(url).host.nil?
+    rescue URI::InvalidURIError
+      false
+    end
+
     private
 
     def active_link?(url)
