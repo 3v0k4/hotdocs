@@ -60,7 +60,7 @@ create_file(Pathname(destination_root).join("app/views/layouts/hotdocs.html.erb"
     <%= content_for(:title, "HotDocs") unless content_for?(:title) %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= stylesheet_link_tag "hotdocs/application" %>
-    <%= stylesheet_link_tag "hotdocs/base" %>
+    <%= stylesheet_link_tag "hotdocs/custom" %>
     <%= stylesheet_link_tag "hotdocs/rouge" %>
     <%= javascript_importmap_tags "hotdocs" %>
   <% end %>
@@ -158,7 +158,7 @@ FILE
 
 empty_directory "app/assets/stylesheets/hotdocs"
 
-create_file(Pathname(destination_root).join("app/assets/stylesheets/hotdocs/base.css"), <<~FILE)
+create_file(Pathname(destination_root).join("app/assets/stylesheets/hotdocs/custom.css"), <<~FILE)
   :root {
     --docs-code-background-color: #eee;
     --docs-code-border-color: #00000022;
