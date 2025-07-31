@@ -429,7 +429,6 @@
   .menu__row {
     align-items: center;
     display: flex;
-    height: 2.5rem;
     justify-content: space-between;
   }
 
