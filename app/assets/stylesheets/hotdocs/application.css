@@ -240,7 +240,7 @@
     --search-excerpt-border-color: #535353;
   }
 
-  .search-button {
+  .search-box__button {
     align-items: center;
     background-color: var(--search-background-color);
     border: solid 1px transparent;
@@ -259,12 +259,12 @@
     }
   }
 
-  .search-button__icon {
+  .search-box__icon {
     height: 1.2rem;
     width: 1.2rem;
   }
 
-  .search-button__label {
+  .search-box__label {
     display: none;
 
     @media (min-width: 40rem) {
