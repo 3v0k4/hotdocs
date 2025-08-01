@@ -25,7 +25,7 @@ class MarkdownHandler
       .new
       .call(template, source)
       .split(";")
-      .grep(/content_for.*\(.*:/)
+      .grep(/@output_buffer.append=\(\scontent_for.*\(.*:/)
 
     <<~STRING
       #{content_fors.join(";")}

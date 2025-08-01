@@ -41,6 +41,10 @@
       </script>
     </dialog>
 
+    <% if content_for?(:announcement) %>
+      <%= content_for(:announcement) %>
+    <% end %>
+
     <% if content_for?(:hotdocs_nav) %>
       <%= content_for(:hotdocs_nav) %>
 
@@ -162,11 +166,13 @@
         </div>
 
         <div class="reset sidetoc">
-          <ul class="sidetoc__entries" data-toc-target="sidetoc">
-            <template data-toc-target="sidetocTemplate">
-              <li><a id class="sidetoc__link" href></a></li>
-            </template>
-          </ul>
+          <div class="sidetoc__section">
+            <ul class="sidetoc__entries" data-toc-target="sidetoc">
+              <template data-toc-target="sidetocTemplate">
+                <li><a id class="sidetoc__link" href></a></li>
+              </template>
+            </ul>
+          </div>
         </div>
       </main>
     </div>

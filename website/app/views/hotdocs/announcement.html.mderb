@@ -1,0 +1,18 @@
+<%= content_for(:title, "HotDocs: Announcement Bar") %>
+<%= content_for(:announcement, '<div class="announcement">Demo announcement 🎉</div>'.html_safe) %>
+
+# HotDocs: Announcement Bar
+
+An announcement, like the one at the top of this page, can be configured as follows:
+
+```erb
+<%%= content_for(:announcement, '<div class="announcement">Demo announcement 🎉</div>'.html_safe) %>
+```
+
+Or in `hotdocs_helper.rb` like:
+
+```erb
+<%%= content_for(:announcement) do %>
+  <div class="announcement">Demo announcement 🎉</div>
+<%% end %>
+```

@@ -65,6 +65,10 @@ create_file(Pathname(destination_root).join("app/views/layouts/hotdocs.html.erb"
     <%= javascript_importmap_tags "hotdocs" %>
   <% end %>
 
+  <%= content_for(:announcement) do %>
+    <div class="announcement">This is an announcement at the top of the page</div>
+  <% end if false %>
+
   <%= render template: "layouts/hotdocs/application" %>
 FILE
 

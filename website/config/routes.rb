@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "static-export", to: "hotdocs#static_export"
 
   get "components", to: "hotdocs#components"
+  get "announcement", to: "hotdocs#announcement"
   get "nav", to: "hotdocs#nav"
   get "table-of-contents", to: "hotdocs#toc", as: "toc"
   get "search", to: "hotdocs#search"

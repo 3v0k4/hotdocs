@@ -33,6 +33,7 @@ module HotdocsHelper
       { label: "Static export", url: static_export_path },
       {
         label: "Components", url: components_path, children: [
+          { label: "Announcement", url: announcement_path },
           { label: "Nav / Sidenav", url: nav_path },
           { label: "Table of contents", url: toc_path },
           { label: "Search", url: search_path },
