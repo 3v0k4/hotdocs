@@ -1,5 +1,17 @@
 ## [Unreleased]
 
+## [0.5.0]
+
+- Wrap styles in CSS layers to make it easier to override
+- Reset styles by wrapping them in `.reset` rather than using `revert-layer` which cause side-effects
+- Use `<div>` for user content rather than `<article>` because [on webkit `<h1>` and `<h2>` are indistinguishable](https://bugs.webkit.org/show_bug.cgi?id=57744)
+- Tweaks CSS styles
+- Support url-less menu items
+- Support [alerts](https://hotdocsrails.com/markdown/#alerts) via Rails templates (remove custom markdown syntax)
+- Rename `base.css` to `custom.css`
+- Support external links in menu
+- Add [announcement bar](https://hotdocsrails.com/announcement/)
+
 ## [0.4.0]
 
 - Always install at `/hotdocs`
