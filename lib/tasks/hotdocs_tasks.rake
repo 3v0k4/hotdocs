@@ -3,40 +3,45 @@ namespace :hotdocs do
   task :install do
     location = File.expand_path("../install/install.rb", __dir__)
     system("#{RbConfig.ruby} ./bin/rails app:template LOCATION=#{location}")
-    # Needed for hotdocs:index to find the generated ::HotdocsController
+    # Needed for hotdocs:lunr:index to find the generated ::HotdocsController
     Rails.application.reloader.reload!
-    Rake::Task["hotdocs:index"].invoke
+    Rake::Task["hotdocs:lunr:index"].invoke
   end
 
-  desc "Build search data"
-  task index: :environment do
-    path = Rails.root.join("app/assets/builds/search_data.json")
-    # Propshaft caches the `@load_path`s. Rendering data goes through Propshaft
-    # because of the assets, so the file must exist before rendering.
-    File.write(path, "")
-    data = render_search_data.call.to_json
-    File.write(path, data)
+  namespace :lunr do
+    desc "Prepare lunr data"
+    task index: :environment do
+      helper = Object.new.extend(Hotdocs::ApplicationHelper)
+      next if helper.search_provider != "lunr"
+
+      path = Rails.root.join("app/assets/builds/lunr_data.json")
+      # Propshaft caches the `@load_path`s. Rendering data goes through Propshaft
+      # because of the assets, so the file must exist before rendering.
+      File.write(path, "")
+      data = render_lunr_data.call.to_json
+      File.write(path, data)
+    end
   end
 end
 
 if Rake::Task.task_defined?("assets:precompile")
-  Rake::Task["assets:precompile"].enhance([ "hotdocs:index" ])
+  Rake::Task["assets:precompile"].enhance([ "hotdocs:lunr:index" ])
 end
 
 if Rake::Task.task_defined?("test:prepare")
-  Rake::Task["test:prepare"].enhance([ "hotdocs:index" ])
+  Rake::Task["test:prepare"].enhance([ "hotdocs:lunr:index" ])
 elsif Rake::Task.task_defined?("spec:prepare")
-  Rake::Task["spec:prepare"].enhance([ "hotdocs:index" ])
+  Rake::Task["spec:prepare"].enhance([ "hotdocs:lunr:index" ])
 elsif Rake::Task.task_defined?("db:test:prepare")
-  Rake::Task["db:test:prepare"].enhance([ "hotdocs:index" ])
+  Rake::Task["db:test:prepare"].enhance([ "hotdocs:lunr:index" ])
 end
 
-def render_search_data
+def render_lunr_data
   renderer = Class.new(::HotdocsController) do
     include Hotdocs::ApplicationHelper
 
     def call
-      with_no_view_annotations { render_search_data }
+      with_no_view_annotations { render_lunr_data }
     end
 
     private
@@ -49,7 +54,7 @@ def render_search_data
       Rails.application.config.action_view.annotate_rendered_view_with_filename = annotate
     end
 
-    def render_search_data
+    def render_lunr_data
       pages = pages_from(menu_items)
       $stderr.puts "Indexing #{pages.size} pages:"
       render_pages(pages).tap { $stderr.puts }

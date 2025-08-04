@@ -8,39 +8,7 @@
     <%= stylesheet_link_tag "hotdocs/application", media: "all", "data-turbo-track": "reload" %>
   </head>
 
-  <body data-controller="search">
-    <dialog data-search-target="search" class="reset search">
-      <div data-search-target="dialog" class="search__dialog">
-        <div class="search__header">
-          <input autofocus data-action="input->search#search" type="text" class="search__input"></input>
-          <button aria-label="Close search dialog" type="button" class="search__dismiss" data-action="click->search#close">
-            <svg viewBox="0 0 15 15">
-              <g stroke="currentColor" stroke-width="1.2">
-                <path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path>
-              </g>
-            </svg>
-          </button>
-        </div>
-
-        <template data-search-target="resultTemplate">
-          <li class="search__result">
-            <h1></h1>
-            <a href="#" class="search__result-excerpt"></a>
-          </li>
-        </template>
-
-        <ul data-search-target="results">
-          <li class="search__result search__result--loading">
-            Loading index...
-          </li>
-        </ul>
-      </div>
-
-      <script type="application/json" data-search-target="data">
-        <%= raw(Rails.application.assets.resolver.read("search_data.json")&.force_encoding("UTF-8") || [].to_json) %>
-      </script>
-    </dialog>
-
+  <body>
     <% if content_for?(:announcement) %>
       <%= content_for(:announcement) %>
     <% end %>
@@ -81,14 +49,48 @@
             <% end %>
           </div>
 
-          <div class="search-box">
-            <button type="button" data-action="click->search#open:stop" class="search-box__button" aria-label="Open search dialog">
-              <svg class="search-box__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-              </svg>
+          <div class="search-box" data-controller="<%= search_provider %>">
+            <% if search_provider == "lunr" %>
+              <button type="button" data-action="click->lunr#open:stop" class="search-box__button" aria-label="Open search dialog">
+                <svg class="search-box__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
 
-              <span class="search-box__label">Type / to search</span>
-            </button>
+                <span class="search-box__label">Type / to search</span>
+              </button>
+
+              <dialog data-lunr-target="search" class="reset search">
+                <div data-lunr-target="dialog" class="search__dialog">
+                  <div class="search__header">
+                    <input autofocus data-action="input->lunr#search" type="text" class="search__input"></input>
+                    <button aria-label="Close search dialog" type="button" class="search__dismiss" data-action="click->lunr#close">
+                      <svg viewBox="0 0 15 15">
+                        <g stroke="currentColor" stroke-width="1.2">
+                        <path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path>
+                        </g>
+                      </svg>
+                    </button>
+                  </div>
+
+                  <template data-lunr-target="resultTemplate">
+                    <li class="search__result">
+                      <h1></h1>
+                      <a href="#" class="search__result-excerpt"></a>
+                    </li>
+                  </template>
+
+                  <ul data-lunr-target="results">
+                    <li class="search__result search__result--loading">
+                      Loading index...
+                    </li>
+                  </ul>
+                </div>
+
+                <script type="application/json" data-lunr-target="data">
+                  <%= raw(Rails.application.assets.resolver.read("lunr_data.json")&.force_encoding("UTF-8") || [].to_json) %>
+                </script>
+              </dialog>
+            <% end %>
           </div>
         </div>
 

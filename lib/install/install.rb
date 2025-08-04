@@ -157,6 +157,10 @@ create_file(Pathname(destination_root).join("app/helpers/hotdocs_helper.rb"), <<
     def fetcher_host
       "http://127.0.0.1:3000"
     end
+
+    def search_provider
+      "lunr"
+    end
   end
 FILE
 

@@ -78,7 +78,7 @@ export default class extends Controller {
       console.warn(
         [
           "The search data is not present in the HTML.",
-          "If you are in development, run `bundle exec rails hotdocs:index`.",
+          "If you are in development, run `bundle exec rails hotdocs:lunr:index`.",
           "If you are in production, assets compilation should have taken care of it.",
         ].join(" ")
       );

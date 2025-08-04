@@ -8,6 +8,6 @@
 
 HotDocs indexes for search all the pages listed under `menu_items` in `hotdocs_helper.rb`.
 
-In development, you can index pages by running `bundle exec rails hotdocs:index`.
+In development, you can index pages by running `bundle exec rails hotdocs:lunr:index`.
 
 On production, HotDocs hooks into the `assets:precompile` task.
