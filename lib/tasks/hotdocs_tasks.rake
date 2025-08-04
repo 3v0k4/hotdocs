@@ -66,12 +66,12 @@ def render_search_data
 
     def pages_from(menu_items, parent = "Docs")
       menu_items
-        .filter { _1.fetch(:url).start_with?("/") }
         .flat_map do |item|
-          current = { title: item.fetch(:label), parent: parent, url: item.fetch(:url) }
+          current = { title: item.fetch(:label), parent: parent, url: item.fetch(:url, "") }
           children = pages_from(item.fetch(:children, []), item.fetch(:label))
           [ current ] + children
         end
+        .filter { _1.fetch(:url).start_with?("/") }
     end
 
     def render_path(path)
