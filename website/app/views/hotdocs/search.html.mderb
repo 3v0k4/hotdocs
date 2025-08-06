@@ -11,3 +11,29 @@ HotDocs indexes for search all the pages listed under `menu_items` in `hotdocs_h
 In development, you can index pages by running `bundle exec rails hotdocs:lunr:index`.
 
 On production, HotDocs hooks into the `assets:precompile` task.
+
+## Algolia
+
+To replace the default `lunr` search with `algolia`, follow these steps:
+1 `bin/importmap unpin lunr`
+1. Setup <%= external_link_to "Algolia DocSearch", "https://docsearch.algolia.com/docs/what-is-docsearch" %>
+1. `bin/importmap pin @docsearch/js@beta`
+1. Add `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@beta" />` to `app/views/layouts/hotdocs.html.erb`
+1. In `hotdocs_helper.rb`, replace `"lunr"` with `"algolia"` in `#search_provider`
+1. Create the following stimulus controller `bundle exec rails generate stimulus algolia`:
+   ```js
+   import docsearch from "@docsearch/js"
+   import { Controller } from "@hotwired/stimulus"
+
+   export default class extends Controller {
+     connect() {
+       docsearch({
+         container: this.element,
+         appId: MY_APP_ID,
+         apiKey: MY_APP_KEY,
+         indexName: MY_INDEX_NAME,
+         // ...https://docsearch.algolia.com/docs/api
+       });
+     }
+   }
+   ```
