@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [0.6.0]
+
+- Fix indexing for search url-less menu items
+- Support for Algolia
+
 ## [0.5.0]
 
 - Wrap styles in CSS layers to make it easier to override
