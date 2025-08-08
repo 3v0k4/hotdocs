@@ -18,7 +18,7 @@
   }
 }
 
-html:has(#scheme-light:checked) {
+:root:has(#scheme-light:checked) {
   --docs-background-active-color: #d9d9d9;
   --docs-background-color: #e9e9e9;
   --docs-border-color: #dadada;
@@ -27,7 +27,7 @@ html:has(#scheme-light:checked) {
   --docs-text-color: #1c1e21;
 }
 
-html:has(#scheme-dark:checked) {
+:root:has(#scheme-dark:checked) {
   --docs-background-active-color: #5a5a5a;
   --docs-background-color: #444444;
   --docs-border-color: #535353;

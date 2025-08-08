@@ -181,13 +181,13 @@ create_file(Pathname(destination_root).join("app/assets/stylesheets/hotdocs/cust
     }
   }
 
-  html:has(#scheme-light:checked) {
+  :root:has(#scheme-light:checked) {
     --docs-code-background-color: #eee;
     --docs-code-border-color: #00000022;
     --docs-text-color: #1c1e21;
   }
 
-  html:has(#scheme-dark:checked) {
+  :root:has(#scheme-dark:checked) {
     --docs-code-background-color: #2b2b2b;
     --docs-code-border-color: #ffffff22;
     --docs-text-color: #e3e1de;

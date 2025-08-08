@@ -14,6 +14,7 @@
     --link-color: #707070;
     --nav-height: 3.75rem;
     --text-color: #1c1e21;
+    color-scheme: light;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -25,10 +26,11 @@
       --link-active-color: white;
       --link-color: #909090;
       --text-color: #e3e1de;
+      color-scheme: dark;
     }
   }
 
-  html:has(#scheme-light:checked) {
+  :root:has(#scheme-light:checked) {
     --background-color: white;
     --code-background-color: #f6f6f6;
     --code-border-color: #00000022;
@@ -38,9 +40,10 @@
     --link-color: #707070;
     --nav-height: 3.75rem;
     --text-color: #1c1e21;
+    color-scheme: light;
   }
 
-  html:has(#scheme-dark:checked) {
+  :root:has(#scheme-dark:checked) {
     --background-color: #1b1b1d;
     --code-background-color: #2b2b2b;
     --code-border-color: #ffffff22;
@@ -48,6 +51,7 @@
     --link-active-color: white;
     --link-color: #909090;
     --text-color: #e3e1de;
+    color-scheme: dark;
   }
 
   html {
@@ -92,7 +96,7 @@
     }
   }
 
-  html:has(#scheme-light:checked) {
+  :root:has(#scheme-light:checked) {
     --nav-background-color: white;
     --nav-padding-horizontal: 1.5rem;
     --nav-padding-vertical: 0.5rem;
@@ -102,7 +106,7 @@
     --sidenav-padding-horizontal: 0.75rem;
   }
 
-  html:has(#scheme-dark:checked) {
+  :root:has(#scheme-dark:checked) {
     --nav-background-color: #242526;
     --nav-title-color: #e3e1de;
     --nav-toggle-color: rgb(227, 225, 222);
@@ -328,14 +332,14 @@
     }
   }
 
-  html:has(#scheme-light:checked) {
+  :root:has(#scheme-light:checked) {
     --search-background-color: #f5f6f7;
     --search-button-background-color: #e9e9e9;
     --search-excerpt-background-color: white;
     --search-excerpt-border-color: #d7d7d7;
   }
 
-  html:has(#scheme-dark:checked) {
+  :root:has(#scheme-dark:checked) {
     --search-background-color: #242526;
     --search-button-background-color: #1b1b1b;
     --search-excerpt-background-color: #1b1b1b;
@@ -501,12 +505,12 @@
     }
   }
 
-  html:has(#scheme-light:checked) {
+  :root:has(#scheme-light:checked) {
     --menu-accordion-color: #7f7f7f;
     --menu-link-hover-background-color: rgba(0, 0, 0, .05);
   }
 
-  html:has(#scheme-dark:checked) {
+  :root:has(#scheme-dark:checked) {
     --menu-accordion-color: #a0a0a0;
     --menu-link-hover-background-color: rgba(255, 255, 255, .05);
   }
@@ -666,14 +670,14 @@
     }
   }
 
-  html:has(#scheme-light:checked) {
+  :root:has(#scheme-light:checked) {
     --toc-background-color: #e9e9e9;
     --toc-divider-color: #b0b0b0;
     --toc-link-active-color: black;
     --toc-link-color: #606060;
   }
 
-  html:has(#scheme-dark:checked) {
+  :root:has(#scheme-dark:checked) {
     --toc-background-color: #444444;
     --toc-divider-color: #909090;
     --toc-link-active-color: white;
@@ -865,11 +869,11 @@
     }
   }
 
-  html:has(#scheme-light:checked) {
+  :root:has(#scheme-light:checked) {
     --footer-background-color: #e9e9e9;
   }
 
-  html:has(#scheme-dark:checked) {
+  :root:has(#scheme-dark:checked) {
     --footer-background-color: #444444;
   }
 
@@ -1022,12 +1026,12 @@
     }
   }
 
-  html:has(#scheme-light:checked) {
+  :root:has(#scheme-light:checked) {
     --announcement-background-color: black;
     --announcement-color: white;
   }
 
-  html:has(#scheme-dark:checked) {
+  :root:has(#scheme-dark:checked) {
     --announcement-background-color: white;
     --announcement-color: black;
   }

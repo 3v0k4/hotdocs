@@ -25,11 +25,11 @@ For example, here is a COMPONENT that uses different background colors:
   }
 }
 
-html:has(#scheme-light:checked) {
+:root:has(#scheme-light:checked) {
   --COMPONENT-background-color: #ffffff;
 }
 
-html:has(#scheme-dark:checked) {
+:root:has(#scheme-dark:checked) {
   --COMPONENT-background-color: #000000;
 }
 
