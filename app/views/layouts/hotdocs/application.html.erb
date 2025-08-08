@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="light" lang="<%= I18n.locale %>">
+<html lang="<%= I18n.locale %>">
   <head>
     <title><%= content_for(:title) %></title>
 
@@ -20,8 +20,9 @@
       <nav class="reset nav" data-controller="sidenav" data-sidenav-open-class-value="sidenav--open" data-sidenav-main-menu-class-value="sidenav__sections--main">
         <div class="nav__section">
           <button class="nav__toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-action="click->sidenav#open">
-            <svg viewBox="0 0 30 30" aria-hidden="true">
-              <path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path>
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+              <path fill="currentColor" d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/>
             </svg>
           </button>
 
@@ -49,11 +50,29 @@
             <% end %>
           </div>
 
+          <form class="scheme" data-controller="input-cycler" data-turbo-permanent id="scheme">
+            <input class="scheme__input" type="radio" name="scheme" id="scheme-auto" checked />
+            <label class="scheme__icon scheme__icon--auto" role="button" for="scheme-auto" title="System color scheme">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M512 320C512 214 426 128 320 128L320 512C426 512 512 426 512 320zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320z"/></svg>
+            </label>
+
+            <input class="scheme__input" type="radio" name="scheme" id="scheme-light" />
+            <label class="scheme__icon scheme__icon--light" for="scheme-light" title="Light color scheme">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M210.2 53.9C217.6 50.8 226 51.7 232.7 56.1L320.5 114.3L408.3 56.1C415 51.7 423.4 50.9 430.8 53.9C438.2 56.9 443.4 63.5 445 71.3L465.9 174.5L569.1 195.4C576.9 197 583.5 202.4 586.5 209.7C589.5 217 588.7 225.5 584.3 232.2L526.1 320L584.3 407.8C588.7 414.5 589.5 422.9 586.5 430.3C583.5 437.7 576.9 443.1 569.1 444.6L465.8 465.4L445 568.7C443.4 576.5 438 583.1 430.7 586.1C423.4 589.1 414.9 588.3 408.2 583.9L320.4 525.7L232.6 583.9C225.9 588.3 217.5 589.1 210.1 586.1C202.7 583.1 197.3 576.5 195.8 568.7L175 465.4L71.7 444.5C63.9 442.9 57.3 437.5 54.3 430.2C51.3 422.9 52.1 414.4 56.5 407.7L114.7 320L56.5 232.2C52.1 225.5 51.3 217.1 54.3 209.7C57.3 202.3 63.9 196.9 71.7 195.4L175 174.6L195.9 71.3C197.5 63.5 202.9 56.9 210.2 53.9zM239.6 320C239.6 275.6 275.6 239.6 320 239.6C364.4 239.6 400.4 275.6 400.4 320C400.4 364.4 364.4 400.4 320 400.4C275.6 400.4 239.6 364.4 239.6 320zM448.4 320C448.4 249.1 390.9 191.6 320 191.6C249.1 191.6 191.6 249.1 191.6 320C191.6 390.9 249.1 448.4 320 448.4C390.9 448.4 448.4 390.9 448.4 320z"/></svg>
+            </label>
+
+            <input class="scheme__input" type="radio" name="scheme" id="scheme-dark" />
+            <label class="scheme__icon scheme__icon--dark" for="scheme-dark" title="Dark color scheme">
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576C388.8 576 451.3 548.8 497.3 504.6C504.6 497.6 506.7 486.7 502.6 477.5C498.5 468.3 488.9 462.6 478.8 463.4C473.9 463.8 469 464 464 464C362.4 464 280 381.6 280 280C280 207.9 321.5 145.4 382.1 115.2C391.2 110.7 396.4 100.9 395.2 90.8C394 80.7 386.6 72.5 376.7 70.3C358.4 66.2 339.4 64 320 64z"/></svg>
+            </label>
+          </form>
+
           <div class="search-box" data-controller="<%= search_provider %>">
             <% if search_provider == "lunr" %>
               <button type="button" data-action="click->lunr#open:stop" class="search-box__button" aria-label="Open search dialog">
-                <svg class="search-box__icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                <svg aria-hidden="true" class="search-box__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                  <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path fill="currentColor" d="M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM272 416C351.5 416 416 351.5 416 272C416 192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 351.5 192.5 416 272 416z"/>
                 </svg>
 
                 <span class="search-box__label">Type / to search</span>
@@ -64,10 +83,9 @@
                   <div class="search__header">
                     <input autofocus data-action="input->lunr#search" type="text" class="search__input"></input>
                     <button aria-label="Close search dialog" type="button" class="search__dismiss" data-action="click->lunr#close">
-                      <svg viewBox="0 0 15 15">
-                        <g stroke="currentColor" stroke-width="1.2">
-                        <path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path>
-                        </g>
+                      <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                        <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                        <path fill="currentColor" d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/>
                       </svg>
                     </button>
                   </div>
@@ -108,10 +126,9 @@
             <% end %>
 
             <button aria-label="Close navigation" class="sidenav__toggle" type="button" data-action="click->sidenav#close">
-              <svg viewBox="0 0 15 15">
-                <g stroke="currentColor" stroke-width="1.2">
-                  <path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path>
-                </g>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                <path fill="currentColor" d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/>
               </svg>
             </button>
           </div>

@@ -6,13 +6,11 @@
   Light / Dark is currently under development. You can chime in on <%= external_link_to "this GitHub discussion", "https://github.com/3v0k4/hotdocs/discussions/3" %> to share wishes and feedback.
 <% end %>
 
-The Light / Dark theme is implemented with Css variables and a data attribute on `<html>`:
-- `<html data-theme="light">`
-- `<html data-theme="dark">`
+The Light / Dark color scheme is implemented with Css variables and a check on what scheme is currently selected (see `.scheme`).
 
 ## Styling your own content
 
-When styling your docs, use Css variables to support both light and dark themes.
+When styling your docs, use Css variables to support both light and dark color schemes.
 
 For example, here is a COMPONENT that uses different background colors:
 
@@ -21,7 +19,17 @@ For example, here is a COMPONENT that uses different background colors:
   --COMPONENT-background-color: #ffffff;
 }
 
-[data-theme=dark]:root {
+@media (prefers-color-scheme: dark) {
+  :root {
+    --COMPONENT-background-color: #000000;
+  }
+}
+
+html:has(#scheme-light:checked) {
+  --COMPONENT-background-color: #ffffff;
+}
+
+html:has(#scheme-dark:checked) {
   --COMPONENT-background-color: #000000;
 }
 
