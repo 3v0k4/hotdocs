@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.7.0]
+
+- [Light/Dark](https://hotdocsrails.com/light-dark/) color schemes
+
 ## [0.6.0]
 
 - Fix indexing for search url-less menu items

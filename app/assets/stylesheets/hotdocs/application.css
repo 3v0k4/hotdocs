@@ -552,12 +552,14 @@
   }
 
   .menu__link {
+    align-items: center;
     border-radius: 0.25rem;
     color: var(--menu-link-color);
-    display: inline-block;
+    display: flex;
     flex: 1 0 0;
+    height: 2.2rem;
     overflow: hidden;
-    padding: 0.375rem 1rem;
+    padding-inline: 0.5rem;
     text-overflow: ellipsis;
     white-space: nowrap;
 
@@ -577,9 +579,9 @@
     border-radius: 0.25rem;
     display: flex;
     flex: 0 0 auto;
-    height: 2rem;
+    height: 2.2rem;
     justify-content: center;
-    width: 2rem;
+    width: 2.2rem;
 
     &:hover {
       background-color: var(--menu-link-hover-background-color);
@@ -607,8 +609,8 @@
 
   .menu__toggle-icon {
     color: var(--menu-accordion-color);
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 100%;
+    padding: 0.5rem;
   }
 
   .menu__row--expanded .menu__toggle-icon {
