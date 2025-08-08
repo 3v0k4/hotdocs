@@ -557,7 +557,7 @@
     color: var(--menu-link-color);
     display: flex;
     flex: 1 0 0;
-    height: 2.4rem;
+    height: 2.5rem;
     overflow: hidden;
     padding-inline: 0.75rem;
     text-overflow: ellipsis;
@@ -608,7 +608,7 @@
   .menu__toggle-icon-wrapper {
     display: flex;
     justify-content: center;
-    width: 2.4rem;
+    width: 2.5rem;
   }
 
   .menu__toggle-icon {
