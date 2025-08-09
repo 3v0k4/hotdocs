@@ -1,6 +1,6 @@
 <%= content_for(:title, "HotDocs: Light / Dark") %>
 
-# HotDocs: Light / Dark 🔜
+# HotDocs: Light / Dark
 
 The Light / Dark color scheme is implemented with Css variables and a check on what scheme is currently selected (see `.scheme`).
 
