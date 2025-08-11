@@ -137,6 +137,10 @@
     gap: 1.5rem;
   }
 
+  .nav__section--brand {
+    overflow: hidden;
+  }
+
   .nav__links {
     display: none;
 
@@ -162,6 +166,7 @@
   .nav__brand {
     align-items: center;
     display: flex;
+    overflow: hidden;
     gap: 0.5rem;
   }
 
@@ -179,6 +184,9 @@
     color: var(--nav-title-color);
     font-size: 1.5rem;
     font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .nav__toggle {

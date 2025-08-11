@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- Prevent title in nav from overflowing (show ellipsis)
+
 ## [0.7.0]
 
 - [Light/Dark](https://hotdocsrails.com/light-dark/) color schemes
