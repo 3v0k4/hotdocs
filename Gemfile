@@ -27,7 +27,7 @@ gem "rubocop-minitest", require: false
 gem "rubocop-rake", require: false
 gem "rubocop-thread_safety", require: false
 
-gem "parklife"
+gem "parklife-rails"
 
 group :development do
   gem "hotwire-spark"
