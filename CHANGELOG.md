@@ -4,7 +4,7 @@
 
 ## [0.7.0]
 
-- [Light/Dark](https://hotdocsrails.com/light-dark/) color schemes
+- [Light/Dark](https://hotdocsrails.odone.me/light-dark/) color schemes
 
 ## [0.6.0]
 
@@ -18,10 +18,10 @@
 - Use `<div>` for user content rather than `<article>` because [on webkit `<h1>` and `<h2>` are indistinguishable](https://bugs.webkit.org/show_bug.cgi?id=57744)
 - Tweaks CSS styles
 - Support url-less menu items
-- Support [alerts](https://hotdocsrails.com/markdown/#alerts) via Rails templates (remove custom markdown syntax)
+- Support [alerts](https://hotdocsrails.odone.me/markdown/#alerts) via Rails templates (remove custom markdown syntax)
 - Rename `base.css` to `custom.css`
 - Support external links in menu
-- Add [announcement bar](https://hotdocsrails.com/announcement/)
+- Add [announcement bar](https://hotdocsrails.odone.me/announcement/)
 
 ## [0.4.0]
 

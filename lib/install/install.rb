@@ -83,7 +83,7 @@ create_file(Pathname(destination_root).join("app/views/hotdocs/index.html.mderb"
 
   <input type="checkbox" id="first"><label for="first"> Update <code>app/views/layouts/hotdocs.html.erb</code></label>
   <input type="checkbox" id="second"><label for="second"> Update <code>app/helpers/hotdocs_helper.rb</code></label>
-  <input type="checkbox" id="third"><label for="third"> Maybe read the docs: <a href="https://hotdocsrails.com/" target="_blank">hotdocsrails.com</a></label>
+  <input type="checkbox" id="third"><label for="third"> Maybe read the docs: <a href="https://hotdocsrails.odone.me/" target="_blank">hotdocsrails.odone.me</a></label>
 FILE
 
 empty_directory "app/assets/images/hotdocs"

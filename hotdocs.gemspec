@@ -5,7 +5,7 @@ Gem::Specification.new do |spec|
   spec.version     = Hotdocs::VERSION
   spec.authors     = [ "3v0k4" ]
   spec.email       = [ "riccardo.odone@gmail.com" ]
-  spec.homepage    = "https://hotdocsrails.com/"
+  spec.homepage    = "https://hotdocsrails.odone.me/"
   spec.summary     = "Write your docs with Ruby on Rails"
   spec.description = "HotDocs is a set of optimized Rails components & tools for writing docs."
   spec.licenses    = %w[LGPL-3.0 Commercial]

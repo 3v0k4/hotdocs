@@ -10,7 +10,7 @@ HotDocs is a set of optimized Rails components & tools for writing docs:
 - Write your docs from scratch
 - Embed docs in your Rails app
 
-[**Get Started**](https://hotdocsrails.com)
+[**Get Started**](https://hotdocsrails.odone.me)
 
 ## Comparison
 
@@ -31,7 +31,7 @@ HotDocs is a set of optimized Rails components & tools for writing docs:
 
 ## Demo
 
-HotDocs uses itself for its docs: [check the demo out](https://hotdocsrails.com).
+HotDocs uses itself for its docs: [check the demo out](https://hotdocsrails.odone.me).
 
 ## Development
 
