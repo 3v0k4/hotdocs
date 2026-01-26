@@ -141,7 +141,8 @@ GEM
     marcel (1.1.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
-    minitest (5.27.0)
+    minitest (6.0.1)
+      prism (~> 1.5)
     net-imap (0.6.2)
       date
       net-protocol
@@ -313,7 +314,6 @@ DEPENDENCIES
   hotdocs!
   hotwire-spark
   importmap-rails (~> 2.1)
-  minitest (~> 5.0)
   parklife-rails
   propshaft
   puma
