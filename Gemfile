@@ -32,3 +32,5 @@ gem "parklife-rails"
 group :development do
   gem "hotwire-spark"
 end
+
+gem "minitest", "~> 5.0"
