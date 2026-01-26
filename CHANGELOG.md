@@ -1,6 +1,7 @@
 ## [Unreleased]
 
 - Prevent title in nav from overflowing (show ellipsis)
+- Fix reset.css in Safari
 
 ## [0.7.0]
 
